@@ -22,14 +22,14 @@
 		946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */; };
 		946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AD20C61F6C00570ADE /* Flyer_CollectionViewCell.swift */; };
 		946DF3B320C61F6C00570ADE /* User_Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3AE20C61F6C00570ADE /* User_Board.storyboard */; };
-		946DF3BD20C6223C00570ADE /* NoSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3B520C6223C00570ADE /* NoSubTableViewCell.swift */; };
-		946DF3BE20C6223C00570ADE /* AddSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3B620C6223C00570ADE /* AddSubViewController.swift */; };
-		946DF3BF20C6223C00570ADE /* Subscription_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3B720C6223C00570ADE /* Subscription_Page.storyboard */; };
-		946DF3C020C6223C00570ADE /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3B820C6223C00570ADE /* SubscriptionTableViewCell.swift */; };
-		946DF3C120C6223C00570ADE /* AllSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3B920C6223C00570ADE /* AllSubTableViewCell.swift */; };
-		946DF3C220C6223C00570ADE /* AddSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3BA20C6223C00570ADE /* AddSubTableViewCell.swift */; };
-		946DF3C320C6223C00570ADE /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3BB20C6223C00570ADE /* SubscribeTableViewCell.swift */; };
-		946DF3C420C6223C00570ADE /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3BC20C6223C00570ADE /* SubscriptionViewController.swift */; };
+		946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3D820C7586F00570ADE /* NoSubTableViewCell.swift */; };
+		946DF3E120C7586F00570ADE /* AddSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3D920C7586F00570ADE /* AddSubViewController.swift */; };
+		946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */; };
+		946DF3E320C7586F00570ADE /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */; };
+		946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */; };
+		946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */; };
+		946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */; };
+		946DF3E720C7586F00570ADE /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DF20C7586F00570ADE /* SubscriptionViewController.swift */; };
 		948674792031216D00EC9D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948674782031216D00EC9D9F /* AppDelegate.swift */; };
 		9486747B2031216D00EC9D9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486747A2031216D00EC9D9F /* LoginViewController.swift */; };
 		9486747E2031216D00EC9D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9486747C2031216D00EC9D9F /* Main.storyboard */; };
@@ -89,14 +89,14 @@
 		946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image_ViewController.swift; sourceTree = "<group>"; };
 		946DF3AD20C61F6C00570ADE /* Flyer_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flyer_CollectionViewCell.swift; sourceTree = "<group>"; };
 		946DF3AE20C61F6C00570ADE /* User_Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User_Board.storyboard; sourceTree = "<group>"; };
-		946DF3B520C6223C00570ADE /* NoSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSubTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3B620C6223C00570ADE /* AddSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubViewController.swift; sourceTree = "<group>"; };
-		946DF3B720C6223C00570ADE /* Subscription_Page.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Subscription_Page.storyboard; sourceTree = "<group>"; };
-		946DF3B820C6223C00570ADE /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3B920C6223C00570ADE /* AllSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSubTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3BA20C6223C00570ADE /* AddSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3BB20C6223C00570ADE /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3BC20C6223C00570ADE /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		946DF3D820C7586F00570ADE /* NoSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSubTableViewCell.swift; sourceTree = "<group>"; };
+		946DF3D920C7586F00570ADE /* AddSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubViewController.swift; sourceTree = "<group>"; };
+		946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Subscription_Page.storyboard; sourceTree = "<group>"; };
+		946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSubTableViewCell.swift; sourceTree = "<group>"; };
+		946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubTableViewCell.swift; sourceTree = "<group>"; };
+		946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
+		946DF3DF20C7586F00570ADE /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		948674752031216D00EC9D9F /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948674782031216D00EC9D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9486747A2031216D00EC9D9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -216,25 +216,26 @@
 			path = User_Board;
 			sourceTree = "<group>";
 		};
-		946DF3B420C6223C00570ADE /* Subscription_Page */ = {
+		946DF3D720C7586F00570ADE /* Subscription_Page */ = {
 			isa = PBXGroup;
 			children = (
-				946DF3B520C6223C00570ADE /* NoSubTableViewCell.swift */,
-				946DF3B620C6223C00570ADE /* AddSubViewController.swift */,
-				946DF3B720C6223C00570ADE /* Subscription_Page.storyboard */,
-				946DF3B820C6223C00570ADE /* SubscriptionTableViewCell.swift */,
-				946DF3B920C6223C00570ADE /* AllSubTableViewCell.swift */,
-				946DF3BA20C6223C00570ADE /* AddSubTableViewCell.swift */,
-				946DF3BB20C6223C00570ADE /* SubscribeTableViewCell.swift */,
-				946DF3BC20C6223C00570ADE /* SubscriptionViewController.swift */,
+				946DF3D820C7586F00570ADE /* NoSubTableViewCell.swift */,
+				946DF3D920C7586F00570ADE /* AddSubViewController.swift */,
+				946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */,
+				946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */,
+				946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */,
+				946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */,
+				946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */,
+				946DF3DF20C7586F00570ADE /* SubscriptionViewController.swift */,
 			);
 			name = Subscription_Page;
-			path = ../../../../../Downloads/News_iOS/News/News/Subscription_Page;
+			path = News/Subscription_Page;
 			sourceTree = "<group>";
 		};
 		9486746C2031216D00EC9D9F = {
 			isa = PBXGroup;
 			children = (
+				946DF3D720C7586F00570ADE /* Subscription_Page */,
 				94CDFDE9206F068F00983D61 /* Side_Menu */,
 				948674772031216D00EC9D9F /* News */,
 				9486748C2031216D00EC9D9F /* NewsTests */,
@@ -258,7 +259,6 @@
 		948674772031216D00EC9D9F /* News */ = {
 			isa = PBXGroup;
 			children = (
-				946DF3B420C6223C00570ADE /* Subscription_Page */,
 				946DF3A920C61F6C00570ADE /* User_Board */,
 				946DF3A220C61F5300570ADE /* Testing_emIl */,
 				94B8EFAA20A393A600D9882B /* News.entitlements */,
@@ -506,7 +506,7 @@
 				94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */,
 				945331242070534D00545ED4 /* Post_Page.storyboard in Resources */,
 				94C782F5206F0E6400573BED /* Sign_Up.storyboard in Resources */,
-				946DF3BF20C6223C00570ADE /* Subscription_Page.storyboard in Resources */,
+				946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */,
 				948674802031216D00EC9D9F /* Assets.xcassets in Resources */,
 				94F59C0220A383CD00E024A2 /* Send_Page.storyboard in Resources */,
 				9486747E2031216D00EC9D9F /* Main.storyboard in Resources */,
@@ -617,17 +617,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				946DF3C020C6223C00570ADE /* SubscriptionTableViewCell.swift in Sources */,
-				946DF3C120C6223C00570ADE /* AllSubTableViewCell.swift in Sources */,
+				946DF3E320C7586F00570ADE /* SubscriptionTableViewCell.swift in Sources */,
+				946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */,
 				946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */,
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
-				946DF3C320C6223C00570ADE /* SubscribeTableViewCell.swift in Sources */,
+				946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */,
 				6D6D97FD20BE3AEF00F8464C /* TabBarSlideMenu.swift in Sources */,
-				946DF3C420C6223C00570ADE /* SubscriptionViewController.swift in Sources */,
+				946DF3E720C7586F00570ADE /* SubscriptionViewController.swift in Sources */,
 				946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */,
-				946DF3C220C6223C00570ADE /* AddSubTableViewCell.swift in Sources */,
+				946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */,
 				946DF3A820C61F5300570ADE /* Mail_sender.swift in Sources */,
-				946DF3BD20C6223C00570ADE /* NoSubTableViewCell.swift in Sources */,
+				946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */,
 				94EF0B4A203727FF00F3FFDC /* LoginView.swift in Sources */,
 				94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */,
 				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
@@ -645,7 +645,7 @@
 				94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */,
 				94CDFDEF206F068F00983D61 /* SWRevealViewController.m in Sources */,
 				94C782F7206F114100573BED /* All_Feed_ViewController.swift in Sources */,
-				946DF3BE20C6223C00570ADE /* AddSubViewController.swift in Sources */,
+				946DF3E120C7586F00570ADE /* AddSubViewController.swift in Sources */,
 				948674792031216D00EC9D9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
