@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qpR-pX-yZF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Profile-->
+        <scene sceneID="43J-CU-mlP">
+            <objects>
+                <viewController storyboardIdentifier="profile" id="tEE-PB-vD8" customClass="ProfileViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="epV-R4-EEC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-km-vV8">
+                                <rect key="frame" x="55" y="184" width="265" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="V3a-cR-TNK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZS-j3-Kcb">
+                                <rect key="frame" x="167" y="207" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cPb-9Z-XrW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Edit"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txZ-WC-UWZ">
+                                <rect key="frame" x="26" y="308" width="322" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KQF-Qm-z2f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frI-d4-wh4">
+                                <rect key="frame" x="135" y="593" width="105" height="30"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="0.83960087435233155" green="0.0" blue="0.025046841861598383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-qu-fpQ">
+                                <rect key="frame" x="126" y="545" width="123" height="30"/>
+                                <state key="normal" title="Change Password"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SmG-qu-fpQ" secondAttribute="bottom" constant="92" id="2TN-Gg-QXS"/>
+                            <constraint firstItem="3ZS-j3-Kcb" firstAttribute="centerX" secondItem="KeP-km-vV8" secondAttribute="centerX" id="9Lt-zu-xK9"/>
+                            <constraint firstItem="txZ-WC-UWZ" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="26" id="B3K-4G-y5h"/>
+                            <constraint firstItem="3ZS-j3-Kcb" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="167" id="CVu-Rm-8kd"/>
+                            <constraint firstItem="frI-d4-wh4" firstAttribute="top" secondItem="SmG-qu-fpQ" secondAttribute="bottom" constant="18" id="NJx-dr-6Fb"/>
+                            <constraint firstItem="txZ-WC-UWZ" firstAttribute="top" secondItem="3ZS-j3-Kcb" secondAttribute="bottom" constant="71" id="TvO-Ra-1Nf"/>
+                            <constraint firstItem="txZ-WC-UWZ" firstAttribute="top" secondItem="KeP-km-vV8" secondAttribute="bottom" constant="89" id="U17-r2-Pfl"/>
+                            <constraint firstItem="3ZS-j3-Kcb" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="Vb0-K2-VBc"/>
+                            <constraint firstItem="KeP-km-vV8" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="55" id="Xsh-UI-HOn"/>
+                            <constraint firstItem="SmG-qu-fpQ" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="anI-0j-Fsx"/>
+                            <constraint firstItem="frI-d4-wh4" firstAttribute="centerX" secondItem="SmG-qu-fpQ" secondAttribute="centerX" id="buC-xu-W6u"/>
+                            <constraint firstItem="txZ-WC-UWZ" firstAttribute="centerX" secondItem="epV-R4-EEC" secondAttribute="centerX" id="wFV-zt-aHd"/>
+                            <constraint firstItem="1eU-5u-BLK" firstAttribute="bottom" secondItem="txZ-WC-UWZ" secondAttribute="bottom" constant="324" id="wQx-Yu-t6r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1eU-5u-BLK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Profile" largeTitleDisplayMode="always" id="bZ7-23-SbL">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="cea-H8-5My"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deleteAccount" destination="frI-d4-wh4" id="BcX-Ig-qHQ"/>
+                        <outlet property="editName" destination="3ZS-j3-Kcb" id="nsf-9X-Kip"/>
+                        <outlet property="editPassword" destination="SmG-qu-fpQ" id="imU-wA-X7g"/>
+                        <outlet property="email" destination="txZ-WC-UWZ" id="kWJ-f1-4Sc"/>
+                        <outlet property="name" destination="KeP-km-vV8" id="reQ-pI-0xW"/>
+                        <segue destination="7SD-H0-NuV" kind="show" identifier="backToLogin" id="dRR-NR-jy2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58E-ce-tKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.79999999999995" y="68.815592203898049"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="vIp-fb-V19">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="7SD-H0-NuV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zd-xK-Gog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="-179"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qny-7m-byY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qpR-pX-yZF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5HN-EG-B2l">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tEE-PB-vD8" kind="relationship" relationship="rootViewController" id="wq4-g8-5IF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJT-Nz-d59" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="69"/>
+        </scene>
+    </scenes>
+</document>
