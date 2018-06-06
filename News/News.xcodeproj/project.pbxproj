@@ -30,6 +30,7 @@
 		946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */; };
 		946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */; };
 		946DF3E720C7586F00570ADE /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DF20C7586F00570ADE /* SubscriptionViewController.swift */; };
+		946DF3E920C75CCB00570ADE /* Post-To-Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3E820C75CCB00570ADE /* Post-To-Database.swift */; };
 		948674792031216D00EC9D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948674782031216D00EC9D9F /* AppDelegate.swift */; };
 		9486747B2031216D00EC9D9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486747A2031216D00EC9D9F /* LoginViewController.swift */; };
 		9486747E2031216D00EC9D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9486747C2031216D00EC9D9F /* Main.storyboard */; };
@@ -97,6 +98,7 @@
 		946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3DF20C7586F00570ADE /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		946DF3E820C75CCB00570ADE /* Post-To-Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post-To-Database.swift"; sourceTree = "<group>"; };
 		948674752031216D00EC9D9F /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948674782031216D00EC9D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9486747A2031216D00EC9D9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				94F59C0120A383CD00E024A2 /* Send_Page.storyboard */,
 				94F59C0320A383F400E024A2 /* Send_Post_ViewController.swift */,
 				946DF3A020C61E1D00570ADE /* File.swift */,
+				946DF3E820C75CCB00570ADE /* Post-To-Database.swift */,
 			);
 			path = "Send Post";
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				946DF3E320C7586F00570ADE /* SubscriptionTableViewCell.swift in Sources */,
 				946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */,
 				946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */,
+				946DF3E920C75CCB00570ADE /* Post-To-Database.swift in Sources */,
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
 				946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */,
 				6D6D97FD20BE3AEF00F8464C /* TabBarSlideMenu.swift in Sources */,

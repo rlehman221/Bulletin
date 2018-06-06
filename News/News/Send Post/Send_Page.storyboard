@@ -19,35 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-d0-0QO">
-                                <rect key="frame" x="16" y="196" width="343" height="364"/>
+                                <rect key="frame" x="16" y="196" width="343" height="451"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter Text Here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EcX-lr-V05">
-                                        <rect key="frame" x="0.0" y="8" width="343" height="241"/>
+                                        <rect key="frame" x="0.0" y="8" width="343" height="204"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVW-Bo-uvV">
-                                        <rect key="frame" x="141" y="295" width="61" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.43456820493860038" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <state key="normal" title="Post">
-                                            <color key="titleColor" red="0.87861782635666286" green="0.16859088848265213" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY3-uO-6PV">
-                                        <rect key="frame" x="141" y="295" width="61" height="61"/>
+                                        <rect key="frame" x="141" y="390" width="61" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.43456820489999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
@@ -67,6 +50,10 @@
                                             <action selector="send_button_clicked:" destination="QEn-vC-XxT" eventType="touchUpInside" id="tPC-zk-V6T"/>
                                         </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-66-auQ">
+                                        <rect key="frame" x="74" y="250" width="194" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -82,6 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="Maz-LH-J9p"/>
                     </view>
                     <connections>
+                        <outlet property="picker" destination="gl5-66-auQ" id="nJA-gw-xHc"/>
                         <outlet property="subjectField" destination="bhx-PB-bPZ" id="iZE-TQ-2oT"/>
                         <outlet property="textField" destination="EcX-lr-V05" id="npY-Yh-Fbz"/>
                     </connections>

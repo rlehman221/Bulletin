@@ -27,7 +27,7 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         search_bar.delegate = self
         load_database()
         super.viewDidLoad()
-        Messaging.messaging().subscribe(toTopic: "sponge")
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         //refreshControl.backgroundColor = UIColor.redColor
@@ -50,11 +50,14 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let compareDateString = date
         
-        let dateFormatter = ISO8601DateFormatter()
-        let currentDate = Date();
-        let compareDate = dateFormatter.date(from:compareDateString)!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let compareDate2 = dateFormatter.date(from:compareDateString)
+       
+        let currentDate = Date()
+        
         let timeComponents: Set = [Calendar.Component.month,Calendar.Component.day,Calendar.Component.hour, Calendar.Component.minute]
-        var time_interval = NSCalendar.current.dateComponents(timeComponents, from: compareDate, to: currentDate)
+        var time_interval = NSCalendar.current.dateComponents(timeComponents, from: compareDate2!, to: currentDate)
         
         if time_interval.day != 0 {
             return "\(String(describing: time_interval.day!))d ago"
@@ -107,6 +110,7 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
     func load_database() {
         self.feed_data.removeAll()
         ref = Database.database().reference() // Reference to database
+        
         ref.child("Feed").queryOrdered(byChild: "Date").observe(.childAdded, with: { (snapshot) -> Void in
             
             let posts = snapshot.value

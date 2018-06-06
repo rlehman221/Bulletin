@@ -93,6 +93,21 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
         ref.child("Users").child(UID!).child("Subscribed").child((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!).setValue(false)
+        
+        var subscribersCount = 0
+        let clubChoosen = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!
+        let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
+        print(topicString)
+        Messaging.messaging().unsubscribe(fromTopic: topicString)
+        ref.child("Clubs").child(clubChoosen).child("Subscribers").observe(.value) { (snapshot) in
+            
+            subscribersCount = (snapshot.value)! as! Int
+            if (subscribersCount != 0){
+                subscribersCount -= 1
+            }
+            self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(subscribersCount)
+            
+        }
         self.refreshData()
     }
 }

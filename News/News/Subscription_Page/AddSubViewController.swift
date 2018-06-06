@@ -92,6 +92,20 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
         ref.child("Users").child(UID!).child("Subscribed").child(((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text)!).setValue(true)
+        
+        
+        var subscribersCount = 0
+        let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text)!
+        let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
+        
+        Messaging.messaging().subscribe(toTopic: topicString)
+        ref.child("Clubs").child(clubChoosen).child("Subscribers").observe(.value) { (snapshot) in
+            
+            subscribersCount = (snapshot.value)! as! Int
+            subscribersCount += 1
+            self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(subscribersCount)
+            
+        }
         self.refreshData()
     }
     
