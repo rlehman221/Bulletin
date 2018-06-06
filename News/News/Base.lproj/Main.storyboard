@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="2303.1999999999998" y="-503.74812593703155"/>
         </scene>
-        <!--User_Board-->
+        <!--Send_Page-->
         <scene sceneID="ulA-c8-17X">
             <objects>
-                <viewControllerPlaceholder storyboardName="User_Board" id="Exi-ac-1LC" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Send_Page" id="Exi-ac-1LC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTl-NT-kky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2316" y="-451.57421289355324"/>
