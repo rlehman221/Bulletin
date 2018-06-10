@@ -71,11 +71,10 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func getInfo() {
-        subList.removeAll()
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
-        ref.child("Users").child(UID!).child("Subscribed").observeSingleEvent(of: .value, with: { (snapshot) in
-            if !snapshot.exists() { return }
+        ref.child("Users").child(UID!).child("Subscribed").observe(.value, with: { (snapshot) in
+            self.subList.removeAll()
             let subs = snapshot.value as? [String:Bool]
             var count = 0
             for (name,val) in subs! {
@@ -85,14 +84,22 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
                 }
             }
             self.tableView.reloadData()
-            print("went here")
         })
     }
     
     @objc func unsubscribe(_ sender:UIButton!) {
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
-        ref.child("Users").child(UID!).child("Subscribed").child((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!).setValue(false)
+        let club = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!
+        ref.child("Users").child(UID!).child("Subscribed").child(club).setValue(false) {
+            (error:Error?, ref:DatabaseReference) -> Void in
+            if error != nil {
+                print("Data could not be saved")
+            }
+            else {
+                print("Data saved successfully")
+            }
+        }
         
         var subscribersCount = 0
         let clubChoosen = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!

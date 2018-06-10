@@ -44,14 +44,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frI-d4-wh4">
-                                <rect key="frame" x="135" y="593" width="105" height="30"/>
-                                <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="0.83960087435233155" green="0.0" blue="0.025046841861598383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-qu-fpQ">
-                                <rect key="frame" x="126" y="545" width="123" height="30"/>
+                                <rect key="frame" x="125.5" y="545" width="123" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.99894230520332472" blue="0.97772020786959557" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Change Password"/>
                             </button>
                         </subviews>
@@ -61,13 +56,11 @@
                             <constraint firstItem="3ZS-j3-Kcb" firstAttribute="centerX" secondItem="KeP-km-vV8" secondAttribute="centerX" id="9Lt-zu-xK9"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="26" id="B3K-4G-y5h"/>
                             <constraint firstItem="3ZS-j3-Kcb" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="167" id="CVu-Rm-8kd"/>
-                            <constraint firstItem="frI-d4-wh4" firstAttribute="top" secondItem="SmG-qu-fpQ" secondAttribute="bottom" constant="18" id="NJx-dr-6Fb"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="top" secondItem="3ZS-j3-Kcb" secondAttribute="bottom" constant="71" id="TvO-Ra-1Nf"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="top" secondItem="KeP-km-vV8" secondAttribute="bottom" constant="89" id="U17-r2-Pfl"/>
                             <constraint firstItem="3ZS-j3-Kcb" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="Vb0-K2-VBc"/>
                             <constraint firstItem="KeP-km-vV8" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="55" id="Xsh-UI-HOn"/>
                             <constraint firstItem="SmG-qu-fpQ" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="anI-0j-Fsx"/>
-                            <constraint firstItem="frI-d4-wh4" firstAttribute="centerX" secondItem="SmG-qu-fpQ" secondAttribute="centerX" id="buC-xu-W6u"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="centerX" secondItem="epV-R4-EEC" secondAttribute="centerX" id="wFV-zt-aHd"/>
                             <constraint firstItem="1eU-5u-BLK" firstAttribute="bottom" secondItem="txZ-WC-UWZ" secondAttribute="bottom" constant="324" id="wQx-Yu-t6r"/>
                         </constraints>
@@ -77,7 +70,6 @@
                         <barButtonItem key="backBarButtonItem" title="Home" id="cea-H8-5My"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="deleteAccount" destination="frI-d4-wh4" id="BcX-Ig-qHQ"/>
                         <outlet property="editName" destination="3ZS-j3-Kcb" id="nsf-9X-Kip"/>
                         <outlet property="editPassword" destination="SmG-qu-fpQ" id="imU-wA-X7g"/>
                         <outlet property="email" destination="txZ-WC-UWZ" id="kWJ-f1-4Sc"/>

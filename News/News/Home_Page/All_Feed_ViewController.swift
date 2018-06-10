@@ -12,10 +12,12 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var search_bar: UISearchBar!
+    @IBOutlet weak var filter_button: UIButton!
     
     var feed_data: [[String:String]] = []
     var post_time = ""
     var search_text = ""
+    var filter = "both"
     
     var refreshControl: UIRefreshControl!
     
@@ -34,7 +36,7 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
        // refreshControl.tintColor = UIColor.yellowColor
         collectionView.addSubview(refreshControl)
         
-        // Do any additional setup after loading the view.
+        filter_button.addTarget(self, action: #selector(All_Feed_ViewController.changeFilters(_:)), for: .touchUpInside)
     }
     
     @objc func refreshData() {
@@ -119,9 +121,14 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
                 || all_posts!["Name"]?.lowercased().range(of: self.search_text.lowercased()) != nil
                 || all_posts!["Subject"]?.lowercased().range(of: self.search_text.lowercased()) != nil
                 || all_posts!["Body"]?.lowercased().range(of: self.search_text.lowercased()) != nil) {
-                self.feed_data.insert(all_posts!, at: 0)
-                self.post_time = self.timeDuration(date: self.feed_data[0]["Date"]!)
-                self.feed_data[0]["Duration"] = self.post_time
+                
+                if (self.filter == "both"
+                    || (self.filter == "event" && all_posts!["Type"] == "Event")
+                    || (self.filter == "announcement" && all_posts!["Type"] == "Announcement")) {
+                    self.feed_data.insert(all_posts!, at: 0)
+                    self.post_time = self.timeDuration(date: self.feed_data[0]["Date"]!)
+                    self.feed_data[0]["Duration"] = self.post_time
+                }
             }
             self.collectionView.reloadData()
         })
@@ -153,6 +160,23 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         search_bar.resignFirstResponder()
         search_text = search_bar.text!
         self.refreshData()
+    }
+    
+    @objc func changeFilters(_ sender: UIButton!) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Events Only", style: .default, handler: { _ in
+            self.filter = "event"
+            self.refreshData()
+        }))
+        alert.addAction(UIAlertAction(title: "Announcements Only", style: .default, handler: { _ in
+            self.filter = "announcement"
+            self.refreshData()
+        }))
+        alert.addAction(UIAlertAction(title: "Events & Announcements", style: .default, handler: { _ in
+            self.filter = "both"
+            self.refreshData()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
