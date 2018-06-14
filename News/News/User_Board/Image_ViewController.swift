@@ -21,6 +21,7 @@ class Image_ViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     // Initializes instances and global varaibles
     
+    var validTimePost = 1 // Variable to see if user has posted in the last 24 hours
     var storage2: Storage! // Reference to firebase storage server
     var ref = Database.database().reference() // Reference to firebase database
     @IBOutlet weak var user_image: UIImageView! // Storyboard reference for the selected user photo to appear as confirmation before uploading to storage server
@@ -30,7 +31,6 @@ class Image_ViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Additional setup after loading the view.
         storage2 = Storage.storage() // Initlaizes the storage server as a reference
         take_picture() // Executres a function to display the image picker screen to the user
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,56 +103,117 @@ class Image_ViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Generate intializre varibles for establishign both refernces and address's
         let uploadData = UIImagePNGRepresentation(self.user_image.image!)
         let uid = Auth.auth().currentUser?.uid
-        print(uid)
         let storageRef = storage2.reference().child("myFiles/\(uid!)")
-        
-        // Create a call to the storage server and have the image choosen uploaded along with the users UID as the address
-        storageRef.putData(uploadData as! Data).observe(.success) { (snapshot) in
-            
-            // When the image has successfully uploaded, the download URL is taken to be stored in the database
-            storageRef.downloadURL(completion: { (URL, Error) in
-                
-                // if their is an error while the image is being uploaded then an alert is displayed to the user
-                if (Error != nil){
-                    let fail_alert = UIAlertController(title: "Upload Has Failed", message: "please try uploading your photo again", preferredStyle: UIAlertControllerStyle.alert)
+        print("2Val is" + String(self.validTimePost))
+        self.getUserLastPost {
+            print("3Val is" + String(self.validTimePost))
+            if (self.validTimePost == 0) {
+                // Create a call to the storage server and have the image choosen uploaded along with the users UID as the address
+                storageRef.putData(uploadData as! Data).observe(.success) { (snapshot) in
                     
-                    // Add ok action to alert
-                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
-                        UIAlertAction in
-                        NSLog("Next Story Board")
-                    }
-
-                    // Link to alert controller
-                    fail_alert.addAction(okAction)
-                    self.present(fail_alert, animated: true, completion: nil) // Display alert to the user
-                  
-                // If the upload to the server and database were successful then alert the user of the confirmation and change view controllers
-                } else {
-                    // Local varaible for the image refernce in string form
-                    let downloadURL = URL?.absoluteString
-                    
-                    // Write the download URL to the Realtime Database along with a destingated timestamp
-                    let data = ["URL": downloadURL, "time": ServerValue.timestamp()] as [String : Any]
-                    self.ref.child("pendingFiles/\(uid!)").setValue(data)
-              
-                    let success_alert = UIAlertController(title: "Upload Successful", message: "", preferredStyle: UIAlertControllerStyle.alert)
-                    
-                    // Add ok action
-                    let okAction = UIAlertAction(title: "Great", style: UIAlertActionStyle.default) {
-                        UIAlertAction in
-                        // The user will be re-directed the the bulletin board feed after image upload has been completed
-                        if let vc = UIStoryboard(name: "User_Board", bundle: nil).instantiateViewController(withIdentifier: "secondBoard") as? User_Board_ViewController
-                        {
-                            self.present(vc, animated: true, completion: nil)
+                    // When the image has successfully uploaded, the download URL is taken to be stored in the database
+                    storageRef.downloadURL(completion: { (URL, Error) in
+                        
+                        // if their is an error while the image is being uploaded then an alert is displayed to the user
+                        if (Error != nil){
+                            let fail_alert = UIAlertController(title: "Upload Has Failed", message: "please try uploading your photo again", preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            // Add ok action to alert
+                            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                                UIAlertAction in
+                                NSLog("Next Story Board")
+                            }
+                            
+                            // Link to alert controller
+                            fail_alert.addAction(okAction)
+                            self.present(fail_alert, animated: true, completion: nil) // Display alert to the user
+                            
+                            // If the upload to the server and database were successful then alert the user of the confirmation and change view controllers
+                        } else {
+                            
+                            let currentDate = Date()
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                            let finalDate = dateFormatter.string(from: currentDate)
+                            
+                            self.ref.child("Users").child((Auth.auth().currentUser?.uid)!).child("Last Post").setValue(finalDate)
+                            // Local varaible for the image refernce in string form
+                            let downloadURL = URL?.absoluteString
+                            
+                            // Write the download URL to the Realtime Database along with a destingated timestamp
+                            let data = ["URL": downloadURL, "time": ServerValue.timestamp()] as [String : Any]
+                            self.ref.child("pendingFiles/\(uid!)").setValue(data)
+                            
+                            let success_alert = UIAlertController(title: "Upload Successful", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            // Add ok action
+                            let okAction = UIAlertAction(title: "Great", style: UIAlertActionStyle.default) {
+                                UIAlertAction in
+                                // The user will be re-directed the the bulletin board feed after image upload has been completed
+                                
+                                if let vc = UIStoryboard(name: "User_Board", bundle: nil).instantiateViewController(withIdentifier: "secondBoard") as? User_Board_ViewController
+                                {
+                                    self.present(vc, animated: true, completion: nil)
+                                }
+                            }
+                            
+                            // Link to alert controller
+                            success_alert.addAction(okAction)
+                            self.present(success_alert, animated: true, completion: nil) // Display alert to the user
                         }
-                    }
-
-                    // Link to alert controller
-                    success_alert.addAction(okAction)
-                    self.present(success_alert, animated: true, completion: nil) // Display alert to the user
-                    
+                    })
                 }
-            })
+            } else {
+                let fail_alert = UIAlertController(title: "Upload Has Failed", message: "Please wait 24 hours to post a new image", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // Add ok action to alert
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                    NSLog("Next Story Board")
+                }
+                
+                // Link to alert controller
+                fail_alert.addAction(okAction)
+                self.present(fail_alert, animated: true, completion: nil) // Display alert to the user
+            }
+        }
+        
+    }
+    
+    func getUserLastPost (finished: @escaping () -> Void) {
+        let uid = Auth.auth().currentUser?.uid
+   
+        ref.child("Users").child(uid!).child("Last Post").observe(.value) { (snapshot) in
+            var ret = 1
+            var lastPost = snapshot.value! as! String
+            ret = self.checkLastPostDate(date: lastPost)
+            self.validTimePost = ret
+            print("1Val is" + String(self.validTimePost))
+            finished()
+        }
+    }
+    
+    // Returns 0 if successful
+    func checkLastPostDate (date: String) -> Int {
+        // Get the current Date and Time
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let finalDate = dateFormatter.string(from: currentDate)
+        
+        if (date == "0"){
+            return 0
+        } else {
+            let compareDateString = date
+            let compareDate2 = dateFormatter.date(from:compareDateString)
+            let timeComponents: Set = [Calendar.Component.month,Calendar.Component.day,Calendar.Component.hour, Calendar.Component.minute]
+            var time_interval = NSCalendar.current.dateComponents(timeComponents, from: compareDate2!, to: currentDate)
+            print(time_interval.day!)
+            if (time_interval.day! >= 1){
+                return 0
+            } else {
+                return 1
+            }
         }
     }
 }
