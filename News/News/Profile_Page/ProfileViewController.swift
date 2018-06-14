@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     
-    @IBOutlet weak var deleteAccount: UIButton!
+    //@IBOutlet weak var deleteAccount: UIButton!
     @IBOutlet weak var editPassword: UIButton!
     @IBOutlet weak var editName: UIButton!
     var ref: DatabaseReference!
@@ -21,11 +21,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Opening Profile...")
-        //self.home.addTarget(self, action: "goHome:", for: .touchUpInside)
         getInfo()
         editName.addTarget(self, action: #selector(ProfileViewController.edit_name(_:)), for: .touchUpInside)
         editPassword.addTarget(self, action: #selector(ProfileViewController.edit_password(_:)), for: .touchUpInside)
-        deleteAccount.addTarget(self, action: #selector(ProfileViewController.delete_account(_:)), for: .touchUpInside)
+        //deleteAccount.addTarget(self, action: #selector(ProfileViewController.delete_account(_:)), for: .touchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +63,8 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func edit_password(_ sender: UIButton!) {
+        let fail_alert = UIAlertController(title: "Error", message: "Unable to change password", preferredStyle: .alert)
+        fail_alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         let alert = UIAlertController(title: "Edit Password", message: "Enter a new password", preferredStyle: .alert)
         alert.addTextField{ (textField) in
             textField.placeholder = "Current Password"
@@ -82,18 +83,20 @@ class ProfileViewController: UIViewController {
             let textField1 = alert?.textFields![1]
             let textField2 = alert?.textFields![2]
             if (textField1?.text! != textField2?.text!) {
+                self.present(fail_alert, animated: true, completion: nil)
                 return
             }
-            let UID = (Auth.auth().currentUser?.uid)
             self.ref = Database.database().reference()
-            let credential = EmailAuthProvider.credential(withEmail: (self.ref.child("Users").child(UID!).value(forKey: "Email") as? String)!, password: (textField0?.text!)!)
-            Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (error) in
+            let user = Auth.auth().currentUser
+            let credential = EmailAuthProvider.credential(withEmail: (user?.email)!, password: (textField0?.text!)!)
+            user?.reauthenticate(with: credential, completion: { (error) in
                 if (error == nil) {
                     Auth.auth().currentUser?.updatePassword(to: (textField1?.text)!) { (error) in
-                        print("Password changed to" + (textField1?.text!)!)
+                        print("Password changed to " + (textField1?.text!)!)
                     }
                 }
                 else {
+                    self.present(fail_alert, animated: true, completion: nil)
                     print("Error changing password.")
                 }
             })

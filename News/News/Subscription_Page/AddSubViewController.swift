@@ -69,11 +69,10 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func getInfo() {
-        subList.removeAll()
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
-        ref.child("Users").child(UID!).child("Subscribed").observeSingleEvent(of: .value, with: { (snapshot) in
-            if !snapshot.exists() { return }
+        ref.child("Users").child(UID!).child("Subscribed").observe(.value, with: { (snapshot) in
+            self.subList.removeAll()
             let subs = snapshot.value as? [String:Bool]
             var count = 0
             for (name,val) in subs! {
@@ -91,8 +90,16 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     @objc func subscribe(_ sender:UIButton!) {
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
-        ref.child("Users").child(UID!).child("Subscribed").child(((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text)!).setValue(true)
-        
+        let club = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text!
+        ref.child("Users").child(UID!).child("Subscribed").child(club).setValue(true) {
+            (error:Error?, ref:DatabaseReference) -> Void in
+            if error != nil {
+                print("Data could not be saved")
+            }
+            else {
+                print("Data saved successfully")
+            }
+        }
         
         var subscribersCount = 0
         let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text)!
@@ -100,8 +107,12 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         
         Messaging.messaging().subscribe(toTopic: topicString)
         ref.child("Clubs").child(clubChoosen).child("Subscribers").observe(.value) { (snapshot) in
-            
-            subscribersCount = (snapshot.value)! as! Int
+            if (snapshot.value != nil) {
+                subscribersCount = (snapshot.value)! as! Int
+            }
+            else {
+                subscribersCount = 0
+            }
             subscribersCount += 1
             self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(subscribersCount)
             

@@ -230,14 +230,12 @@
 				946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */,
 				946DF3DF20C7586F00570ADE /* SubscriptionViewController.swift */,
 			);
-			name = Subscription_Page;
-			path = News/Subscription_Page;
+			path = Subscription_Page;
 			sourceTree = "<group>";
 		};
 		9486746C2031216D00EC9D9F = {
 			isa = PBXGroup;
 			children = (
-				946DF3D720C7586F00570ADE /* Subscription_Page */,
 				94CDFDE9206F068F00983D61 /* Side_Menu */,
 				948674772031216D00EC9D9F /* News */,
 				9486748C2031216D00EC9D9F /* NewsTests */,
@@ -261,6 +259,7 @@
 		948674772031216D00EC9D9F /* News */ = {
 			isa = PBXGroup;
 			children = (
+				946DF3D720C7586F00570ADE /* Subscription_Page */,
 				946DF3A920C61F6C00570ADE /* User_Board */,
 				946DF3A220C61F5300570ADE /* Testing_emIl */,
 				94B8EFAA20A393A600D9882B /* News.entitlements */,
