@@ -13,7 +13,7 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
-    
+    var subscribersCount = 0
     var ref: DatabaseReference!
     var subList = [Int : (String , Bool)] ()
 
@@ -23,6 +23,7 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
+        self.refreshData() // allows for updates to occur before user goes into page (helps prevent error when user adds club and leaves app)
     }
     
     @objc func refreshData() {
@@ -90,6 +91,7 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     @objc func unsubscribe(_ sender:UIButton!) {
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
+        let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text)!
         let club = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!
         ref.child("Users").child(UID!).child("Subscribed").child(club).setValue(false) {
             (error:Error?, ref:DatabaseReference) -> Void in
@@ -101,20 +103,31 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
             }
         }
         
-        var subscribersCount = 0
-        let clubChoosen = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!
+        
+        
         let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
-        print(topicString)
-        Messaging.messaging().unsubscribe(fromTopic: topicString)
-        ref.child("Clubs").child(clubChoosen).child("Subscribers").observe(.value) { (snapshot) in
-            
-            subscribersCount = (snapshot.value)! as! Int
-            if (subscribersCount != 0){
-                subscribersCount -= 1
-            }
-            self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(subscribersCount)
-            
-        }
+        
+        Messaging.messaging().subscribe(toTopic: topicString)
+        
+        updateClub(finished: {
+            self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(self.subscribersCount)
+            self.refreshData()
+        }, clubChoosen: clubChoosen)
+        
         self.refreshData()
+    }
+    
+    func updateClub (finished: @escaping () -> Void, clubChoosen: String) {
+        
+        ref.child("Clubs").child(clubChoosen).child("Subscribers").observeSingleEvent(of: .value) { (snapshot) in
+            
+            self.subscribersCount = (snapshot.value)! as! Int
+            if (self.subscribersCount != 0){
+                self.subscribersCount -= 1
+                self.refreshData()
+            }
+            
+            finished()
+        }
     }
 }

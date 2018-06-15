@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XGn-TH-Fac">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XGn-TH-Fac">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Home-->
         <scene sceneID="kzd-CZ-3Eq">
             <objects>
-                <tabBarController id="GTc-Bv-4nn" customClass="TabBarSlideMenu" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="slide_out_bar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GTc-Bv-4nn" customClass="TabBarSlideMenu" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Home" id="YlM-Y8-5NN">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Menu_Burder-128" id="TLb-P1-oW5"/>
                     </navigationItem>
@@ -312,7 +307,7 @@
         <!--Table View Controller-->
         <scene sceneID="9AE-U1-7eW">
             <objects>
-                <tableViewController id="Yui-CR-pnk" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="slide_out" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yui-CR-pnk" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kUL-iI-87z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -458,7 +453,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ah9-6m-UMS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CLu-Zg-PPb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav_bar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CLu-Zg-PPb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K9l-uu-MMj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
