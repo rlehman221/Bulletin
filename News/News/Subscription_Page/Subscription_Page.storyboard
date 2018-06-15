@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1vn-R3-MJy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1vn-R3-MJy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,18 +14,29 @@
         <!--Navigation Controller-->
         <scene sceneID="DjR-AC-UJm">
             <objects>
-                <navigationController storyboardIdentifier="subscription" id="1vn-R3-MJy" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACc-yi-XMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="subscription" hidesBarsWhenKeyboardAppears="YES" id="1vn-R3-MJy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WsN-va-O5e">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yT7-Tc-U62">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="gGK-vz-rua" kind="relationship" relationship="rootViewController" id="vKE-lq-iXn"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ACc-yi-XMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2041" y="0.0"/>
+        </scene>
+        <!--slide_out_bar-->
+        <scene sceneID="hxF-9p-uTo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="my_feed" referencedIdentifier="slide_out_bar" id="ybZ-S7-NNX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sep-8Z-qm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1922" y="-483"/>
         </scene>
         <!--Subscriptions-->
         <scene sceneID="c6q-GU-BBP">
@@ -126,7 +137,13 @@
                             <outlet property="delegate" destination="gGK-vz-rua" id="bAu-V4-g9F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subscriptions" id="rWl-jh-IWP"/>
+                    <navigationItem key="navigationItem" title="Subscriptions" id="rWl-jh-IWP">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="wAu-pZ-8xi">
+                            <connections>
+                                <segue destination="ybZ-S7-NNX" kind="show" id="ru7-q3-UAJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Qem-6c-b58" id="rki-qh-OeR"/>
                     </connections>

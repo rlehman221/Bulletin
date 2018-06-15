@@ -162,6 +162,11 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         self.refreshData()
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search_text = search_bar.text!
+        self.refreshData()
+    }
+    
     @objc func changeFilters(_ sender: UIButton!) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Events Only", style: .default, handler: { _ in

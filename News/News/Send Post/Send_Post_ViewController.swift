@@ -8,11 +8,13 @@
 import UIKit
 import Firebase
 import FirebaseMessaging
+import Foundation
+import MessageUI
 
-class Send_Post_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class Send_Post_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate {
     
     
-    
+    var adminClub = ""
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var subjectField: UITextField!
     @IBOutlet weak var textField: UITextView!
@@ -23,7 +25,7 @@ class Send_Post_ViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         self.picker.delegate = self
         self.picker.dataSource = self
         pickerData = ["Announcement", "Event"]
@@ -41,6 +43,14 @@ class Send_Post_ViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 print("didn't worked")
             }
         }
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     // The number of columns of data
@@ -69,9 +79,81 @@ class Send_Post_ViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func send_button_clicked(_ sender: Any) {
-        Notfication_Request(message: self.subjectField.text!, topic: self.topic, title: self.topic).sendNotfication()
-        Database_Request(subject: self.subjectField.text!, message: textField.text!, clubName: self.topic , PostType: self.postType).send_request()
+        
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+        } else {
+            sendEmail()
+        }
+        
     }
     
+    func findAdminClub (finished: @escaping () -> Void) {
+        let uid = Auth.auth().currentUser?.uid
+        
+        ref.child("Users").child(uid!).child("Admin").child("Club").observeSingleEvent(of: .value, with: { (snapshot) in
+            self.adminClub = (snapshot.value as? String)!
+            finished()
+        })
+    }
+    
+    func sendEmail() {
+        
+        findAdminClub {
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            // Configure the fields of the interface.
+            composeVC.setToRecipients(["address@example.com"])
+            composeVC.setSubject(self.subjectField.text!)
+            composeVC.setMessageBody(self.textField.text, isHTML: false)
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        }
 
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        print(result)
+        switch (result) {
+            case .cancelled:
+                self.dismiss(animated: true, completion: nil)
+                break;
+            case .sent:
+                // If email was successful send data to database and a notifcation to users
+                self.dismiss(animated: true, completion: nil)
+                Notfication_Request(message: self.subjectField.text!, topic: self.topic, title: self.topic).sendNotfication()
+                Database_Request(subject: self.subjectField.text!, message: textField.text!, clubName: self.topic , PostType: self.postType).send_request()
+                
+                let upload_alert = UIAlertController(title: "Post Successful", message: "Your post has been successfully made", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // Add ok action to alert
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                }
+    
+                // Link to alert controller
+                upload_alert.addAction(okAction)
+                self.present(upload_alert, animated: true, completion: nil) // Display alert to the user
+                
+                break;
+            case .failed:
+                self.dismiss(animated: true, completion: nil)
+                let fail_alert = UIAlertController(title: "Post Failed", message: "Your post failed to be made please try again", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // Add ok action to alert
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                }
+                
+                // Link to alert controller
+                fail_alert.addAction(okAction)
+                self.present(fail_alert, animated: true, completion: nil) // Display alert to the user
+                
+                break;
+            
+            default:
+                controller.dismiss(animated: true, completion: nil)
+                break;
+        }
+    }
 }
