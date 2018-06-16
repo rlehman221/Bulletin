@@ -14,9 +14,6 @@
 		945331242070534D00545ED4 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
 		94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94533125207054F200545ED4 /* Post_PageViewController.swift */; };
 		946DF3A120C61E1D00570ADE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3A020C61E1D00570ADE /* File.swift */; };
-		946DF3A620C61F5300570ADE /* testing_emil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3A320C61F5300570ADE /* testing_emil.storyboard */; };
-		946DF3A720C61F5300570ADE /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3A420C61F5300570ADE /* MailViewController.swift */; };
-		946DF3A820C61F5300570ADE /* Mail_sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3A520C61F5300570ADE /* Mail_sender.swift */; };
 		946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AA20C61F6C00570ADE /* gridLayout.swift */; };
 		946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */; };
 		946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */; };
@@ -80,9 +77,6 @@
 		945331232070534D00545ED4 /* Post_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post_Page.storyboard; sourceTree = "<group>"; };
 		94533125207054F200545ED4 /* Post_PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PageViewController.swift; sourceTree = "<group>"; };
 		946DF3A020C61E1D00570ADE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		946DF3A320C61F5300570ADE /* testing_emil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = testing_emil.storyboard; sourceTree = "<group>"; };
-		946DF3A420C61F5300570ADE /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
-		946DF3A520C61F5300570ADE /* Mail_sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mail_sender.swift; sourceTree = "<group>"; };
 		946DF3AA20C61F6C00570ADE /* gridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gridLayout.swift; sourceTree = "<group>"; };
 		946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_Board_ViewController.swift; sourceTree = "<group>"; };
 		946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image_ViewController.swift; sourceTree = "<group>"; };
@@ -192,16 +186,6 @@
 			path = Post_Page;
 			sourceTree = "<group>";
 		};
-		946DF3A220C61F5300570ADE /* Testing_emIl */ = {
-			isa = PBXGroup;
-			children = (
-				946DF3A320C61F5300570ADE /* testing_emil.storyboard */,
-				946DF3A420C61F5300570ADE /* MailViewController.swift */,
-				946DF3A520C61F5300570ADE /* Mail_sender.swift */,
-			);
-			path = Testing_emIl;
-			sourceTree = "<group>";
-		};
 		946DF3A920C61F6C00570ADE /* User_Board */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +241,6 @@
 			children = (
 				946DF3D720C7586F00570ADE /* Subscription_Page */,
 				946DF3A920C61F6C00570ADE /* User_Board */,
-				946DF3A220C61F5300570ADE /* Testing_emIl */,
 				94B8EFAA20A393A600D9882B /* News.entitlements */,
 				94F59C0020A383A700E024A2 /* Send Post */,
 				94533122207052D100545ED4 /* Post_Page */,
@@ -494,7 +477,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				946DF3A620C61F5300570ADE /* testing_emil.storyboard in Resources */,
 				94C782F1206F09A200573BED /* my_feed.storyboard in Resources */,
 				946DF3B320C61F6C00570ADE /* User_Board.storyboard in Resources */,
 				6D52CDA920BB8CA1000D553F /* Profile_Page.storyboard in Resources */,
@@ -623,7 +605,6 @@
 				946DF3E720C7586F00570ADE /* SubscriptionViewController.swift in Sources */,
 				946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */,
 				946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */,
-				946DF3A820C61F5300570ADE /* Mail_sender.swift in Sources */,
 				946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */,
 				94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */,
 				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
@@ -632,7 +613,6 @@
 				94C782F9206F128E00573BED /* All_Feed_CollectionViewCell.swift in Sources */,
 				94CDFDF0206F068F00983D61 /* MenuViewController.swift in Sources */,
 				946DF3A120C61E1D00570ADE /* File.swift in Sources */,
-				946DF3A720C61F5300570ADE /* MailViewController.swift in Sources */,
 				946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */,
 				94D2FBD520799FAF00C6A246 /* My_Feed_ViewController.swift in Sources */,
 				9486747B2031216D00EC9D9F /* LoginViewController.swift in Sources */,

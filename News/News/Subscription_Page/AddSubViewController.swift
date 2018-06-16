@@ -15,7 +15,7 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var search_bar: UISearchBar!
     
     var search_text = ""
-    
+    var subscribersCount = 0
     var refreshControl: UIRefreshControl!
     
     var ref: DatabaseReference!
@@ -101,22 +101,15 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
-        var subscribersCount = 0
         let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text)!
         let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
         
         Messaging.messaging().subscribe(toTopic: topicString)
-        ref.child("Clubs").child(clubChoosen).child("Subscribers").observe(.value) { (snapshot) in
-            if (snapshot.value != nil) {
-                subscribersCount = (snapshot.value)! as! Int
-            }
-            else {
-                subscribersCount = 0
-            }
-            subscribersCount += 1
-            self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(subscribersCount)
-            
-        }
+        
+        updateClub(finished: {
+            self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(self.subscribersCount)
+        }, clubChoosen: clubChoosen)
+        
         self.refreshData()
     }
     
@@ -124,5 +117,26 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.resignFirstResponder()
         search_text = searchBar.text!
         self.refreshData()
+    }
+    
+    // Allows for the search bar to automatically update as the user is typing
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search_text = searchBar.text!
+        self.refreshData()
+    }
+    
+    
+    func updateClub (finished: @escaping () -> Void, clubChoosen: String) {
+        
+        ref.child("Clubs").child(clubChoosen).child("Subscribers").observeSingleEvent(of: .value) { (snapshot) in
+            if (snapshot.value != nil) {
+                self.subscribersCount = (snapshot.value)! as! Int
+            }
+            else {
+                self.subscribersCount = 0
+            }
+            self.subscribersCount += 1
+            finished()
+        }
     }
 }

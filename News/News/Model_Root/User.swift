@@ -99,7 +99,9 @@ class User {
             let allClubs = clubsHolder as? [String:Any] // Adds all the known clubs a dictionary
         
             let adminInfo = ["Club": "", "Valid": "false"]
-            let sendingDict = ["Admin": adminInfo,"Subscribed": allClubs!,"Email": self.email, "Name": self.name, "Denial_Counts": 0] as [String : Any] // Allocates a bigger dictionary to hold sending data for the user
+            
+            
+            let sendingDict = ["Admin": adminInfo,"Subscribed": allClubs!,"Email": self.email, "Name": self.name, "Denial_Counts": 0, "Last Post": "0"] as [String : Any] // Allocates a bigger dictionary to hold sending data for the user
           
             self.ref.child("Users").child((Auth.auth().currentUser?.uid)!).setValue(sendingDict) // Creates user with email and attaches all the clubs as false values
         })
