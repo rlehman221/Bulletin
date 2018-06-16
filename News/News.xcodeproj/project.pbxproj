@@ -48,8 +48,6 @@
 		94D2FBD72079A04900C6A246 /* My_Feed_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2FBD62079A04900C6A246 /* My_Feed_CollectionViewCell.swift */; };
 		94EF0B3B2032242700F3FFDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B3A2032242700F3FFDC /* User.swift */; };
 		94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */; };
-		94EF0B4A203727FF00F3FFDC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B49203727FF00F3FFDC /* LoginView.swift */; };
-		94EF0B50203728E000F3FFDC /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B4F203728E000F3FFDC /* SignUpView.swift */; };
 		94F59C0220A383CD00E024A2 /* Send_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F59C0120A383CD00E024A2 /* Send_Page.storyboard */; };
 		94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F59C0320A383F400E024A2 /* Send_Post_ViewController.swift */; };
 		94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F59C0520A3907200E024A2 /* GoogleService-Info.plist */; };
@@ -125,8 +123,6 @@
 		94D2FBD62079A04900C6A246 /* My_Feed_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feed_CollectionViewCell.swift; sourceTree = "<group>"; };
 		94EF0B3A2032242700F3FFDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		94EF0B49203727FF00F3FFDC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		94EF0B4F203728E000F3FFDC /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		94F59C0120A383CD00E024A2 /* Send_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send_Page.storyboard; sourceTree = "<group>"; };
 		94F59C0320A383F400E024A2 /* Send_Post_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Send_Post_ViewController.swift; sourceTree = "<group>"; };
 		94F59C0520A3907200E024A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -320,7 +316,6 @@
 		94EF0B452037276E00F3FFDC /* Login_Page */ = {
 			isa = PBXGroup;
 			children = (
-				94EF0B49203727FF00F3FFDC /* LoginView.swift */,
 				9486747A2031216D00EC9D9F /* LoginViewController.swift */,
 			);
 			path = Login_Page;
@@ -329,7 +324,6 @@
 		94EF0B4B2037287900F3FFDC /* SignUp_Page */ = {
 			isa = PBXGroup;
 			children = (
-				94EF0B4F203728E000F3FFDC /* SignUpView.swift */,
 				94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */,
 				94C782F4206F0E6400573BED /* Sign_Up.storyboard */,
 			);
@@ -631,13 +625,11 @@
 				946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */,
 				946DF3A820C61F5300570ADE /* Mail_sender.swift in Sources */,
 				946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */,
-				94EF0B4A203727FF00F3FFDC /* LoginView.swift in Sources */,
 				94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */,
 				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
 				94EF0B3B2032242700F3FFDC /* User.swift in Sources */,
 				94D2FBD72079A04900C6A246 /* My_Feed_CollectionViewCell.swift in Sources */,
 				94C782F9206F128E00573BED /* All_Feed_CollectionViewCell.swift in Sources */,
-				94EF0B50203728E000F3FFDC /* SignUpView.swift in Sources */,
 				94CDFDF0206F068F00983D61 /* MenuViewController.swift in Sources */,
 				946DF3A120C61E1D00570ADE /* File.swift in Sources */,
 				946DF3A720C61F5300570ADE /* MailViewController.swift in Sources */,

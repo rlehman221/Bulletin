@@ -13,6 +13,7 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var search_bar: UISearchBar!
     @IBOutlet weak var filter_button: UIButton!
+    @IBOutlet weak var filter_label: UILabel!
     
     var feed_data: [[String:String]] = []
     var post_time = ""
@@ -26,6 +27,7 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
     var selected_Post = 0
     
     override func viewDidLoad() {
+        filter_label.text = "All"
         search_bar.delegate = self
         load_database()
         super.viewDidLoad()
@@ -166,15 +168,20 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Events Only", style: .default, handler: { _ in
             self.filter = "event"
+            self.filter_label.text = "Events"
             self.refreshData()
         }))
         alert.addAction(UIAlertAction(title: "Announcements Only", style: .default, handler: { _ in
             self.filter = "announcement"
+            self.filter_label.text = "Announcements"
             self.refreshData()
         }))
         alert.addAction(UIAlertAction(title: "Events & Announcements", style: .default, handler: { _ in
             self.filter = "both"
+            self.filter_label.text = "All"
             self.refreshData()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
         }))
         self.present(alert, animated: true, completion: nil)
     }

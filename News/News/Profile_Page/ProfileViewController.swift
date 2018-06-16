@@ -68,18 +68,22 @@ class ProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Edit Password", message: "Enter a new password", preferredStyle: .alert)
         alert.addTextField{ (textField) in
             textField.placeholder = "Current Password"
+            textField.isSecureTextEntry = true
         }
         
         alert.addTextField { (textField) in
             textField.placeholder = "New Password"
+            textField.isSecureTextEntry = true
         }
         alert.addTextField { (textField) in
             textField.placeholder = "Confirm New Password"
+            textField.isSecureTextEntry = true
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { [weak alert] (_) in
             let textField0 = alert?.textFields![0]
+            
             let textField1 = alert?.textFields![1]
             let textField2 = alert?.textFields![2]
             if (textField1?.text! != textField2?.text!) {
