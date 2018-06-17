@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qpR-pX-yZF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O31-Lf-xE1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,7 +33,9 @@
                                     <constraint firstAttribute="height" constant="30" id="cPb-9Z-XrW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Edit"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txZ-WC-UWZ">
                                 <rect key="frame" x="26" y="308" width="322" height="35"/>
@@ -45,22 +47,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-qu-fpQ">
-                                <rect key="frame" x="125.5" y="545" width="123" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.99894230520332472" blue="0.97772020786959557" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Change Password"/>
+                                <rect key="frame" x="118" y="545" width="138" height="30"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Change Password">
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="SmG-qu-fpQ" secondAttribute="bottom" constant="92" id="2TN-Gg-QXS"/>
                             <constraint firstItem="3ZS-j3-Kcb" firstAttribute="centerX" secondItem="KeP-km-vV8" secondAttribute="centerX" id="9Lt-zu-xK9"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="26" id="B3K-4G-y5h"/>
                             <constraint firstItem="3ZS-j3-Kcb" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="167" id="CVu-Rm-8kd"/>
+                            <constraint firstItem="SmG-qu-fpQ" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="Dr1-E4-mwY"/>
+                            <constraint firstItem="1eU-5u-BLK" firstAttribute="bottom" secondItem="SmG-qu-fpQ" secondAttribute="bottom" constant="92" id="RUp-gH-kTp"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="top" secondItem="3ZS-j3-Kcb" secondAttribute="bottom" constant="71" id="TvO-Ra-1Nf"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="top" secondItem="KeP-km-vV8" secondAttribute="bottom" constant="89" id="U17-r2-Pfl"/>
                             <constraint firstItem="3ZS-j3-Kcb" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="Vb0-K2-VBc"/>
                             <constraint firstItem="KeP-km-vV8" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="55" id="Xsh-UI-HOn"/>
-                            <constraint firstItem="SmG-qu-fpQ" firstAttribute="centerX" secondItem="txZ-WC-UWZ" secondAttribute="centerX" id="anI-0j-Fsx"/>
+                            <constraint firstItem="SmG-qu-fpQ" firstAttribute="leading" secondItem="1eU-5u-BLK" secondAttribute="leading" constant="118" id="Yx5-Pa-LM2"/>
                             <constraint firstItem="txZ-WC-UWZ" firstAttribute="centerX" secondItem="epV-R4-EEC" secondAttribute="centerX" id="wFV-zt-aHd"/>
                             <constraint firstItem="1eU-5u-BLK" firstAttribute="bottom" secondItem="txZ-WC-UWZ" secondAttribute="bottom" constant="324" id="wQx-Yu-t6r"/>
                         </constraints>
@@ -79,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58E-ce-tKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800.79999999999995" y="68.815592203898049"/>
+            <point key="canvasLocation" x="1140" y="68.815592203898049"/>
         </scene>
         <!--Main-->
         <scene sceneID="vIp-fb-V19">
@@ -87,25 +92,25 @@
                 <viewControllerPlaceholder storyboardName="Main" id="7SD-H0-NuV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zd-xK-Gog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418" y="-179"/>
+            <point key="canvasLocation" x="1756.8" y="-179.01049475262371"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Qny-7m-byY">
+        <scene sceneID="87w-86-pxM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qpR-pX-yZF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O31-Lf-xE1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5HN-EG-B2l">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zMx-V7-3GM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tEE-PB-vD8" kind="relationship" relationship="rootViewController" id="wq4-g8-5IF"/>
+                        <segue destination="tEE-PB-vD8" kind="relationship" relationship="rootViewController" id="9N8-Mp-Ms9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oJT-Nz-d59" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQV-gS-P6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="69"/>
+            <point key="canvasLocation" x="364" y="69"/>
         </scene>
     </scenes>
 </document>

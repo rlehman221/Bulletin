@@ -7,44 +7,17 @@
 import UIKit
 import Firebase
 
-
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var loginButton: UIButton!
-    //creates an instance of the UI view
-    let initView = LoginView()
-    var signUpButton: UIButton = UIButton()
-    var signInButton: UIButton = UIButton()
-    var emailField: UITextField = UITextField()
-    var passwordField: UITextField = UITextField()
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        init_all() // call function to create UI
-        
-    }
-    
-    // initialize all UI elements and add them to the view
-    func init_all(){
-        emailField = initView.email_box(input_field: emailField)
-        passwordField = initView.password_box(input_field: passwordField)
-        signUpButton = initView.signUp_button(input_button: signUpButton)
-        signInButton = initView.signIn_button(input_button: signInButton)
         emailField.text = "rlehman221@gmail.com"
         passwordField.text = "password"
-        signUpButton.addTarget(self, action: #selector(self.signUpView(_:)), for: .touchUpInside)
         signInButton.addTarget(self, action: #selector(self.signIn(_:)), for: .touchUpInside)
-        self.view.addSubview(signUpButton)
-        self.view.addSubview(signInButton)
-        self.view.addSubview(emailField)
-        self.view.addSubview(passwordField)
-    }
-    
-    
-    // transitions to signUpViewController upon button pressing
-    @objc func signUpView(_ sender:UIButton!){
-        self.performSegue(withIdentifier: "signup_segue", sender: self)
-     
     }
     
     // checks if the email and password entered in the
@@ -89,7 +62,7 @@ class LoginViewController: UIViewController {
                 if Error == nil{
                     print("invalid email")
                     let alert = UIAlertController(title: "Invalid Email", message: "The email or password entered is not valid", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Dammit", style: UIAlertActionStyle.default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     if let errCode = AuthErrorCode(rawValue: Error!._code) {
@@ -98,7 +71,7 @@ class LoginViewController: UIViewController {
                         case .invalidEmail:
                             print("invalid email")
                             let alert = UIAlertController(title: "Invalid Email", message: "The email or password entered is not valid", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "Dammit", style: UIAlertActionStyle.default, handler: nil))
+                            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
                         default:
                             print(Error!)
@@ -110,15 +83,11 @@ class LoginViewController: UIViewController {
         }))
             
     }
-
-
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
 }
 

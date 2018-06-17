@@ -10,39 +10,17 @@ import Firebase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
-    // sets the inital UI
-    let initView = SignUpView()
-    var confirmButton: UIButton = UIButton()
-    var backButton: UIButton = UIButton()
-    var emailField: UITextField = UITextField()
-    var nameField: UITextField = UITextField()
-    var passwordField: UITextField = UITextField()
-    var textE: UILabel = UILabel()
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var confirmButton: UIButton!
+
     var emailHolder = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        init_all()
-    }
-    
-    // initialize all UI elements and add them to the view
-    func init_all(){
-        
-        backButton = initView.back_button(input_button: backButton)
-        confirmButton = initView.signUp_button(input_button: confirmButton)
-        emailField = initView.email_box(input_field: emailField)
-        nameField = initView.name_box(input_field: nameField)
-        passwordField = initView.password_box(input_field: passwordField)
         confirmButton.addTarget(self, action: #selector(self.signUp(_:)), for: .touchUpInside)
-        backButton.addTarget(self, action: #selector(self.goBack(_:)), for: .touchUpInside)
-        // loading the view.
-        
         emailField.delegate = self
-        self.view.addSubview(confirmButton)
-        self.view.addSubview(backButton)
-        self.view.addSubview(emailField)
-        self.view.addSubview(nameField)
-        self.view.addSubview(passwordField)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -77,20 +55,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
             UIAlertAction in
             NSLog("Next Story Board")
-            self.performSegue(withIdentifier: "backTo_sign_in_segue", sender: self) // Be directed back to login view controller
+            self.performSegue(withIdentifier: "to_home", sender: self) // Be directed back to login view controller
         }
         
         // Link to alert controller
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil) // Display alert to the user
         
-        
-        
-    }
-    
-    // go back to login view from button press
-    @objc func goBack(_ sender:UIButton!){
-        self.performSegue(withIdentifier: "backTo_sign_in_segue", sender: self)
     }
 
 }
