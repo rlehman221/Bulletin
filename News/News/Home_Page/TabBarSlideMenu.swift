@@ -31,7 +31,6 @@ class TabBarSlideMenu: UITabBarController {
         }
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -41,5 +40,4 @@ class TabBarSlideMenu: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

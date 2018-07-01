@@ -41,6 +41,7 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         filter_button.addTarget(self, action: #selector(All_Feed_ViewController.changeFilters(_:)), for: .touchUpInside)
     }
     
+   
     @objc func refreshData() {
         load_database()
         reloadDuration()
@@ -168,6 +169,8 @@ class All_Feed_ViewController: UIViewController, UICollectionViewDataSource, UIC
         search_text = search_bar.text!
         self.refreshData()
     }
+    
+    
     
     @objc func changeFilters(_ sender: UIButton!) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

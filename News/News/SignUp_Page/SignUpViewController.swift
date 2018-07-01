@@ -1,9 +1,14 @@
-//
-//  View that displays to the user a sign up menu, allowing a new user to enter
-//  an email and password to be submitted 
-//
-//  Created by Ryan Lehman on 2/15/18.
-//
+/**
+ * SignUpViewController
+ *
+ * Created on: June 20, 2018
+ * Authors: Ryan Lehman && Nik Murphy
+ *
+ * Description: Displays a sign up menu that allows an email and password to
+ * be sent to a database (firebase) and send an email verfication to the users email. If
+ * the user is already a user an alert is prompted. If the data is successfully sent to the database
+ * a User instance is called and the user is the generated in the database.
+ */
 
 import UIKit
 import Firebase
@@ -15,15 +20,24 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
 
-    var emailHolder = true
+    var emailHolder = true // Allows "RPI.edu" to only be appended once to the users email
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         confirmButton.addTarget(self, action: #selector(self.signUp(_:)), for: .touchUpInside)
         emailField.delegate = self
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+   /**
+    * Triggered from interaction with a textfield, RPI is appened after the text
+    *
+    * @param Textfield interaction trigger
+    *
+    * @return
+    */
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
         if emailHolder {
             textField.text = textField.text! + "@rpi.edu"
             textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.beginningOfDocument)
@@ -31,30 +45,43 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         emailHolder = false
     }
     
-    func isValidEmail(testStr:String) -> Bool {
+   /**
+    * Checks to see if the email entered has valid characters for a
+    * valid email address and uses an RPI email
+    *
+    * @param An email taken in as a string
+    *
+    * @return Boolean value if email is valid or not
+    */
+    func isValidEmail(testStr:String) -> Bool
+    {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@rpi.edu"
-        
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
         return emailTest.evaluate(with: testStr)
     }
-    
-    // activates on button pressing to allow text field
-    // information to be setup as a new user
-    
-    @objc func signUp(_ sender:UIButton!){
-        let newUser = User(email: emailField.text!, password: passwordField.text!, name: nameField.text!) // Creates a new instance of  user
-        newUser.add_User() // Calls the add function on the user
+
+   /**
+    * Creates a new instance of a user and sets corresponding values.
+    * Prompts an alert to the user based on response base and if succcessful performs
+    * a segue back to the login screen
+    *
+    * @param UIButton press
+    *
+    * @return
+    */
+    @objc func signUp(_ sender:UIButton!)
+    {
+        let new_User = User(email: emailField.text!, password: passwordField.text!, name: nameField.text!) // Creates a new instance of  user
+        new_User.add_User() // Calls the add function on the user
         /*
             CBT - Alerts need to change based on (if successful, user already exists, invalid email, etc) as of right now it only returns successful, need to changed based in Model_Root folder and this file
         */
-        let alertArray = newUser.getter_alert() // Get an alert from User class to see if adding user was successful
-        
+        let alertArray = new_User.getter_alert() // Get an alert from User class to see if adding user was successful
         let alert = UIAlertController(title: alertArray[0], message: alertArray[1], preferredStyle: UIAlertControllerStyle.alert)
 
-        // Add the actions
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
             UIAlertAction in
-            NSLog("Next Story Board")
             self.performSegue(withIdentifier: "to_home", sender: self) // Be directed back to login view controller
         }
         
@@ -63,5 +90,4 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil) // Display alert to the user
         
     }
-
 }
