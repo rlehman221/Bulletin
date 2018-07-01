@@ -12,6 +12,7 @@ class My_Feed_ViewController: UIViewController, UICollectionViewDataSource, UICo
 
     @IBOutlet weak var collectionview: UICollectionView!
     var feed_data = [Int : [String : String]] ()
+    var clubHolder = [String]()
     var post_time = "";
     var counter2 = 0;
     
@@ -22,21 +23,24 @@ class My_Feed_ViewController: UIViewController, UICollectionViewDataSource, UICo
     var selected_Post = 0;
     
     override func viewDidLoad() {
-        load_database()
+        
+        
         super.viewDidLoad()
-        //refreshControl = UIRefreshControl()
-        //refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         //refreshControl.backgroundColor = UIColor.redColor
         // refreshControl.tintColor = UIColor.yellowColor
-        //collectionview.addSubview(refreshControl)
-        
+        collectionview.addSubview(refreshControl)
+        loadClubs {
+            self.load_database()
+        }
         // Do any additional setup after loading the view.
     }
     
     @objc func refreshData() {
         reloadDuration()
         
-        self.collectionview.reloadData()
+        
         refreshControl?.endRefreshing()
     }
     
@@ -45,11 +49,14 @@ class My_Feed_ViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let compareDateString = date
         
-        let dateFormatter = ISO8601DateFormatter()
-        let currentDate = Date();
-        let compareDate = dateFormatter.date(from:compareDateString)!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let compareDate2 = dateFormatter.date(from:compareDateString)
+        
+        let currentDate = Date()
+        
         let timeComponents: Set = [Calendar.Component.month,Calendar.Component.day,Calendar.Component.hour, Calendar.Component.minute]
-        var time_interval = NSCalendar.current.dateComponents(timeComponents, from: compareDate, to: currentDate)
+        var time_interval = NSCalendar.current.dateComponents(timeComponents, from: compareDate2!, to: currentDate)
         
         if time_interval.day != 0 {
             return "\(String(describing: time_interval.day!))d ago"
@@ -66,6 +73,7 @@ class My_Feed_ViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! My_Feed_CollectionViewCell
         
@@ -76,14 +84,7 @@ class My_Feed_ViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.time_duration.text = self.feed_data[indexPath.item]?["Duration"]
         cell.imageView.layer.masksToBounds = true
         cell.imageView.layer.cornerRadius = CGFloat(roundf(Float(4)))
-        let i = arc4random() % 3
-        if i == 0 {
-            cell.imageView.image = UIImage(named: "CS_Club")
-        } else if i == 1 {
-            cell.imageView.image = UIImage(named: "Archery_Club")
-        } else {
-            cell.imageView.image = UIImage(named: "RPI")
-        }
+        cell.imageView.image = UIImage(named: cell.label.text!)
         
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         
@@ -99,22 +100,41 @@ class My_Feed_ViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
-    func load_database() {
-        
+    // Loads only clubs that the user has subscribed to into an array for later comparison
+    func loadClubs (finished: @escaping () -> Void) {
         ref = Database.database().reference() // Reference to database
-        ref.child("Feed").observe(.value) { (snapshot) in
-            self.counter2 = Int(snapshot.childrenCount)
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("Users").child(uid!).child("Subscribed").observeSingleEvent(of: .value) { (snapshot) in
+            let subClubs = snapshot.value
+            let all_clubs = subClubs as? [String: Bool]
+            for (club, value) in all_clubs! {
+                if (value) {
+                    self.clubHolder.append(club)
+                }
+            }
+            
+            self.counter2 = self.clubHolder.count
+            finished()
         }
+    }
+  
+    func load_database() {
+        print("Went here")
+        ref = Database.database().reference() // Reference to database
+        
         ref.child("Feed").queryOrdered(byChild: "Date").observe(.childAdded, with: { (snapshot) -> Void in
             
             let posts = snapshot.value
             let all_posts = posts as? [String: String]
-            
-            self.counter2 -= 1
-            self.feed_data[self.counter2] = all_posts
-            self.post_time = self.timeDuration(date: self.feed_data[self.counter2]!["Date"]!)
-            self.feed_data[self.counter2]!["Duration"] = self.post_time
-            
+            if (self.clubHolder.contains(all_posts!["Name"]!)){
+                print("Went here")
+                self.counter2 -= 1
+                self.feed_data[self.counter2] = all_posts
+                self.post_time = self.timeDuration(date: self.feed_data[self.counter2]!["Date"]!)
+                self.feed_data[self.counter2]!["Duration"] = self.post_time
+                
+            }
+            self.collectionview.reloadData()
             
         })
         
