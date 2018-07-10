@@ -1,29 +1,35 @@
 //
-//  SubscriptionViewController.swift
+//  SubscriptionNewViewController.swift
 //  News
 //
-//  Created by Nik Murthy on 4/2/18.
+//  Created by Ryan Lehman on 7/8/18.
 //
 
 import UIKit
 import Firebase
 
-class SubscriptionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
     var subscribersCount = 0
     var ref: DatabaseReference!
     var subList = [Int : (String , Bool)] ()
-
+    let cellSpacingHeight: CGFloat = 10
+    
     override func viewDidLoad() {
         getInfo()
         super.viewDidLoad()
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
-        self.refreshData() // allows for updates to occur before user goes into page (helps prevent error when user adds club and leaves app)
+        tableView.delegate = self
+        tableView.dataSource = self
+        //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.refreshData()
+
+        // Do any additional setup after loading the view.
     }
     
     @objc func refreshData() {
@@ -48,29 +54,42 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
             }
             return self.subList.count
         }
-        return 1
+        return self.subList.count
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as? SubscriptionTableViewCell
+        print(indexPath.count)
+        // Write action code for the trash
+        let TrashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            print("Update action ...")
+            cell!.unsub_button.sendActions(for: .touchUpInside)
+            success(true)
+        })
+        
+        TrashAction.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [TrashAction])
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.section == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "addsub_cell", for: indexPath as IndexPath) as! AddSubTableViewCell
-            cell.addsub_label.text = "Add Subscriptions"
-            return cell
-        }
         if (self.subList.count == 0) {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "nosub_cell", for: indexPath as IndexPath) as! NoSubTableViewCell
+
             cell.nosub_label.text = "You don't have any active subscriptions!"
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as? SubscriptionTableViewCell
+            cell?.backgroundView = UIImageView.init(image: UIImage.init(named: "subscriber_background"))
             cell!.clubName.text = subList[indexPath.row]!.0
             cell!.unsub_button.tag = indexPath.row
             cell!.unsub_button.addTarget(self, action: "unsubscribe:", for: .touchUpInside)
             return cell!
         }
     }
-
+    
     func getInfo() {
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
@@ -88,11 +107,18 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
         })
     }
     
-    @objc func unsubscribe(_ sender:UIButton!) {
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    
+    @IBAction func unsubscribe(_ sender: Any) {
+        print(sender)
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
-        let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text)!
-        let club = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!
+        let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: (sender as AnyObject).tag, section: 1)) as! SubscriptionTableViewCell).clubName.text)!
+        let club = (tableView.cellForRow(at: IndexPath(row: (sender as AnyObject).tag, section: 1)) as! SubscriptionTableViewCell).clubName.text!
         ref.child("Users").child(UID!).child("Subscribed").child(club).setValue(false) {
             (error:Error?, ref:DatabaseReference) -> Void in
             if error != nil {
@@ -130,4 +156,5 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
             finished()
         }
     }
+
 }

@@ -10,4 +10,5 @@ import UIKit
 class AddSubTableViewCell: UITableViewCell {
 
     @IBOutlet weak var addsub_label: UILabel!
+    
 }
