@@ -12,32 +12,24 @@ class Post_PageViewController: UIViewController {
     @IBOutlet weak var post_data: UITextView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var subject: UILabel!
+    @IBOutlet weak var date: UILabel!
     
     var receivedName = ""
     var receivedPostData = ""
     var receivedSubject = ""
+    var receivedDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = receivedName
         post_data.text = receivedPostData
-        subject.text = receivedSubject  
+        subject.text = receivedSubject
+        date.text = receivedDate
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

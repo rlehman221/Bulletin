@@ -13,7 +13,6 @@ import MessageUI
 
 class Send_Post_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate {
     
-    
     var adminClub = ""
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var subjectField: UITextField!

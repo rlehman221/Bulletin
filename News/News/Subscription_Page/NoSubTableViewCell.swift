@@ -10,4 +10,5 @@ import UIKit
 class NoSubTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nosub_label: UILabel!
+    
 }
