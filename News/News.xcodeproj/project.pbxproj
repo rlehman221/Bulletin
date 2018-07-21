@@ -10,6 +10,8 @@
 		6D52CDA920BB8CA1000D553F /* Profile_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D52CDA820BB8CA1000D553F /* Profile_Page.storyboard */; };
 		6DA7CA67204A539F00E9C1FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7CA66204A539F00E9C1FC /* ProfileViewController.swift */; };
 		8377A7E2697F74E2A60F5DB3 /* Pods_NewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4123DABBA8EED15D064CB4D6 /* Pods_NewsTests.framework */; };
+		9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9401D8D420FED0EC00D27E71 /* Settings.storyboard */; };
+		9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */; };
 		945331242070534D00545ED4 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
 		94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94533125207054F200545ED4 /* Post_PageViewController.swift */; };
 		946BABDE20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABDD20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift */; };
@@ -77,6 +79,8 @@
 		4123DABBA8EED15D064CB4D6 /* Pods_NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D52CDA820BB8CA1000D553F /* Profile_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile_Page.storyboard; sourceTree = "<group>"; };
 		6DA7CA66204A539F00E9C1FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = News/Profile_Page/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		9401D8D420FED0EC00D27E71 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		945331232070534D00545ED4 /* Post_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post_Page.storyboard; sourceTree = "<group>"; };
 		94533125207054F200545ED4 /* Post_PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PageViewController.swift; sourceTree = "<group>"; };
 		946BABDD20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot_PasswordViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 				ADD93B4CE69915612D883E91 /* Pods_NewsUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9401D8D320FED0D100D27E71 /* Menu Sections */ = {
+			isa = PBXGroup;
+			children = (
+				9401D8D420FED0EC00D27E71 /* Settings.storyboard */,
+				9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */,
+			);
+			path = "Menu Sections";
 			sourceTree = "<group>";
 		};
 		94533122207052D100545ED4 /* Post_Page */ = {
@@ -330,6 +343,7 @@
 		94EF0B5220374A9500F3FFDC /* Home_Page */ = {
 			isa = PBXGroup;
 			children = (
+				9401D8D320FED0D100D27E71 /* Menu Sections */,
 				94C782F0206F09A200573BED /* my_feed.storyboard */,
 				946BABE520E96B5900EB3AA9 /* All_Feed_TableViewCell.swift */,
 				946BABE720E96E4400EB3AA9 /* Table_View_Helper.swift */,
@@ -496,6 +510,7 @@
 				946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */,
 				948674802031216D00EC9D9F /* Assets.xcassets in Resources */,
 				94F59C0220A383CD00E024A2 /* Send_Page.storyboard in Resources */,
+				9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */,
 				9486747E2031216D00EC9D9F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +639,7 @@
 				946BABE820E96E4500EB3AA9 /* Table_View_Helper.swift in Sources */,
 				946DF3A120C61E1D00570ADE /* File.swift in Sources */,
 				946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */,
+				9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */,
 				946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */,
 				947DED1F20FD7DE0007DAD17 /* MenuViewController.swift in Sources */,
 				94A8F7D620F28B1D007B95DD /* SubscriptionNewViewController.swift in Sources */,
