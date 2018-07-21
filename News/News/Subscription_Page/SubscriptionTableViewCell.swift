@@ -11,6 +11,4 @@ import Firebase
 class SubscriptionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var clubName: UILabel!
-    
-    @IBOutlet weak var unsub_button: UIButton!
 }

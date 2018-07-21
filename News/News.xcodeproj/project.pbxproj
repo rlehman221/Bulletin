@@ -30,7 +30,6 @@
 		946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */; };
 		946DF3E320C7586F00570ADE /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */; };
 		946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */; };
-		946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */; };
 		946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */; };
 		946DF3E920C75CCB00570ADE /* Post-To-Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3E820C75CCB00570ADE /* Post-To-Database.swift */; };
 		947DED1F20FD7DE0007DAD17 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */; };
@@ -97,7 +96,6 @@
 		946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Subscription_Page.storyboard; sourceTree = "<group>"; };
 		946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSubTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3E820C75CCB00570ADE /* Post-To-Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post-To-Database.swift"; sourceTree = "<group>"; };
 		947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */,
 				946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */,
 				946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */,
-				946DF3DD20C7586F00570ADE /* AddSubTableViewCell.swift */,
 				946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */,
 				94A8F7D520F28B1D007B95DD /* SubscriptionNewViewController.swift */,
 			);
@@ -614,7 +611,6 @@
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
 				946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */,
 				946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */,
-				946DF3E520C7586F00570ADE /* AddSubTableViewCell.swift in Sources */,
 				947DED2120FD7DEF007DAD17 /* MenuTableViewCell.swift in Sources */,
 				946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */,
 				94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */,
