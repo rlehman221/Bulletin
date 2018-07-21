@@ -9,11 +9,7 @@ import UIKit
 import Firebase
 
 class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    
-    
-    
-    
-    
+
     @IBOutlet weak var table_view: UITableView!
     
     @IBOutlet weak var search_bar: UISearchBar!
@@ -115,7 +111,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     func load_database()
     {
-        print("Went here")
         ref = Database.database().reference() // Reference to database
         
         ref.child("Feed").queryOrdered(byChild: "Date").observe(.childAdded, with: { (snapshot) -> Void in
@@ -132,7 +127,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             self.table_view.reloadData()
             print(self.feed_data.count)
         })
-        
     }
     
     // Fix - Thread 1: Fatal error: Can't form Range with upperBound < lowerBound
