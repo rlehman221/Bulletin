@@ -129,8 +129,8 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     func updateClub (finished: @escaping () -> Void, clubChoosen: String) {
         
         ref.child("Clubs").child(clubChoosen).child("Subscribers").observeSingleEvent(of: .value) { (snapshot) in
-            if (snapshot.value != nil) {
-                self.subscribersCount = (snapshot.value)! as! Int
+            if let count = snapshot.value as? Int {
+                self.subscribersCount = count
             }
             else {
                 self.subscribersCount = 0
