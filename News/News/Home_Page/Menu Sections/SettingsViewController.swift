@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
         
         //2. Add the text field. You can configure it however you need.
         usernameAlert.addTextField { (textField) in
-            textField.placeholder = "Enter username here"
+            textField.placeholder = "New Username"
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -49,13 +49,13 @@ class SettingsViewController: UIViewController {
         let resetAlert = UIAlertController(title: "Invalid Password", message: "New passwords don't match", preferredStyle: .alert)
         let passwordAlert = UIAlertController(title: "Change Password", message: "", preferredStyle: .alert)
         let confirmAlert = UIAlertController(title: "Password Successfully Changed", message: "", preferredStyle: .alert)
-        let backendFailAlert = UIAlertController(title: "Network Error", message: "Please try again", preferredStyle: .alert)
+        let backendFailAlert = UIAlertController(title: "Network Error", message: "Please try again later.", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         passwordAlert.addTextField { (textField: UITextField) in
             textField.keyboardAppearance = .dark
             textField.keyboardType = .default
-            textField.placeholder = "Type your old password here"
+            textField.placeholder = "Current Password"
             textField.isSecureTextEntry = true
           
         }
@@ -63,7 +63,7 @@ class SettingsViewController: UIViewController {
         passwordAlert.addTextField { (textField: UITextField) in
             textField.keyboardAppearance = .dark
             textField.keyboardType = .default
-            textField.placeholder = "Type your new password here"
+            textField.placeholder = "New Password"
             textField.isSecureTextEntry = true
          
         }
@@ -71,7 +71,7 @@ class SettingsViewController: UIViewController {
         passwordAlert.addTextField { (textField: UITextField) in
             textField.keyboardAppearance = .dark
             textField.keyboardType = .default
-            textField.placeholder = "Re-type your new password here"
+            textField.placeholder = "Confirm New Password"
             textField.isSecureTextEntry = true
            
         }

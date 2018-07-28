@@ -36,8 +36,16 @@
                                                     <color key="value" red="0.97254901959999995" green="0.78823529410000004" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="sed-a4-dSm" kind="show" id="PTd-yb-Za6"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="add_subscribers" id="d3r-WO-A7X">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                    <color key="value" red="1" green="0.76959400566506009" blue="0.19539162589146053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <segue destination="0vd-cz-mS0" kind="show" id="XSa-6i-JpJ"/>
                                             </connections>
@@ -122,6 +130,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEG-Be-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2239.1999999999998" y="-91.304347826086968"/>
+        </scene>
+        <!--menu-->
+        <scene sceneID="Skn-ry-VcV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="my_feed" referencedIdentifier="menu" id="sed-a4-dSm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHL-Z5-Rhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1705" y="-310"/>
         </scene>
         <!--Subscribe-->
         <scene sceneID="Vy9-JE-f1e">
