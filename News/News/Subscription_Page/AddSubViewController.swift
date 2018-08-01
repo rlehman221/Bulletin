@@ -61,11 +61,21 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "addsub_cell", for: indexPath as IndexPath) as? SubscribeTableViewCell
-        cell!.club_button.setTitle(self.subList[indexPath.row]!.0, for: UIControlState.normal)
-        cell!.club_button.tag = indexPath.row
-        cell!.subscribe_button.tag = indexPath.row
-        cell!.subscribe_button.addTarget(self, action: #selector(AddSubViewController.subscribe(_:)), for: .touchUpInside)
+        cell!.club_name.text = self.subList[indexPath.row]!.0
+        cell!.club_name.tag = indexPath.row
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // Write action code for the trash
+        let TrashAction = UIContextualAction(style: .normal, title:  "Add", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            print("add")
+            self.subscribe(index: indexPath.section)
+            success(true)
+        })
+        TrashAction.backgroundColor = .green
+        
+        return UISwipeActionsConfiguration(actions: [TrashAction])
     }
     
     func getInfo() {
@@ -87,10 +97,12 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
-    @objc func subscribe(_ sender:UIButton!) {
+    func subscribe(index: Int)
+    {
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()
-        let club = (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text!
+        let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: 0, section: index)) as! SubscribeTableViewCell).club_name.text)!
+        let club = (tableView.cellForRow(at: IndexPath(row: 0, section: index)) as! SubscribeTableViewCell).club_name.text!
         ref.child("Users").child(UID!).child("Subscribed").child(club).setValue(true) {
             (error:Error?, ref:DatabaseReference) -> Void in
             if error != nil {
@@ -101,7 +113,6 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
-        let clubChoosen = ((tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! SubscribeTableViewCell).club_button.titleLabel!.text)!
         let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
         
         Messaging.messaging().subscribe(toTopic: topicString)

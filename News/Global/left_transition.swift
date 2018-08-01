@@ -25,7 +25,7 @@ class SegueFromLeft: UIStoryboardSegue
         {
             dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
         },
-            completion: { finished in src.present(dst, animated: false, completion: nil)
+                       completion: { (finished) in src.removeFromParentViewController()
             
         })
         

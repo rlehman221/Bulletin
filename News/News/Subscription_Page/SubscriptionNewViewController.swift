@@ -124,11 +124,9 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
             }
         }
         
-        
-        
         let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
         
-        Messaging.messaging().subscribe(toTopic: topicString)
+        Messaging.messaging().unsubscribe(fromTopic: topicString)
         
         updateClub(finished: {
             self.ref.child("Clubs").child(clubChoosen).child("Subscribers").setValue(self.subscribersCount)
@@ -139,7 +137,6 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func updateClub (finished: @escaping () -> Void, clubChoosen: String) {
-        
         ref.child("Clubs").child(clubChoosen).child("Subscribers").observeSingleEvent(of: .value) { (snapshot) in
             
             self.subscribersCount = (snapshot.value)! as! Int
@@ -151,5 +148,4 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
             finished()
         }
     }
-
 }
