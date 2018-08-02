@@ -9,7 +9,6 @@ import UIKit
 
 class SubscribeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var club_button: UIButton!
+    @IBOutlet weak var club_name: UILabel!
     
-    @IBOutlet weak var subscribe_button: UIButton!
 }
