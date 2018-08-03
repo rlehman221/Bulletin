@@ -8,8 +8,9 @@
 import UIKit
 import Firebase
 
-class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
+    @IBOutlet weak var top_nav: UIView!
     @IBOutlet weak var table_view: UITableView!
     @IBOutlet weak var search_bar: UISearchBar!
     @IBOutlet weak var filter_button: UIButton!
@@ -25,22 +26,30 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     var refreshControl: UIRefreshControl!
     var counter = 0
     
+    
     @IBOutlet weak var filter_view: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
+        let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
         segemented_filters.addTarget(self, action: #selector(segmented_control_changed), for: .valueChanged)
 
-        
-        textFieldInsideSearchBar?.backgroundColor = UIColor.gray
+        placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
+        placeholderField?.textColor = UIColor.white
+        textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
+        textFieldInsideSearchBar?.textColor = UIColor.white
+        search_bar.layer.cornerRadius = 1
+        search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
+        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         table_view.dataSource = self
         table_view.delegate = self
         search_bar.delegate = self
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         table_view.addSubview(refreshControl!)
+        table_view.tableHeaderView = top_nav
         load_database()
      
         
@@ -168,6 +177,12 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         search_text = search_bar.text!
+        if (search_text == "") {
+            filter_button.alpha = 1
+        }
+        else {
+            filter_button.alpha = 0
+        }
         self.refreshData()
     }
     
