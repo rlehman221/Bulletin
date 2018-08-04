@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XGz-Vw-RDn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XGz-Vw-RDn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-Light</string>
-            <string>AppleSDGothicNeo-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Nav View Controller-->
         <scene sceneID="rU3-7l-btU">
             <objects>
-                <navigationController navigationBarHidden="YES" id="XGz-Vw-RDn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home_view" navigationBarHidden="YES" id="XGz-Vw-RDn" customClass="NavViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2O6-ID-ggt">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -30,12 +23,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8C7-kG-uuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="521"/>
+            <point key="canvasLocation" x="310" y="539"/>
         </scene>
         <!--All Feed-->
         <scene sceneID="v8W-L0-emA">
             <objects>
-                <viewController storyboardIdentifier="new" id="XT4-P2-7qN" customClass="All_Feeds_ViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="all_feed_controller" id="XT4-P2-7qN" customClass="All_Feeds_ViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XLj-gU-Fkx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +213,31 @@
                                 <state key="normal" image="gear">
                                     <color key="titleColor" red="0.9713253378868103" green="0.011285457760095596" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="filter_pressed:" destination="epY-ED-yXc" eventType="touchUpInside" id="d5K-4V-xk6"/>
+                                </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGW-nW-qTE">
+                                <rect key="frame" x="67" y="67" width="260" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="filter_popup" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-DQ-fJL">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="F38-jd-a3U">
+                                        <rect key="frame" x="8" y="14" width="244" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Events"/>
+                                            <segment title="Announcement"/>
+                                            <segment title="All"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.95294117647058818" green="0.6470588235294118" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VGL-hS-eq7"/>
@@ -231,9 +248,11 @@
                     <connections>
                         <outlet property="filter_button" destination="abQ-B6-VVM" id="kKr-5O-8Xt"/>
                         <outlet property="filter_label" destination="TkO-oh-uyp" id="3pr-nE-AG1"/>
+                        <outlet property="filter_view" destination="MGW-nW-qTE" id="w1Y-li-Hlw"/>
                         <outlet property="search_bar" destination="jdc-o1-myH" id="vNA-t6-hkw"/>
+                        <outlet property="segemented_filters" destination="F38-jd-a3U" id="JOt-Mi-6dq"/>
                         <outlet property="table_view" destination="WU8-Bc-3Se" id="rff-iy-cvr"/>
-                        <segue destination="VZN-fk-X2o" kind="custom" identifier="go_to_post" customClass="SegueFromRight" customModule="News" customModuleProvider="target" id="pJV-VO-cVJ"/>
+                        <segue destination="VZN-fk-X2o" kind="show" identifier="go_to_post" id="pJV-VO-cVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5f-xJ-kt8" userLabel="First Responder" sceneMemberID="firstResponder"/>

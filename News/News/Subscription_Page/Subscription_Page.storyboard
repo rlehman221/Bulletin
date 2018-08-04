@@ -39,7 +39,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="iBu-tu-dQF" kind="show" identifier="" customClass="SegueFromLeft" customModule="News" customModuleProvider="target" id="gau-eB-rq4"/>
+                                                <segue destination="iBu-tu-dQF" kind="show" identifier="" id="gau-eB-rq4"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="add_subscribers" id="d3r-WO-A7X">

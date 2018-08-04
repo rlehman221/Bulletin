@@ -112,7 +112,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="yHg-dd-SgQ" kind="custom" customClass="SegueFromLeft" customModule="News" customModuleProvider="target" id="ikN-UR-Udd"/>
+                                                <segue destination="yHg-dd-SgQ" kind="show" identifier="post_page" id="ikN-UR-Udd"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

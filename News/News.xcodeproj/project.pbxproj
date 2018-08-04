@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D52CDA920BB8CA1000D553F /* Profile_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D52CDA820BB8CA1000D553F /* Profile_Page.storyboard */; };
-		6DA7CA67204A539F00E9C1FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7CA66204A539F00E9C1FC /* ProfileViewController.swift */; };
 		8377A7E2697F74E2A60F5DB3 /* Pods_NewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4123DABBA8EED15D064CB4D6 /* Pods_NewsTests.framework */; };
 		9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9401D8D420FED0EC00D27E71 /* Settings.storyboard */; };
 		9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */; };
+		9414869121152D95001AF799 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9414869021152D95001AF799 /* NavViewController.swift */; };
 		945331242070534D00545ED4 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
 		94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94533125207054F200545ED4 /* Post_PageViewController.swift */; };
 		946BABDE20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABDD20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift */; };
@@ -77,10 +76,9 @@
 
 /* Begin PBXFileReference section */
 		4123DABBA8EED15D064CB4D6 /* Pods_NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D52CDA820BB8CA1000D553F /* Profile_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile_Page.storyboard; sourceTree = "<group>"; };
-		6DA7CA66204A539F00E9C1FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = News/Profile_Page/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		9401D8D420FED0EC00D27E71 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9414869021152D95001AF799 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		945331232070534D00545ED4 /* Post_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post_Page.storyboard; sourceTree = "<group>"; };
 		94533125207054F200545ED4 /* Post_PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PageViewController.swift; sourceTree = "<group>"; };
 		946BABDD20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot_PasswordViewController.swift; sourceTree = "<group>"; };
@@ -168,15 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6DA7CA62204A531800E9C1FC /* Profile_Page */ = {
-			isa = PBXGroup;
-			children = (
-				6D52CDA820BB8CA1000D553F /* Profile_Page.storyboard */,
-				6DA7CA66204A539F00E9C1FC /* ProfileViewController.swift */,
-			);
-			path = Profile_Page;
-			sourceTree = "<group>";
-		};
 		8E7271C63A972010A7FCB129 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +270,6 @@
 				94B8EFAA20A393A600D9882B /* News.entitlements */,
 				94F59C0020A383A700E024A2 /* Send Post */,
 				94533122207052D100545ED4 /* Post_Page */,
-				6DA7CA62204A531800E9C1FC /* Profile_Page */,
 				94EF0B5220374A9500F3FFDC /* Home_Page */,
 				94EF0B51203729F600F3FFDC /* Model_Root */,
 				94EF0B4B2037287900F3FFDC /* SignUp_Page */,
@@ -360,6 +348,7 @@
 				946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */,
 				947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */,
 				947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */,
+				9414869021152D95001AF799 /* NavViewController.swift */,
 			);
 			path = Home_Page;
 			sourceTree = "<group>";
@@ -509,7 +498,6 @@
 			files = (
 				94C782F1206F09A200573BED /* my_feed.storyboard in Resources */,
 				946DF3B320C61F6C00570ADE /* User_Board.storyboard in Resources */,
-				6D52CDA920BB8CA1000D553F /* Profile_Page.storyboard in Resources */,
 				948674832031216D00EC9D9F /* LaunchScreen.storyboard in Resources */,
 				94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */,
 				946BABE020E9132D00EB3AA9 /* Forgot_PW.storyboard in Resources */,
@@ -644,6 +632,7 @@
 				946BABDE20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift in Sources */,
 				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
 				94EF0B3B2032242700F3FFDC /* User.swift in Sources */,
+				9414869121152D95001AF799 /* NavViewController.swift in Sources */,
 				946BABE820E96E4500EB3AA9 /* Table_View_Helper.swift in Sources */,
 				946DF3A120C61E1D00570ADE /* File.swift in Sources */,
 				946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */,
@@ -652,7 +641,6 @@
 				947DED1F20FD7DE0007DAD17 /* MenuViewController.swift in Sources */,
 				94A8F7D620F28B1D007B95DD /* SubscriptionNewViewController.swift in Sources */,
 				9486747B2031216D00EC9D9F /* LoginViewController.swift in Sources */,
-				6DA7CA67204A539F00E9C1FC /* ProfileViewController.swift in Sources */,
 				94A8F7D420F2762D007B95DD /* right_transition.swift in Sources */,
 				946BABE620E96B5900EB3AA9 /* All_Feed_TableViewCell.swift in Sources */,
 				94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */,

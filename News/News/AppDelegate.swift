@@ -15,10 +15,6 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
-    
-    
-
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -40,7 +36,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         
         FirebaseApp.configure()
+        setRootViewController()
         return true
+    }
+    
+    func setRootViewController() {
+        if Auth.auth().currentUser != nil {
+            // Set Your home view controller Here as root View Controller
+            let storyboard = UIStoryboard.init(name: "my_feed", bundle: nil)
+            
+            // controller identifier sets up in storyboard utilities
+            // panel (on the right), it called Storyboard ID
+            let viewController = storyboard.instantiateViewController(withIdentifier: "home_view") as! NavViewController
+            
+            
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
