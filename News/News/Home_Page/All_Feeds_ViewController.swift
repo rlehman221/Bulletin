@@ -10,7 +10,6 @@ import Firebase
 
 class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
-    @IBOutlet weak var top_nav: UIView!
     @IBOutlet weak var table_view: UITableView!
     @IBOutlet weak var search_bar: UISearchBar!
     @IBOutlet weak var filter_button: UIButton!
@@ -32,6 +31,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filter_button.addTarget(self, action: #selector(All_Feeds_ViewController.filter_pressed(_:)), for: .touchUpInside)
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
         let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
         segemented_filters.addTarget(self, action: #selector(segmented_control_changed), for: .valueChanged)
@@ -49,10 +49,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         table_view.addSubview(refreshControl!)
-        table_view.tableHeaderView = top_nav
         load_database()
-     
-        
     }
    
     @objc func refreshData()
@@ -91,7 +88,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        
         return self.feed_data.count
     }
     
@@ -186,8 +182,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         self.refreshData()
     }
     
-    @IBAction func filter_pressed(_ sender: Any) {
-        
+    @objc func filter_pressed(_ sender: UIButton!) {
         if (filter_view.alpha == 1){
             filter_view.alpha = 0
             
