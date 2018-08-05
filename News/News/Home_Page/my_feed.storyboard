@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FIm-ZN-k6z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FIm-ZN-k6z">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-Light</string>
-            <string>AppleSDGothicNeo-Medium</string>
-            <string>AppleSDGothicNeo-Regular</string>
-            <string>AppleSDGothicNeo-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--All Feed-->
         <scene sceneID="v8W-L0-emA">
@@ -220,7 +211,31 @@
                                 <state key="normal" image="gear">
                                     <color key="titleColor" red="0.9713253378868103" green="0.011285457760095596" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="filter_pressed:" destination="epY-ED-yXc" eventType="touchUpInside" id="paM-up-tVc"/>
+                                </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3A0-kr-hzc">
+                                <rect key="frame" x="67" y="67" width="260" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="filter_popup" translatesAutoresizingMaskIntoConstraints="NO" id="clM-cY-FbI">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-IO-Isy">
+                                        <rect key="frame" x="8" y="24" width="244" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Event"/>
+                                            <segment title="Announcement"/>
+                                            <segment title="All"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.93333333333333335" green="0.66274509803921566" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VGL-hS-eq7"/>
@@ -231,7 +246,9 @@
                     <connections>
                         <outlet property="filter_button" destination="abQ-B6-VVM" id="kKr-5O-8Xt"/>
                         <outlet property="filter_label" destination="TkO-oh-uyp" id="3pr-nE-AG1"/>
+                        <outlet property="filter_view" destination="3A0-kr-hzc" id="jNg-8j-1kb"/>
                         <outlet property="search_bar" destination="jdc-o1-myH" id="vNA-t6-hkw"/>
+                        <outlet property="segemented_filters" destination="LXg-IO-Isy" id="oDp-oZ-QDb"/>
                         <outlet property="table_view" destination="WU8-Bc-3Se" id="rff-iy-cvr"/>
                         <segue destination="VZN-fk-X2o" kind="custom" identifier="go_to_post" customClass="SegueFromRight" customModule="News" customModuleProvider="target" id="pJV-VO-cVJ"/>
                     </connections>
@@ -522,10 +539,10 @@
             </objects>
             <point key="canvasLocation" x="2822" y="826"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="xvl-fT-01w">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FIm-ZN-k6z" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="home_view" automaticallyAdjustsScrollViewInsets="NO" id="FIm-ZN-k6z" customClass="TabViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Dtq-95-U7t"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lZr-Rb-X91">
@@ -567,6 +584,6 @@
         <image name="subscriber_background" width="335" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IVQ-Mk-ijx"/>
+        <segue reference="pJV-VO-cVJ"/>
     </inferredMetricsTieBreakers>
 </document>

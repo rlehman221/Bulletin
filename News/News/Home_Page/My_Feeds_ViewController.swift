@@ -10,6 +10,8 @@ import Firebase
 
 class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var filter_view: UIView!
+    @IBOutlet weak var segemented_filters: UISegmentedControl!
     @IBOutlet weak var table_view: UITableView!
     
     @IBOutlet weak var search_bar: UISearchBar!
@@ -18,8 +20,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var filter_label: UILabel!
     
-    var feed_data = [Int : [String : String]] ()
+    var feed_data: [[String:String]] = []
     var clubHolder = [String]()
+    var search_text = ""
+    var filter = "both"
     var post_time = "";
     var counter2 = 0;
     
@@ -32,7 +36,9 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
+        segemented_filters.addTarget(self, action: #selector(segmented_control_changed), for: .valueChanged)
+        textFieldInsideSearchBar?.backgroundColor = UIColor.gray
         table_view.dataSource = self
         table_view.delegate = self
         refreshControl = UIRefreshControl()
@@ -58,6 +64,30 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         refreshControl?.endRefreshing()
     }
     
+    @objc func segmented_control_changed()
+    {
+        let filter_data = segemented_filters.selectedSegmentIndex
+        
+        switch (filter_data){
+        case (0):
+            self.filter = "event"
+            self.refreshData()
+            break
+        case (1):
+            self.filter = "announcement"
+            self.refreshData()
+            break
+        case (2):
+            self.filter = "both"
+            self.refreshData()
+            break
+        default:
+            break
+        }
+        sleep(1)
+        filter_view.alpha = 0
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -71,9 +101,9 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! My_Feed_TableViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.club_name.text = self.feed_data[indexPath.item]?["Name"]
-        cell.Subject.text = self.feed_data[indexPath.item]?["Subject"]
-        cell.time_duration.text = self.feed_data[indexPath.item]?["Duration"]
+        cell.club_name.text = self.feed_data[indexPath.item]["Name"]
+        cell.Subject.text = self.feed_data[indexPath.item]["Subject"]
+        cell.time_duration.text = self.feed_data[indexPath.item]["Duration"]
         cell.image_view.layer.masksToBounds = true
         cell.image_view.layer.cornerRadius = CGFloat(roundf(Float(4)))
         
@@ -117,34 +147,83 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             
             let posts = snapshot.value
             let all_posts = posts as? [String: String]
-            if (self.clubHolder.contains(all_posts!["Name"]!)){
-                
-                self.counter2 -= 1
-                self.feed_data[self.counter2] = all_posts
-                self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]!["Date"]!)
-                self.feed_data[self.counter2]!["Duration"] = self.post_time
+            
+            if (self.clubHolder.contains(all_posts!["Name"]!)) {
+                if (self.search_text == ""
+                    || all_posts!["Name"]?.lowercased().range(of: self.search_text.lowercased()) != nil
+                    || all_posts!["Subject"]?.lowercased().range(of: self.search_text.lowercased()) != nil
+                    || all_posts!["Body"]?.lowercased().range(of: self.search_text.lowercased()) != nil) {
+                    
+                    if (self.filter == "both"
+                        || (self.filter == "event" && all_posts!["Type"] == "Event")
+                        || (self.filter == "announcement" && all_posts!["Type"] == "Announcement")) {
+                        self.feed_data.insert(all_posts!, at: 0)
+                        self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                        self.feed_data[0]["Duration"] = self.post_time
+                    }
+                }
             }
             self.table_view.reloadData()
-            print(self.feed_data.count)
         })
     }
     
+    @IBAction func filter_pressed(_ sender: Any) {
+        if (filter_view.alpha == 1){
+            filter_view.alpha = 0
+            
+            let filter_data = segemented_filters.selectedSegmentIndex
+            
+            switch (filter_data){
+            case (0):
+                self.filter = "event"
+                self.refreshData()
+                break
+            case (1):
+                self.filter = "announcement"
+                self.refreshData()
+                break
+            case (2):
+                self.filter = "both"
+                self.refreshData()
+                break
+            default:
+                break
+            }
+            
+        } else {
+            filter_view.alpha = 1
+        }
+    }
     // Fix - Thread 1: Fatal error: Can't form Range with upperBound < lowerBound
     func reloadDuration()
     {
-        for index in 0...(feed_data.count - 1) {
-            post_time = table_view_helper().timeDuration(date: self.feed_data[index]!["Date"]!)
-            self.feed_data[index]!["Duration"] = post_time
+        if (feed_data.count == 0) {
+            return
         }
+        for index in 0...(feed_data.count - 1) {
+            post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            self.feed_data[index]["Duration"] = post_time
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search_bar.resignFirstResponder()
+        search_text = search_bar.text!
+        self.refreshData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search_text = search_bar.text!
+        self.refreshData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let dataToSend = segue.destination as? Post_PageViewController
-        dataToSend?.receivedPostData = (self.feed_data[selected_Post]?["Body"])!
-        dataToSend?.receivedName = (self.feed_data[selected_Post]?["Name"])!
-        dataToSend?.receivedSubject = (self.feed_data[selected_Post]?["Subject"])!
-        dataToSend?.receivedDate = (self.feed_data[selected_Post]?["Duration"])!
+        dataToSend?.receivedPostData = (self.feed_data[selected_Post]["Body"])!
+        dataToSend?.receivedName = (self.feed_data[selected_Post]["Name"])!
+        dataToSend?.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
+        dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
     }
     
     override func didReceiveMemoryWarning()

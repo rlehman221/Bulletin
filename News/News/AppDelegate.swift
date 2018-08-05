@@ -43,6 +43,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+    func setRootViewController() {
+        if Auth.auth().currentUser != nil {
+            // Set Your home view controller Here as root View Controller
+            let storyboard = UIStoryboard.init(name: "my_feed", bundle: nil)
+            
+            // controller identifier sets up in storyboard utilities
+            // panel (on the right), it called Storyboard ID
+            let viewController = storyboard.instantiateViewController(withIdentifier: "home_view") as! TabViewController
+            
+            
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         Messaging.messaging().setAPNSToken(deviceToken, type: .prod)

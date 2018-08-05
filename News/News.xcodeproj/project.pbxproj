@@ -15,6 +15,7 @@
 		9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */; };
 		945331242070534D00545ED4 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
 		94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94533125207054F200545ED4 /* Post_PageViewController.swift */; };
+		94633EC921173FFB003C0D59 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94633EC821173FFB003C0D59 /* TabViewController.swift */; };
 		946BABDE20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABDD20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift */; };
 		946BABE020E9132D00EB3AA9 /* Forgot_PW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946BABDF20E9132D00EB3AA9 /* Forgot_PW.storyboard */; };
 		946BABE620E96B5900EB3AA9 /* All_Feed_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABE520E96B5900EB3AA9 /* All_Feed_TableViewCell.swift */; };
@@ -85,6 +86,7 @@
 		9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		945331232070534D00545ED4 /* Post_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post_Page.storyboard; sourceTree = "<group>"; };
 		94533125207054F200545ED4 /* Post_PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PageViewController.swift; sourceTree = "<group>"; };
+		94633EC821173FFB003C0D59 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		946BABDD20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot_PasswordViewController.swift; sourceTree = "<group>"; };
 		946BABDF20E9132D00EB3AA9 /* Forgot_PW.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Forgot_PW.storyboard; sourceTree = "<group>"; };
 		946BABE520E96B5900EB3AA9 /* All_Feed_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_Feed_TableViewCell.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */,
 				947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */,
 				947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */,
+				94633EC821173FFB003C0D59 /* TabViewController.swift */,
 			);
 			path = Home_Page;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */,
 				946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */,
 				946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */,
+				94633EC921173FFB003C0D59 /* TabViewController.swift in Sources */,
 				946DF3E920C75CCB00570ADE /* Post-To-Database.swift in Sources */,
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
 				946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */,
