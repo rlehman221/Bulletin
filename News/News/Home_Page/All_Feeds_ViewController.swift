@@ -40,7 +40,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         placeholderField?.textColor = UIColor.white
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
         textFieldInsideSearchBar?.textColor = UIColor.white
-        search_bar.layer.cornerRadius = 1
+        search_bar.layer.cornerRadius = 5
         search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
         textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         table_view.dataSource = self
