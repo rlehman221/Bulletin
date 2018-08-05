@@ -22,6 +22,16 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     var subList = [Int : (String , Bool)] ()
     
     override func viewDidLoad() {
+        let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
+        let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
+        
+        placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
+        placeholderField?.textColor = UIColor.black
+        textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
+        textFieldInsideSearchBar?.textColor = UIColor.black
+        search_bar.layer.cornerRadius = 5
+        search_bar.setImage(UIImage(named: "search_black"), for: UISearchBarIcon.search, state: .normal)
+        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
         tableView.dataSource = self
         tableView.delegate = self
         search_bar.delegate = self
@@ -30,6 +40,7 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
+        tableView.tableHeaderView = search_bar
     }
     
     @objc func refreshData() {
@@ -44,14 +55,14 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.subList.count == 0) {
             return 1
         }
         return self.subList.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,8 +72,8 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "addsub_cell", for: indexPath as IndexPath) as? SubscribeTableViewCell
-        cell!.club_name.text = self.subList[indexPath.row]!.0
-        cell!.club_name.tag = indexPath.row
+        cell!.club_name.text = self.subList[indexPath.section]!.0
+        cell!.club_name.tag = indexPath.section
         return cell!
     }
     
@@ -73,11 +84,19 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
             self.subscribe(index: indexPath.section)
             success(true)
         })
-        TrashAction.backgroundColor = .green
+        TrashAction.backgroundColor = UIColor.init(red: 0, green: 0.7, blue: 0, alpha: 1)
         
         return UISwipeActionsConfiguration(actions: [TrashAction])
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
     func getInfo() {
         let UID = (Auth.auth().currentUser?.uid)
         ref = Database.database().reference()

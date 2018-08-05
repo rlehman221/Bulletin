@@ -9,6 +9,7 @@ import UIKit
 
 class Post_PageViewController: UIViewController {
 
+    @IBOutlet weak var scroll_view: UIScrollView!
     @IBOutlet weak var post_data: UITextView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var subject: UILabel!
@@ -21,10 +22,11 @@ class Post_PageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scroll_view.backgroundColor = .clear
         name.text = receivedName
         post_data.text = receivedPostData
         subject.text = receivedSubject
-        date.text = receivedDate
+        date.text = "Posted:" + receivedDate
     }
 
     override func didReceiveMemoryWarning() {
