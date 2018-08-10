@@ -40,5 +40,4 @@ class table_view_helper: UIViewController {
             }
         }
     }
-    
 }

@@ -25,10 +25,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     var selected_Post = 0
     var refreshControl: UIRefreshControl!
     var counter = 0
-    
-    
     @IBOutlet weak var filter_view: UIView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +47,21 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         refreshControl?.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         table_view.addSubview(refreshControl!)
         table_view.tableHeaderView = top_nav
-        load_database()
-     
-        
+        do {
+            try load_database()
+        } catch {
+            print("All_Feed: Load database error")
+        }
     }
    
     @objc func refreshData()
     {
-        load_database()
+        do {
+            try load_database()
+        } catch {
+            print("All_Feed: Load database error")
+        }
+        
         reloadDuration()
         
         self.table_view.reloadData()
@@ -111,8 +115,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         print("You selected cell #\(indexPath.item)!")
@@ -121,8 +123,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         self.performSegue(withIdentifier: "post_page", sender: self)
     }
     
- 
-    func load_database()
+    func load_database() throws
     {
         self.feed_data.removeAll()
         ref = Database.database().reference() // Reference to database
@@ -175,8 +176,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
     }
     
-    
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         search_bar.resignFirstResponder()
         search_text = search_bar.text!
@@ -227,5 +226,4 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }

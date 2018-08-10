@@ -542,7 +542,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tD8-Zd-wSl">
             <objects>
-                <navigationController navigationBarHidden="YES" id="NAd-l9-2I1" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home_view" navigationBarHidden="YES" id="NAd-l9-2I1" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YpX-Mc-EBC">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -557,7 +557,7 @@
         <!--Tab View Controller-->
         <scene sceneID="xvl-fT-01w">
             <objects>
-                <tabBarController storyboardIdentifier="home_view" automaticallyAdjustsScrollViewInsets="NO" id="FIm-ZN-k6z" customClass="TabViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FIm-ZN-k6z" customClass="TabViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Dtq-95-U7t"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lZr-Rb-X91">

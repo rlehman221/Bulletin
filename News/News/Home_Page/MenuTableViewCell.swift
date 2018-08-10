@@ -9,11 +9,7 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var Icon_Image: UIImageView!
-    
     @IBOutlet weak var label: UILabel!
-    
-   
 
 }

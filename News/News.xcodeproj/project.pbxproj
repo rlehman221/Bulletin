@@ -23,6 +23,7 @@
 		946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABE920E9791C00EB3AA9 /* All_Feeds_ViewController.swift */; };
 		946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABEB20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift */; };
 		946BABEE20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */; };
+		946D6301211D1F2B008CD197 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D6300211D1F2B008CD197 /* NavViewController.swift */; };
 		946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AA20C61F6C00570ADE /* gridLayout.swift */; };
 		946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */; };
 		946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */; };
@@ -90,6 +91,7 @@
 		946BABE920E9791C00EB3AA9 /* All_Feeds_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_Feeds_ViewController.swift; sourceTree = "<group>"; };
 		946BABEB20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feeds_ViewController.swift; sourceTree = "<group>"; };
 		946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feed_TableViewCell.swift; sourceTree = "<group>"; };
+		946D6300211D1F2B008CD197 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		946DF3AA20C61F6C00570ADE /* gridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gridLayout.swift; sourceTree = "<group>"; };
 		946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_Board_ViewController.swift; sourceTree = "<group>"; };
 		946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image_ViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */,
 				947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */,
 				94633EC821173FFB003C0D59 /* TabViewController.swift */,
+				946D6300211D1F2B008CD197 /* NavViewController.swift */,
 			);
 			path = Home_Page;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
 				94EF0B3B2032242700F3FFDC /* User.swift in Sources */,
 				946BABE820E96E4500EB3AA9 /* Table_View_Helper.swift in Sources */,
+				946D6301211D1F2B008CD197 /* NavViewController.swift in Sources */,
 				946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */,
 				9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */,
 				946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */,
