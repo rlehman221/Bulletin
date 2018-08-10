@@ -23,7 +23,6 @@
 		946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABE920E9791C00EB3AA9 /* All_Feeds_ViewController.swift */; };
 		946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABEB20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift */; };
 		946BABEE20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */; };
-		946DF3A120C61E1D00570ADE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3A020C61E1D00570ADE /* File.swift */; };
 		946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AA20C61F6C00570ADE /* gridLayout.swift */; };
 		946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */; };
 		946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */; };
@@ -35,7 +34,6 @@
 		946DF3E320C7586F00570ADE /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */; };
 		946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */; };
 		946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */; };
-		946DF3E920C75CCB00570ADE /* Post-To-Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3E820C75CCB00570ADE /* Post-To-Database.swift */; };
 		9478963B2102CDAB00DE4195 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9478963A2102CDAB00DE4195 /* Events.storyboard */; };
 		947DED1F20FD7DE0007DAD17 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */; };
 		947DED2120FD7DEF007DAD17 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */; };
@@ -53,8 +51,6 @@
 		94C782F5206F0E6400573BED /* Sign_Up.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C782F4206F0E6400573BED /* Sign_Up.storyboard */; };
 		94EF0B3B2032242700F3FFDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B3A2032242700F3FFDC /* User.swift */; };
 		94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */; };
-		94F59C0220A383CD00E024A2 /* Send_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F59C0120A383CD00E024A2 /* Send_Page.storyboard */; };
-		94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F59C0320A383F400E024A2 /* Send_Post_ViewController.swift */; };
 		94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F59C0520A3907200E024A2 /* GoogleService-Info.plist */; };
 		E663DAC67382B8332863F473 /* Pods_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD93B4CE69915612D883E91 /* Pods_NewsUITests.framework */; };
 		F8B46F4CF3412EE61E9C9C24 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F81492564848547F61BA851 /* Pods_News.framework */; };
@@ -94,7 +90,6 @@
 		946BABE920E9791C00EB3AA9 /* All_Feeds_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_Feeds_ViewController.swift; sourceTree = "<group>"; };
 		946BABEB20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feeds_ViewController.swift; sourceTree = "<group>"; };
 		946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feed_TableViewCell.swift; sourceTree = "<group>"; };
-		946DF3A020C61E1D00570ADE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		946DF3AA20C61F6C00570ADE /* gridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gridLayout.swift; sourceTree = "<group>"; };
 		946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_Board_ViewController.swift; sourceTree = "<group>"; };
 		946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image_ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		946DF3DB20C7586F00570ADE /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSubTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
-		946DF3E820C75CCB00570ADE /* Post-To-Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post-To-Database.swift"; sourceTree = "<group>"; };
 		9478963A2102CDAB00DE4195 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
 		947DED1E20FD7DE0007DAD17 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,8 +125,6 @@
 		94C782F4206F0E6400573BED /* Sign_Up.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign_Up.storyboard; sourceTree = "<group>"; };
 		94EF0B3A2032242700F3FFDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		94F59C0120A383CD00E024A2 /* Send_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send_Page.storyboard; sourceTree = "<group>"; };
-		94F59C0320A383F400E024A2 /* Send_Post_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Send_Post_ViewController.swift; sourceTree = "<group>"; };
 		94F59C0520A3907200E024A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F81492564848547F61BA851 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A227941DEDA096348FC8F596 /* Pods-NewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsUITests/Pods-NewsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,7 +275,6 @@
 				946DF3D720C7586F00570ADE /* Subscription_Page */,
 				946DF3A920C61F6C00570ADE /* User_Board */,
 				94B8EFAA20A393A600D9882B /* News.entitlements */,
-				94F59C0020A383A700E024A2 /* Send Post */,
 				94533122207052D100545ED4 /* Post_Page */,
 				6DA7CA62204A531800E9C1FC /* Profile_Page */,
 				94EF0B5220374A9500F3FFDC /* Home_Page */,
@@ -368,17 +359,6 @@
 				94633EC821173FFB003C0D59 /* TabViewController.swift */,
 			);
 			path = Home_Page;
-			sourceTree = "<group>";
-		};
-		94F59C0020A383A700E024A2 /* Send Post */ = {
-			isa = PBXGroup;
-			children = (
-				94F59C0120A383CD00E024A2 /* Send_Page.storyboard */,
-				94F59C0320A383F400E024A2 /* Send_Post_ViewController.swift */,
-				946DF3A020C61E1D00570ADE /* File.swift */,
-				946DF3E820C75CCB00570ADE /* Post-To-Database.swift */,
-			);
-			path = "Send Post";
 			sourceTree = "<group>";
 		};
 		99C59816F90ED908278357A9 /* Pods */ = {
@@ -524,7 +504,6 @@
 				946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */,
 				9478963B2102CDAB00DE4195 /* Events.storyboard in Resources */,
 				948674802031216D00EC9D9F /* Assets.xcassets in Resources */,
-				94F59C0220A383CD00E024A2 /* Send_Page.storyboard in Resources */,
 				9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */,
 				9486747E2031216D00EC9D9F /* Main.storyboard in Resources */,
 			);
@@ -641,18 +620,15 @@
 				946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */,
 				946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */,
 				94633EC921173FFB003C0D59 /* TabViewController.swift in Sources */,
-				946DF3E920C75CCB00570ADE /* Post-To-Database.swift in Sources */,
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
 				946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */,
 				946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */,
 				947DED2120FD7DEF007DAD17 /* MenuTableViewCell.swift in Sources */,
 				946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */,
-				94F59C0420A383F400E024A2 /* Send_Post_ViewController.swift in Sources */,
 				946BABDE20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift in Sources */,
 				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
 				94EF0B3B2032242700F3FFDC /* User.swift in Sources */,
 				946BABE820E96E4500EB3AA9 /* Table_View_Helper.swift in Sources */,
-				946DF3A120C61E1D00570ADE /* File.swift in Sources */,
 				946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */,
 				9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */,
 				946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */,

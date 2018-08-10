@@ -158,7 +158,11 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
                         || (self.filter == "event" && all_posts!["Type"] == "Event")
                         || (self.filter == "announcement" && all_posts!["Type"] == "Announcement")) {
                         self.feed_data.insert(all_posts!, at: 0)
-                        self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                        do {
+                            try self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                        } catch {
+                            print("Major Error In Date")
+                        }
                         self.feed_data[0]["Duration"] = self.post_time
                     }
                 }
@@ -201,7 +205,11 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             return
         }
         for index in 0...(feed_data.count - 1) {
-            post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            do {
+                try post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            } catch {
+                print("Major Error In Date")
+            }
             self.feed_data[index]["Duration"] = post_time
         }
     }
