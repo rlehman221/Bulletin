@@ -31,15 +31,23 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        filter_button.addTarget(self, action: #selector(My_Feeds_ViewController.filter_pressed(_:)), for: .touchUpInside)
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
+        let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
         segemented_filters.addTarget(self, action: #selector(segmented_control_changed), for: .valueChanged)
-        textFieldInsideSearchBar?.backgroundColor = UIColor.gray
+        placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
+        placeholderField?.textColor = UIColor.white
+        textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
+        textFieldInsideSearchBar?.textColor = UIColor.white
+        search_bar.layer.cornerRadius = 5
+        search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
+        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        
         table_view.dataSource = self
         table_view.delegate = self
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
-        //refreshControl.backgroundColor = UIColor.redColor
-        // refreshControl.tintColor = UIColor.yellowColor
         table_view.addSubview(refreshControl)
         loadClubs {
             do {
@@ -124,6 +132,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     // Loads only clubs that the user has subscribed to into an array for later comparison
     func loadClubs (finished: @escaping () -> Void)
     {
+        self.clubHolder.removeAll()
         ref = Database.database().reference() // Reference to database
         let uid = Auth.auth().currentUser?.uid
         ref.child("Users").child(uid!).child("Subscribed").observeSingleEvent(of: .value) { (snapshot) in
@@ -143,6 +152,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     func load_database() throws
     {
+        self.feed_data.removeAll()
         ref = Database.database().reference() // Reference to database
         
         ref.child("Feed").queryOrdered(byChild: "Date").observe(.childAdded, with: { (snapshot) -> Void in
@@ -173,7 +183,8 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         })
     }
     
-    @IBAction func filter_pressed(_ sender: Any) {
+    @objc func filter_pressed(_ sender: UIButton!) {
+        print("button")
         if (filter_view.alpha == 1){
             filter_view.alpha = 0
             
@@ -224,6 +235,12 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         search_text = search_bar.text!
+        if (search_text == "") {
+            filter_button.alpha = 1
+        }
+        else {
+            filter_button.alpha = 0
+        }
         self.refreshData()
     }
     

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35x-2Y-sQ4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35x-2Y-sQ4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Forgot Password View Controller-->
         <scene sceneID="9ZS-jM-XhX">
@@ -18,38 +24,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPX-Y7-MRW">
-                                <rect key="frame" x="22" y="35" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPX-Y7-MRW">
+                                <rect key="frame" x="16" y="32" width="45" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="TNg-Gy-6ux"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
                                 <connections>
                                     <segue destination="OXw-X5-Qmv" kind="show" id="PRK-0y-Pnd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Your Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhx-pP-CNn">
-                                <rect key="frame" x="56" y="192" width="125" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email below and we will send you an email with instructions on how to reset your password." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhx-pP-CNn">
+                                <rect key="frame" x="41" y="147" width="292" height="82"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-Fi-tAM">
-                                <rect key="frame" x="56" y="221" width="218" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-Fi-tAM">
+                                <rect key="frame" x="60" y="309" width="302" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a5m-Vv-nGt"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqG-7r-kag">
-                                <rect key="frame" x="147" y="318" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-A6-V8N">
+                                <rect key="frame" x="16" y="316" width="26" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="nKh-u4-G9z"/>
+                                    <constraint firstAttribute="width" constant="26" id="wMQ-cT-Soj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="lii-08-O9o">
+                                <rect key="frame" x="5" y="344" width="370" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="KvO-wX-kRp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="106017-200" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-nP-LoU">
+                                <rect key="frame" x="173" y="27" width="29" height="46"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RESET PASSWORD" translatesAutoresizingMaskIntoConstraints="NO" id="bXW-wT-uqe">
+                                <rect key="frame" x="68" y="95" width="238" height="22"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqG-7r-kag">
+                                <rect key="frame" x="70" y="401" width="234" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="5w2-dm-J3s"/>
+                                </constraints>
+                                <state key="normal" image="Forgot_PW"/>
                                 <connections>
                                     <action selector="send_button:" destination="35x-2Y-sQ4" eventType="touchUpInside" id="fFT-Kv-VGF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bXW-wT-uqe" firstAttribute="centerX" secondItem="Qhx-pP-CNn" secondAttribute="centerX" id="0r6-Az-ify"/>
+                            <constraint firstItem="lii-08-O9o" firstAttribute="top" secondItem="ADr-Fi-tAM" secondAttribute="bottom" constant="5" id="8gW-1i-n0n"/>
+                            <constraint firstItem="4Pb-Og-XOH" firstAttribute="trailing" secondItem="ADr-Fi-tAM" secondAttribute="trailing" constant="13" id="9h7-Ex-Ykf"/>
+                            <constraint firstItem="KqG-7r-kag" firstAttribute="top" secondItem="lii-08-O9o" secondAttribute="bottom" constant="55" id="AZ6-aD-IFh"/>
+                            <constraint firstItem="HPX-Y7-MRW" firstAttribute="top" secondItem="4Pb-Og-XOH" secondAttribute="top" constant="12" id="CrW-Zz-oIE"/>
+                            <constraint firstItem="Qhx-pP-CNn" firstAttribute="top" secondItem="HPX-Y7-MRW" secondAttribute="bottom" constant="79" id="Eh5-M6-YWb"/>
+                            <constraint firstItem="Qhx-pP-CNn" firstAttribute="leading" secondItem="4Pb-Og-XOH" secondAttribute="leading" constant="41" id="Fe1-2L-daS"/>
+                            <constraint firstAttribute="trailing" secondItem="lii-08-O9o" secondAttribute="trailing" id="Gh5-8P-tSd"/>
+                            <constraint firstItem="lii-08-O9o" firstAttribute="centerX" secondItem="KqG-7r-kag" secondAttribute="centerX" constant="3" id="Ioh-Tg-uSC"/>
+                            <constraint firstItem="KqG-7r-kag" firstAttribute="leading" secondItem="4Pb-Og-XOH" secondAttribute="leading" constant="70" id="KSu-Or-mzr"/>
+                            <constraint firstItem="ADr-Fi-tAM" firstAttribute="leading" secondItem="ebf-A6-V8N" secondAttribute="trailing" constant="18" id="Ke0-yU-spX"/>
+                            <constraint firstItem="bXW-wT-uqe" firstAttribute="leading" secondItem="4Pb-Og-XOH" secondAttribute="leading" constant="68" id="O3W-fD-Y0y"/>
+                            <constraint firstItem="HPX-Y7-MRW" firstAttribute="leading" secondItem="A5o-a0-wMe" secondAttribute="leadingMargin" id="PaC-ff-G5G"/>
+                            <constraint firstItem="bXW-wT-uqe" firstAttribute="top" secondItem="r3E-nP-LoU" secondAttribute="bottom" constant="22" id="Pkw-uW-yXv"/>
+                            <constraint firstItem="4Pb-Og-XOH" firstAttribute="bottom" secondItem="KqG-7r-kag" secondAttribute="bottom" constant="204" id="ReR-RL-gnS"/>
+                            <constraint firstItem="ADr-Fi-tAM" firstAttribute="top" secondItem="Qhx-pP-CNn" secondAttribute="bottom" constant="80" id="VlW-1a-OO2"/>
+                            <constraint firstItem="HPX-Y7-MRW" firstAttribute="centerY" secondItem="r3E-nP-LoU" secondAttribute="centerY" id="Vwr-qA-aGL"/>
+                            <constraint firstItem="Qhx-pP-CNn" firstAttribute="centerX" secondItem="lii-08-O9o" secondAttribute="centerX" constant="-3" id="ZC4-fF-rVg"/>
+                            <constraint firstItem="r3E-nP-LoU" firstAttribute="top" secondItem="4Pb-Og-XOH" secondAttribute="top" constant="7" id="Zi1-fI-hGd"/>
+                            <constraint firstItem="lii-08-O9o" firstAttribute="top" secondItem="ebf-A6-V8N" secondAttribute="bottom" constant="10" id="ra0-z9-7Ea"/>
+                            <constraint firstItem="HPX-Y7-MRW" firstAttribute="leading" secondItem="ebf-A6-V8N" secondAttribute="leading" id="uwB-aW-FpG"/>
+                            <constraint firstItem="r3E-nP-LoU" firstAttribute="centerX" secondItem="bXW-wT-uqe" secondAttribute="centerX" constant="0.5" id="w9p-uf-Kfe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Pb-Og-XOH"/>
                     </view>
                     <connections>
@@ -70,6 +125,14 @@
             <point key="canvasLocation" x="438" y="-16"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="106017-200" width="29" height="46"/>
+        <image name="Email" width="23" height="19"/>
+        <image name="Forgot_PW" width="234" height="60"/>
+        <image name="Line" width="375" height="1"/>
+        <image name="RESET PASSWORD" width="230" height="22"/>
+        <image name="back" width="18" height="26"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fKJ-nC-voj"/>
     </inferredMetricsTieBreakers>
