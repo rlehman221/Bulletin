@@ -24,11 +24,6 @@
 		946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABEB20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift */; };
 		946BABEE20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */; };
 		946D6301211D1F2B008CD197 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D6300211D1F2B008CD197 /* NavViewController.swift */; };
-		946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AA20C61F6C00570ADE /* gridLayout.swift */; };
-		946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */; };
-		946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */; };
-		946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3AD20C61F6C00570ADE /* Flyer_CollectionViewCell.swift */; };
-		946DF3B320C61F6C00570ADE /* User_Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3AE20C61F6C00570ADE /* User_Board.storyboard */; };
 		946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3D820C7586F00570ADE /* NoSubTableViewCell.swift */; };
 		946DF3E120C7586F00570ADE /* AddSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DF3D920C7586F00570ADE /* AddSubViewController.swift */; };
 		946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */; };
@@ -92,11 +87,6 @@
 		946BABEB20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feeds_ViewController.swift; sourceTree = "<group>"; };
 		946BABED20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Feed_TableViewCell.swift; sourceTree = "<group>"; };
 		946D6300211D1F2B008CD197 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
-		946DF3AA20C61F6C00570ADE /* gridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gridLayout.swift; sourceTree = "<group>"; };
-		946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_Board_ViewController.swift; sourceTree = "<group>"; };
-		946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image_ViewController.swift; sourceTree = "<group>"; };
-		946DF3AD20C61F6C00570ADE /* Flyer_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flyer_CollectionViewCell.swift; sourceTree = "<group>"; };
-		946DF3AE20C61F6C00570ADE /* User_Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User_Board.storyboard; sourceTree = "<group>"; };
 		946DF3D820C7586F00570ADE /* NoSubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSubTableViewCell.swift; sourceTree = "<group>"; };
 		946DF3D920C7586F00570ADE /* AddSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubViewController.swift; sourceTree = "<group>"; };
 		946DF3DA20C7586F00570ADE /* Subscription_Page.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Subscription_Page.storyboard; sourceTree = "<group>"; };
@@ -212,18 +202,6 @@
 			path = Forgot_PW;
 			sourceTree = "<group>";
 		};
-		946DF3A920C61F6C00570ADE /* User_Board */ = {
-			isa = PBXGroup;
-			children = (
-				946DF3AA20C61F6C00570ADE /* gridLayout.swift */,
-				946DF3AB20C61F6C00570ADE /* User_Board_ViewController.swift */,
-				946DF3AC20C61F6C00570ADE /* Image_ViewController.swift */,
-				946DF3AD20C61F6C00570ADE /* Flyer_CollectionViewCell.swift */,
-				946DF3AE20C61F6C00570ADE /* User_Board.storyboard */,
-			);
-			path = User_Board;
-			sourceTree = "<group>";
-		};
 		946DF3D720C7586F00570ADE /* Subscription_Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +253,6 @@
 				947896392102CD9200DE4195 /* Events */,
 				946BABDC20E912EE00EB3AA9 /* Forgot_PW */,
 				946DF3D720C7586F00570ADE /* Subscription_Page */,
-				946DF3A920C61F6C00570ADE /* User_Board */,
 				94B8EFAA20A393A600D9882B /* News.entitlements */,
 				94533122207052D100545ED4 /* Post_Page */,
 				6DA7CA62204A531800E9C1FC /* Profile_Page */,
@@ -497,7 +474,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94C782F1206F09A200573BED /* my_feed.storyboard in Resources */,
-				946DF3B320C61F6C00570ADE /* User_Board.storyboard in Resources */,
 				6D52CDA920BB8CA1000D553F /* Profile_Page.storyboard in Resources */,
 				948674832031216D00EC9D9F /* LaunchScreen.storyboard in Resources */,
 				94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */,
@@ -621,19 +597,15 @@
 				946BABEE20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift in Sources */,
 				946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */,
 				946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */,
-				946DF3AF20C61F6C00570ADE /* gridLayout.swift in Sources */,
 				94633EC921173FFB003C0D59 /* TabViewController.swift in Sources */,
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
 				946DF3E620C7586F00570ADE /* SubscribeTableViewCell.swift in Sources */,
-				946DF3B120C61F6C00570ADE /* Image_ViewController.swift in Sources */,
 				947DED2120FD7DEF007DAD17 /* MenuTableViewCell.swift in Sources */,
 				946DF3E020C7586F00570ADE /* NoSubTableViewCell.swift in Sources */,
 				946BABDE20E9130C00EB3AA9 /* Forgot_PasswordViewController.swift in Sources */,
-				946DF3B020C61F6C00570ADE /* User_Board_ViewController.swift in Sources */,
 				94EF0B3B2032242700F3FFDC /* User.swift in Sources */,
 				946BABE820E96E4500EB3AA9 /* Table_View_Helper.swift in Sources */,
 				946D6301211D1F2B008CD197 /* NavViewController.swift in Sources */,
-				946DF3B220C61F6C00570ADE /* Flyer_CollectionViewCell.swift in Sources */,
 				9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */,
 				946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */,
 				947DED1F20FD7DE0007DAD17 /* MenuViewController.swift in Sources */,
