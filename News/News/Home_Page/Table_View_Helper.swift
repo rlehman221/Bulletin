@@ -10,7 +10,7 @@ import UIKit
 
 class table_view_helper: UIViewController {
     
-    func timeDuration(date: String) -> String {
+    func timeDuration(date: String) throws -> String {
         
         let compareDateString = date
         let dateFormatter = DateFormatter()
@@ -40,5 +40,4 @@ class table_view_helper: UIViewController {
             }
         }
     }
-    
 }

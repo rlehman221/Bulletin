@@ -24,10 +24,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     var selected_Post = 0
     var refreshControl: UIRefreshControl!
     var counter = 0
-    
-    
     @IBOutlet weak var filter_view: UIView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +46,22 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         table_view.addSubview(refreshControl!)
-        load_database()
+        table_view.tableHeaderView = top_nav
+        do {
+            try load_database()
+        } catch {
+            print("All_Feed: Load database error")
+        }
     }
    
     @objc func refreshData()
     {
-        load_database()
+        do {
+            try load_database()
+        } catch {
+            print("All_Feed: Load database error")
+        }
+        
         reloadDuration()
         
         self.table_view.reloadData()
@@ -107,8 +114,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         print("You selected cell #\(indexPath.item)!")
@@ -117,8 +122,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         self.performSegue(withIdentifier: "post_page", sender: self)
     }
     
- 
-    func load_database()
+    func load_database() throws
     {
         self.feed_data.removeAll()
         ref = Database.database().reference() // Reference to database
@@ -136,7 +140,11 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
                     || (self.filter == "event" && all_posts!["Type"] == "Event")
                     || (self.filter == "announcement" && all_posts!["Type"] == "Announcement")) {
                     self.feed_data.insert(all_posts!, at: 0)
-                    self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                    do {
+                        try self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                    } catch {
+                        print("Major Error In Date")
+                    }
                     self.feed_data[0]["Duration"] = self.post_time
                 }
             }
@@ -150,7 +158,11 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
             return
         }
         for index in 0...(feed_data.count - 1) {
-            post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            do {
+                try post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            } catch {
+                print("Major Error In Date")
+            }
             self.feed_data[index]["Duration"] = post_time
         }
     }
@@ -162,8 +174,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         dataToSend?.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
         dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
     }
-    
-    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         search_bar.resignFirstResponder()
@@ -214,5 +224,4 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }

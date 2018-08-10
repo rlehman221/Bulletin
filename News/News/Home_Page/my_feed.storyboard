@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FIm-ZN-k6z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAd-l9-2I1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -576,12 +576,27 @@
             </objects>
             <point key="canvasLocation" x="2841" y="539"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tD8-Zd-wSl">
+            <objects>
+                <navigationController storyboardIdentifier="home_view" navigationBarHidden="YES" id="NAd-l9-2I1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YpX-Mc-EBC">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FIm-ZN-k6z" kind="relationship" relationship="rootViewController" id="WeB-eQ-bdG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lv-eC-Fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-530" y="468"/>
+        </scene>
         <!--Tab View Controller-->
         <scene sceneID="xvl-fT-01w">
             <objects>
-                <tabBarController storyboardIdentifier="home_view" automaticallyAdjustsScrollViewInsets="NO" id="FIm-ZN-k6z" customClass="TabViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FIm-ZN-k6z" customClass="TabViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Dtq-95-U7t"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Dtq-95-U7t"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lZr-Rb-X91">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

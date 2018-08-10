@@ -9,15 +9,9 @@ import UIKit
 
 class All_Feed_TableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var club_name: UILabel!
-    
     @IBOutlet weak var Subject: UILabel!
     @IBOutlet weak var time_duration: UILabel!
-    
     @IBOutlet weak var image_view: UIImageView!
-    
-    
-    
 
 }

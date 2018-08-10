@@ -13,9 +13,9 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var filter_view: UIView!
     @IBOutlet weak var segemented_filters: UISegmentedControl!
     @IBOutlet weak var table_view: UITableView!
-    
     @IBOutlet weak var search_bar: UISearchBar!
     @IBOutlet weak var filter_button: UIButton!
+    @IBOutlet weak var filter_label: UILabel!
     
     var feed_data: [[String:String]] = []
     var clubHolder = [String]()
@@ -23,9 +23,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     var filter = "both"
     var post_time = "";
     var counter2 = 0;
-    
     var refreshControl: UIRefreshControl!
-    
     var ref: DatabaseReference! // Reference to database
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var selected_Post = 0;
@@ -52,16 +50,23 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         table_view.addSubview(refreshControl)
         loadClubs {
-            self.load_database()
+            do {
+                try self.load_database()
+            } catch {
+                print("My_Feed: Load database error")
+            }
         }
-        // Do any additional setup after loading the view.
     }
     
     @objc func refreshData()
     {
         
         loadClubs {
-            self.load_database()
+            do {
+                try self.load_database()
+            } catch {
+                print("My_Feed: Load database error")
+            }
         }
         reloadDuration()
         
@@ -145,7 +150,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func load_database()
+    func load_database() throws
     {
         self.feed_data.removeAll()
         ref = Database.database().reference() // Reference to database
@@ -165,7 +170,11 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
                         || (self.filter == "event" && all_posts!["Type"] == "Event")
                         || (self.filter == "announcement" && all_posts!["Type"] == "Announcement")) {
                         self.feed_data.insert(all_posts!, at: 0)
-                        self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                        do {
+                            try self.post_time = table_view_helper().timeDuration(date: self.feed_data[0]["Date"]!)
+                        } catch {
+                            print("Major Error In Date")
+                        }
                         self.feed_data[0]["Duration"] = self.post_time
                     }
                 }
@@ -209,7 +218,11 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             return
         }
         for index in 0...(feed_data.count - 1) {
-            post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            do {
+                try post_time = table_view_helper().timeDuration(date: self.feed_data[index]["Date"]!)
+            } catch {
+                print("Major Error In Date")
+            }
             self.feed_data[index]["Duration"] = post_time
         }
     }
