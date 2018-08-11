@@ -27,14 +27,31 @@ class Menu2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserData()
-        newPostButton.addTarget(self, action: #selector(Menu2ViewController.goToCreatePost(_:)), for: .touchUpInside)
-        logoutButton.addTarget(self, action: #selector(Menu2ViewController.signOut(_:)), for: .touchUpInside)
-        feedbackButton.addTarget(self, action: #selector(Menu2ViewController.requestFeedback(_:)), for: .touchUpInside)
+        getServerInfo {
+            do {
+                try self.getUserData()
+            } catch {
+                print("Menu: Load database error")
+            }
+            
+            self.logoutButton.addTarget(self, action: #selector(Menu2ViewController.signOut(_:)), for: .touchUpInside)
+            self.feedbackButton.addTarget(self, action: #selector(Menu2ViewController.requestFeedback(_:)), for: .touchUpInside)
+        }
     }
     
     @objc func signOut(_ sender: UIButton!) {
         try! Auth.auth().signOut()
+    }
+    
+    func getServerInfo (finished: @escaping () -> Void)
+    {
+        ref = Database.database().reference() // Reference to database
+        ref.child("Server Info").child("Events").observeSingleEvent(of: .value) { (snapshot) in
+            let value = snapshot.value
+            print(value!)
+            finished()
+        }
+        
     }
     
     func revealPost() {
@@ -77,7 +94,7 @@ class Menu2ViewController: UIViewController {
         
     }
     
-    func getUserData() {
+    func getUserData() throws {
         ref = Database.database().reference()
         ref.child("Users").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
             

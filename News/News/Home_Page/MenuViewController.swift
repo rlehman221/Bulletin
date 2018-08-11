@@ -36,7 +36,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         table_view.delegate = self
         initialize()
 
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,7 +119,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             self.getUser {
                 var profileList = [SectionRow]()
-                print("went into init after admin call")
                 if (self.isClub != "None") {
                     profileList.append(SectionRow(cellLabel: self.username, cellImage: nil))
                     profileList.append(SectionRow(cellLabel: self.isClub, cellImage: nil))
