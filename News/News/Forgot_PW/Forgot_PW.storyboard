@@ -43,11 +43,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="OXw-X5-Qmv" kind="show" id="PRK-0y-Pnd"/>
+                                    <segue destination="OXw-X5-Qmv" kind="custom" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="PRK-0y-Pnd"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="106017-200" translatesAutoresizingMaskIntoConstraints="NO" id="r3E-nP-LoU">
-                                <rect key="frame" x="173.5" y="20" width="29" height="46"/>
+                                <rect key="frame" x="173" y="20" width="29" height="46"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RESET PASSWORD" translatesAutoresizingMaskIntoConstraints="NO" id="bXW-wT-uqe">
                                 <rect key="frame" x="84" y="101" width="207" height="22"/>
@@ -304,7 +304,7 @@
                     </view>
                     <connections>
                         <outlet property="email_field" destination="ADr-Fi-tAM" id="5sY-Gs-CiU"/>
-                        <segue destination="OXw-X5-Qmv" kind="show" identifier="to_home" id="fKJ-nC-voj"/>
+                        <segue destination="OXw-X5-Qmv" kind="custom" identifier="to_home" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="fKJ-nC-voj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urX-a0-w7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -317,7 +317,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="OXw-X5-Qmv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fv-JI-K9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-16"/>
+            <point key="canvasLocation" x="638" y="113"/>
         </scene>
     </scenes>
     <resources>
@@ -329,6 +329,6 @@
         <image name="back" width="18" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PRK-0y-Pnd"/>
+        <segue reference="fKJ-nC-voj"/>
     </inferredMetricsTieBreakers>
 </document>
