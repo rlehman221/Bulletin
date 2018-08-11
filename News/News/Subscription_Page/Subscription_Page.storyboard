@@ -45,23 +45,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="subscriber_background" translatesAutoresizingMaskIntoConstraints="NO" id="d34-vt-hGq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="49"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="389" height="49"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-qw-Ib0" userLabel="Club Name">
-                                                    <rect key="frame" x="25" y="17" width="300" height="21"/>
+                                                    <rect key="frame" x="0.0" y="15" width="389" height="21"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <color key="textColor" red="0.91886532306671143" green="0.64919948577880859" blue="0.24635136127471924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IkC-qw-Ib0" firstAttribute="top" secondItem="AyP-Yt-dAr" secondAttribute="topMargin" constant="6" id="6O3-hx-GeP"/>
-                                                <constraint firstItem="IkC-qw-Ib0" firstAttribute="leading" secondItem="AyP-Yt-dAr" secondAttribute="leadingMargin" constant="10" id="QSE-vo-OLw"/>
-                                                <constraint firstItem="d34-vt-hGq" firstAttribute="top" secondItem="AyP-Yt-dAr" secondAttribute="top" id="dEA-90-RoY"/>
-                                                <constraint firstItem="d34-vt-hGq" firstAttribute="leading" secondItem="AyP-Yt-dAr" secondAttribute="leading" id="qJI-Ci-esi"/>
-                                                <constraint firstItem="d34-vt-hGq" firstAttribute="centerX" secondItem="IkC-qw-Ib0" secondAttribute="centerX" id="qO4-zF-JoJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="d34-vt-hGq" secondAttribute="trailing" id="sS4-1h-LBQ"/>
-                                                <constraint firstItem="d34-vt-hGq" firstAttribute="centerY" secondItem="AyP-Yt-dAr" secondAttribute="centerY" id="xTl-bj-i1y"/>
+                                                <constraint firstItem="IkC-qw-Ib0" firstAttribute="centerY" secondItem="AyP-Yt-dAr" secondAttribute="centerY" id="066-kd-hpp"/>
+                                                <constraint firstItem="d34-vt-hGq" firstAttribute="trailing" secondItem="IkC-qw-Ib0" secondAttribute="trailing" id="CHM-B1-qQl"/>
+                                                <constraint firstItem="d34-vt-hGq" firstAttribute="centerY" secondItem="AyP-Yt-dAr" secondAttribute="centerY" id="DXG-gY-z6n"/>
+                                                <constraint firstAttribute="trailing" secondItem="d34-vt-hGq" secondAttribute="trailing" id="FuA-z7-SdK"/>
+                                                <constraint firstItem="d34-vt-hGq" firstAttribute="leading" secondItem="IkC-qw-Ib0" secondAttribute="leading" id="f9d-qz-R1m"/>
+                                                <constraint firstItem="d34-vt-hGq" firstAttribute="leading" secondItem="AyP-Yt-dAr" secondAttribute="leading" id="fAO-Lt-NdX"/>
+                                                <constraint firstItem="d34-vt-hGq" firstAttribute="top" secondItem="AyP-Yt-dAr" secondAttribute="top" id="wbA-a1-ugk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -75,14 +75,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVt-uj-Ikf" userLabel="nosub_label">
-                                                    <rect key="frame" x="16" y="11" width="319" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVt-uj-Ikf" userLabel="nosub_label">
+                                                    <rect key="frame" x="0.0" y="15" width="389" height="21"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SVt-uj-Ikf" firstAttribute="centerY" secondItem="0T4-Xk-ag3" secondAttribute="centerY" id="FJx-Gk-UZu"/>
+                                                <constraint firstItem="SVt-uj-Ikf" firstAttribute="leading" secondItem="0T4-Xk-ag3" secondAttribute="leading" id="mlS-vM-JGj"/>
+                                                <constraint firstAttribute="trailing" secondItem="SVt-uj-Ikf" secondAttribute="trailing" id="xMg-VR-mGc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nosub_label" destination="SVt-uj-Ikf" id="DvW-2J-6hH"/>
@@ -106,17 +110,17 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="iBu-tu-dQF" kind="show" identifier="" customClass="SegueFromLeft" customModule="News" customModuleProvider="target" id="gau-eB-rq4"/>
+                                                <segue destination="iBu-tu-dQF" kind="custom" identifier="" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="gau-eB-rq4"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="add_subscribers" id="d3r-WO-A7X">
+                                        <barButtonItem key="rightBarButtonItem" image="add_subscribers" id="d3r-WO-A7X">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                                     <color key="value" red="1" green="0.76959400566506009" blue="0.19539162589146053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="0vd-cz-mS0" kind="show" id="XSa-6i-JpJ"/>
+                                                <segue destination="0vd-cz-mS0" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="News" customModuleProvider="target" id="XSa-6i-JpJ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -125,13 +129,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8dn-6C-AJN" firstAttribute="centerX" secondItem="pq9-uD-rVa" secondAttribute="centerX" id="HPH-gl-s6X"/>
-                            <constraint firstAttribute="trailing" secondItem="8dn-6C-AJN" secondAttribute="trailing" id="MdQ-HH-X4a"/>
-                            <constraint firstItem="pq9-uD-rVa" firstAttribute="bottom" secondItem="1XP-os-xrq" secondAttribute="bottom" id="Nfg-P8-Ct9"/>
-                            <constraint firstItem="8dn-6C-AJN" firstAttribute="top" secondItem="1XP-os-xrq" secondAttribute="top" id="YM2-9y-ZZD"/>
-                            <constraint firstItem="pq9-uD-rVa" firstAttribute="top" secondItem="8dn-6C-AJN" secondAttribute="bottom" id="ea1-6y-LaZ"/>
-                            <constraint firstItem="pq9-uD-rVa" firstAttribute="leading" secondItem="1XP-os-xrq" secondAttribute="leading" constant="12" id="klV-ak-ibf"/>
-                            <constraint firstItem="8dn-6C-AJN" firstAttribute="leading" secondItem="EAZ-Yd-3cR" secondAttribute="leading" id="u9N-K5-SOb"/>
+                            <constraint firstItem="pq9-uD-rVa" firstAttribute="top" secondItem="8dn-6C-AJN" secondAttribute="bottom" id="FGe-nL-61M"/>
+                            <constraint firstItem="8dn-6C-AJN" firstAttribute="leading" secondItem="EAZ-Yd-3cR" secondAttribute="leading" id="HNc-rh-Tbu"/>
+                            <constraint firstItem="pq9-uD-rVa" firstAttribute="bottom" secondItem="1XP-os-xrq" secondAttribute="bottom" id="PUG-EG-QLK"/>
+                            <constraint firstItem="8dn-6C-AJN" firstAttribute="top" secondItem="1XP-os-xrq" secondAttribute="top" id="fCl-Pq-6DK"/>
+                            <constraint firstItem="pq9-uD-rVa" firstAttribute="leading" secondItem="1XP-os-xrq" secondAttribute="leading" constant="12" id="nk7-EL-xuU"/>
+                            <constraint firstItem="8dn-6C-AJN" firstAttribute="centerX" secondItem="pq9-uD-rVa" secondAttribute="centerX" id="pfq-SA-dAt"/>
+                            <constraint firstAttribute="trailing" secondItem="8dn-6C-AJN" secondAttribute="trailing" id="xyV-wb-7H9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1XP-os-xrq"/>
                     </view>
@@ -141,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEG-Be-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2239.1999999999998" y="-91.304347826086968"/>
+            <point key="canvasLocation" x="-2243.4782608695655" y="-91.304347826086968"/>
         </scene>
         <!--Add Sub View Controller-->
         <scene sceneID="Vy9-JE-f1e">
@@ -165,7 +169,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="back"/>
                                                 <connections>
-                                                    <segue destination="iKO-v1-rpt" kind="show" id="U8r-Vi-YxH"/>
+                                                    <segue destination="iKO-v1-rpt" kind="custom" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="U8r-Vi-YxH"/>
                                                 </connections>
                                             </button>
                                             <userDefinedRuntimeAttributes>
