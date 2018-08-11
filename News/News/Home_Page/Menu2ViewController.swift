@@ -18,6 +18,8 @@ class Menu2ViewController: UIViewController {
     @IBOutlet weak var newPostButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var feedbackButton: UIButton!
+    @IBOutlet weak var events_view: UIView!
+    @IBOutlet weak var coming_soon: UILabel!
     
     
     var ref: DatabaseReference! // Reference to database
@@ -47,8 +49,15 @@ class Menu2ViewController: UIViewController {
     {
         ref = Database.database().reference() // Reference to database
         ref.child("Server Info").child("Events").observeSingleEvent(of: .value) { (snapshot) in
-            let value = snapshot.value
-            print(value!)
+            let value = snapshot.value as! Float
+            if value == 1 {
+                self.events_view.alpha = 1
+                self.coming_soon.text = ""
+            }
+            else {
+                self.events_view.alpha = 0.5
+                self.coming_soon.text = "Coming Soon!"
+            }
             finished()
         }
         
@@ -106,10 +115,12 @@ class Menu2ViewController: UIViewController {
             if (admin["Valid"] == "true") {
                 self.club = admin["Club"]!
                 self.adminClub.text = self.club + " Admin"
+                self.adminClub.alpha = 1
                 self.clubPost.text = self.club
             }
             else {
                 self.adminClub.text = ""
+                self.adminClub.alpha = 0
                 self.clubPost.text = ""
             }
             self.nameLabel.text = self.username
