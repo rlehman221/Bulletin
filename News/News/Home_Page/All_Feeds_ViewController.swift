@@ -46,7 +46,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         table_view.addSubview(refreshControl!)
-        table_view.tableHeaderView = top_nav
         do {
             try load_database()
         } catch {
