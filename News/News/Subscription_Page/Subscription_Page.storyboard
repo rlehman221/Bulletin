@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--menu-->
+        <!--home_view-->
         <scene sceneID="zac-qc-fzZ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="my_feed" referencedIdentifier="menu" id="iBu-tu-dQF" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="my_feed" referencedIdentifier="home_view" id="iBu-tu-dQF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-8g-Rip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2919" y="-269"/>

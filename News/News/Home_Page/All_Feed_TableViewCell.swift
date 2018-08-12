@@ -13,5 +13,6 @@ class All_Feed_TableViewCell: UITableViewCell {
     @IBOutlet weak var Subject: UILabel!
     @IBOutlet weak var time_duration: UILabel!
     @IBOutlet weak var image_view: UIImageView!
-
+    @IBOutlet weak var post_type_label: UILabel!
+    
 }

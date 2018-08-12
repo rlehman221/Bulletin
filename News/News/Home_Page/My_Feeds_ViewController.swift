@@ -10,6 +10,7 @@ import Firebase
 
 class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var filter_view: UIView!
     @IBOutlet weak var segemented_filters: UISegmentedControl!
     @IBOutlet weak var table_view: UITableView!
@@ -30,6 +31,8 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad()
     {
+        spinner.startAnimating()
+        spinner.isHidden = false
         super.viewDidLoad()
         filter_button.addTarget(self, action: #selector(My_Feeds_ViewController.filter_pressed(_:)), for: .touchUpInside)
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
@@ -42,7 +45,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         search_bar.layer.cornerRadius = 5
         search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
         textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        
         
         table_view.dataSource = self
         table_view.delegate = self
@@ -101,13 +103,13 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("went into tableview2")
         return self.feed_data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        print("went into tableview")
+        spinner.stopAnimating()
+        spinner.isHidden = true
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! My_Feed_TableViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
@@ -116,7 +118,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         cell.time_duration.text = self.feed_data[indexPath.item]["Duration"]
         cell.image_view.layer.masksToBounds = true
         cell.image_view.layer.cornerRadius = CGFloat(roundf(Float(4)))
-        
+        if (self.feed_data[indexPath.item]["Type"] == "Event"){
+            cell.post_type_label.text = "Event"
+            cell.post_type_label.font = UIFont(name: "Arial Rounded MT Bold", size: 18.0) // set fontName and Size
+        }
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         
         return cell
@@ -124,7 +129,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     {
-        print("You selected cell #\(indexPath.item)!")
         self.selected_Post = indexPath.item
         self.performSegue(withIdentifier: "go_to_post", sender: self)
     }
@@ -184,7 +188,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @objc func filter_pressed(_ sender: UIButton!) {
-        print("button")
         if (filter_view.alpha == 1){
             filter_view.alpha = 0
             

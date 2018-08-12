@@ -15,6 +15,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var filter_button: UIButton!
     @IBOutlet weak var segemented_filters: UISegmentedControl!
     
+
     var feed_data: [[String:String]] = []
     var post_time = ""
     var search_text = ""
@@ -26,7 +27,11 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     var counter = 0
     @IBOutlet weak var filter_view: UIView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {
+        spinner.startAnimating()
+        spinner.isHidden = false
+    
         super.viewDidLoad()
         filter_button.addTarget(self, action: #selector(All_Feeds_ViewController.filter_pressed(_:)), for: .touchUpInside)
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
@@ -48,11 +53,12 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         table_view.addSubview(refreshControl!)
         do {
             try load_database()
+            
         } catch {
             print("All_Feed: Load database error")
         }
     }
-   
+    
     @objc func refreshData()
     {
         do {
@@ -99,6 +105,8 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        spinner.stopAnimating()
+        spinner.isHidden = true
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! All_Feed_TableViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
@@ -107,7 +115,11 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.time_duration.text = self.feed_data[indexPath.item]["Duration"]
         cell.image_view.layer.masksToBounds = true
         cell.image_view.layer.cornerRadius = CGFloat(roundf(Float(4)))
-        
+        if (self.feed_data[indexPath.item]["Type"] == "Event"){
+             cell.post_type_label.text = "Event"
+             cell.post_type_label.font = UIFont(name: "Arial Rounded MT Bold", size: 18.0) // set fontName and Size
+        }
+       
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         
         return cell
@@ -115,7 +127,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print("You selected cell #\(indexPath.item)!")
         self.selected_Post = indexPath.item
        
         self.performSegue(withIdentifier: "post_page", sender: self)
