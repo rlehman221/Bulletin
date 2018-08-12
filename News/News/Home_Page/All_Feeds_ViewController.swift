@@ -33,6 +33,12 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         spinner.isHidden = false
     
         super.viewDidLoad()
+        filter_view.layer.cornerRadius = 10
+        filter_view.clipsToBounds = true
+
+        // Used for dismissing keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        search_bar.addGestureRecognizer(tap)
         filter_button.addTarget(self, action: #selector(All_Feeds_ViewController.filter_pressed(_:)), for: .touchUpInside)
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
         let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
@@ -41,10 +47,9 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
         placeholderField?.textColor = UIColor.white
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
-        textFieldInsideSearchBar?.textColor = UIColor.white
+        textFieldInsideSearchBar?.textColor = UIColor.black
         search_bar.layer.cornerRadius = 5
         search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
-        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         table_view.dataSource = self
         table_view.delegate = self
         search_bar.delegate = self
@@ -57,6 +62,12 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         } catch {
             print("All_Feed: Load database error")
         }
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the search to resign the first responder status.
+        search_bar.endEditing(true)
     }
     
     @objc func refreshData()
@@ -93,7 +104,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
             default:
                 break
             }
-        sleep(1)
         filter_view.alpha = 0
     }
     
@@ -116,8 +126,8 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.image_view.layer.masksToBounds = true
         cell.image_view.layer.cornerRadius = CGFloat(roundf(Float(4)))
         if (self.feed_data[indexPath.item]["Type"] == "Event"){
-             cell.post_type_label.text = "Event"
-             cell.post_type_label.font = UIFont(name: "Arial Rounded MT Bold", size: 18.0) // set fontName and Size
+            cell.post_type_label.text = "Event"
+            cell.post_type_label.font = UIFont(name: "Arial Rounded MT Bold", size: 18.0) // set fontName and Size
         }
        
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
@@ -128,7 +138,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         self.selected_Post = indexPath.item
-       
         self.performSegue(withIdentifier: "post_page", sender: self)
     }
     
@@ -145,7 +154,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
                 || all_posts!["Name"]?.lowercased().range(of: self.search_text.lowercased()) != nil
                 || all_posts!["Subject"]?.lowercased().range(of: self.search_text.lowercased()) != nil
                 || all_posts!["Body"]?.lowercased().range(of: self.search_text.lowercased()) != nil) {
-                
+               
                 if (self.filter == "both"
                     || (self.filter == "event" && all_posts!["Type"] == "Event")
                     || (self.filter == "announcement" && all_posts!["Type"] == "Announcement")) {
@@ -189,6 +198,14 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         search_bar.resignFirstResponder()
         search_text = search_bar.text!
         self.refreshData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = ""
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = "Search"
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

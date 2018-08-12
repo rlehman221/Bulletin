@@ -26,7 +26,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     {
         super.viewDidLoad()
         confirmButton.addTarget(self, action: #selector(self.signUp(_:)), for: .touchUpInside)
-        emailField.delegate = self
+        self.emailField.delegate = self as UITextFieldDelegate
+        self.nameField.delegate = self as UITextFieldDelegate
+        self.passwordField.delegate = self as UITextFieldDelegate
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
    /**
@@ -43,6 +47,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.beginningOfDocument)
         }
         emailHolder = false
+    }
+    
+    // If return key on keyboard is clicked it will be dismissed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the search to resign the first responder status.
+        view.endEditing(true)
     }
     
    /**
@@ -72,22 +88,37 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     */
     @objc func signUp(_ sender:UIButton!)
     {
-        let new_User = User(email: emailField.text!, password: passwordField.text!, name: nameField.text!) // Creates a new instance of  user
-        new_User.add_User() // Calls the add function on the user
-        /*
-            CBT - Alerts need to change based on (if successful, user already exists, invalid email, etc) as of right now it only returns successful, need to changed based in Model_Root folder and this file
-        */
-        let alertArray = new_User.getter_alert() // Get an alert from User class to see if adding user was successful
-        let alert = UIAlertController(title: alertArray[0], message: alertArray[1], preferredStyle: UIAlertControllerStyle.alert)
-
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            self.performSegue(withIdentifier: "to_home", sender: self) // Be directed back to login view controller
+        
+        if (emailField.text! == "" || nameField.text! == "" || passwordField.text! == "") {
+            let invalid_Alert = UIAlertController(title: "Invalid", message: "All Fields Need To Be Filled In", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+            }
+            invalid_Alert.addAction(okAction)
+            self.present(invalid_Alert, animated: true, completion: nil)
+        } else {
+            let new_User = User(email: emailField.text!, password: passwordField.text!, name: nameField.text!) // Creates a new instance of  user
+            do {
+                try new_User.add_User() // Calls the add function on the user
+                let alert = UIAlertController(title: "Success", message: "Please check your email for verification", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                    self.performSegue(withIdentifier: "login", sender: self) // Be directed back to login view controller
+                }
+                
+                // Link to alert controller
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil) // Display alert to the user
+            } catch {
+                let alert = UIAlertController(title: "Error", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                }
+                
+                // Link to alert controller
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil) // Display alert to the user
+            }
         }
-        
-        // Link to alert controller
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil) // Display alert to the user
-        
     }
 }

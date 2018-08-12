@@ -24,14 +24,15 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
         let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        search_bar.addGestureRecognizer(tap)
         placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
         placeholderField?.textColor = UIColor.black
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
         textFieldInsideSearchBar?.textColor = UIColor.black
         search_bar.layer.cornerRadius = 5
         search_bar.setImage(UIImage(named: "search_black"), for: UISearchBarIcon.search, state: .normal)
-        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
+        
         tableView.dataSource = self
         tableView.delegate = self
         search_bar.delegate = self
@@ -41,6 +42,12 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
         tableView.tableHeaderView = search_bar
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the search to resign the first responder status.
+        search_bar.endEditing(true)
     }
     
     @objc func refreshData() {
@@ -141,6 +148,14 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         }, clubChoosen: clubChoosen)
         
         self.refreshData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = ""
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = "Search"
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

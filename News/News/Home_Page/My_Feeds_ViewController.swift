@@ -9,12 +9,14 @@ import UIKit
 import Firebase
 
 class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-
+    @IBOutlet weak var loading_view: UIView!
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var filter_view: UIView!
     @IBOutlet weak var segemented_filters: UISegmentedControl!
     @IBOutlet weak var table_view: UITableView!
     @IBOutlet weak var search_bar: UISearchBar!
+    
     @IBOutlet weak var filter_button: UIButton!
     @IBOutlet weak var filter_label: UILabel!
     
@@ -33,7 +35,14 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     {
         spinner.startAnimating()
         spinner.isHidden = false
+        loading_view.alpha = 1
         super.viewDidLoad()
+        filter_view.layer.cornerRadius = 10
+        filter_view.clipsToBounds = true
+        // Used for dismissing keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        search_bar.addGestureRecognizer(tap)
+        
         filter_button.addTarget(self, action: #selector(My_Feeds_ViewController.filter_pressed(_:)), for: .touchUpInside)
         let textFieldInsideSearchBar = search_bar.value(forKey: "searchField") as? UITextField
         let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
@@ -41,10 +50,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
         placeholderField?.textColor = UIColor.white
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
-        textFieldInsideSearchBar?.textColor = UIColor.white
+        textFieldInsideSearchBar?.textColor = UIColor.black
         search_bar.layer.cornerRadius = 5
         search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
-        textFieldInsideSearchBar?.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        search_bar.delegate = self
         
         table_view.dataSource = self
         table_view.delegate = self
@@ -96,7 +105,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         default:
             break
         }
-        sleep(1)
         filter_view.alpha = 0
     }
     
@@ -110,6 +118,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     {
         spinner.stopAnimating()
         spinner.isHidden = true
+        loading_view.alpha = 0
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! My_Feed_TableViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
@@ -125,6 +134,12 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         
         return cell
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the search to resign the first responder status.
+        search_bar.endEditing(true)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
@@ -147,7 +162,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
                     self.clubHolder.append(club)
                 }
             }
-            
             self.counter2 = self.clubHolder.count
             
             finished()
@@ -183,6 +197,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
                     }
                 }
             }
+            
             self.table_view.reloadData()
         })
     }
@@ -200,7 +215,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
                 break
             case (1):
                 self.filter = "announcement"
-                self.refreshData()
+                //self.refreshData()
                 break
             case (2):
                 self.filter = "both"
@@ -214,7 +229,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             filter_view.alpha = 1
         }
     }
-    // Fix - Thread 1: Fatal error: Can't form Range with upperBound < lowerBound
+    
     func reloadDuration()
     {
         if (feed_data.count == 0) {
@@ -236,6 +251,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         self.refreshData()
     }
     
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = "Search"
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         search_text = search_bar.text!
         if (search_text == "") {
@@ -245,6 +264,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             filter_button.alpha = 0
         }
         self.refreshData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

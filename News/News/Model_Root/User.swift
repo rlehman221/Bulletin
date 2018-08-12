@@ -18,7 +18,7 @@ class User {
     var email: String!
     var password: String!
     var name: String!
-    var alerts: [String] = ["Successfully Signed Up", "Please check your email for a verification link"]
+    var retVal: String!
     var ref: DatabaseReference! // Reference to database
     
    /**
@@ -56,7 +56,7 @@ class User {
     *
     * @return
     */
-    func add_User()
+    func add_User() throws
     {
         Auth.auth().createUser(withEmail: self.email, password: self.password) { (User, Error) in
             if Error != nil {
@@ -65,11 +65,12 @@ class User {
                     
                     switch errCode {
                     case .emailAlreadyInUse:
-                        self.alerts[0] = "Email Exists"
-                        self.alerts[1] = "The email entered is already being used"
+                        self.retVal = "Email Exists"
                     case .invalidEmail:
+                        self.retVal = "Invalid Email"
                         print("invalid email")
                     default:
+                        self.retVal = "Other Error"
                         print("Create User Error: \(Error!)")
                     }
                 }
@@ -82,11 +83,7 @@ class User {
         }
     }
     
-    func getter_alert() -> Array<String>
-    {
-        return self.alerts
-    }
-    
+
    /**
     * Sends the user a verfication email
     *

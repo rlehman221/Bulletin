@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--home_view-->
+        <!--tab_view-->
         <scene sceneID="zac-qc-fzZ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="my_feed" referencedIdentifier="home_view" id="iBu-tu-dQF" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="my_feed" referencedIdentifier="tab_view" id="iBu-tu-dQF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-8g-Rip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2919" y="-269"/>
@@ -90,7 +90,7 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dn-6C-AJN">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,7 +104,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="iBu-tu-dQF" kind="custom" identifier="" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="gau-eB-rq4"/>
+                                                <segue destination="iBu-tu-dQF" kind="custom" identifier="" customClass="UIStoryboardSegueFrom_MenuItem_To_Menu_Left" customModule="News" customModuleProvider="target" id="gau-eB-rq4"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="add_subscribers" id="d3r-WO-A7X">
@@ -121,7 +121,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pq9-uD-rVa" firstAttribute="top" secondItem="8dn-6C-AJN" secondAttribute="bottom" id="FGe-nL-61M"/>
                             <constraint firstItem="8dn-6C-AJN" firstAttribute="leading" secondItem="EAZ-Yd-3cR" secondAttribute="leading" id="HNc-rh-Tbu"/>
@@ -149,9 +149,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zul-fP-wb3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-Kd-QDI">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
                                 </textAttributes>
@@ -163,7 +168,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="back"/>
                                                 <connections>
-                                                    <segue destination="iKO-v1-rpt" kind="custom" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="U8r-Vi-YxH"/>
+                                                    <segue destination="iKO-v1-rpt" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="News" customModuleProvider="target" id="U8r-Vi-YxH"/>
                                                 </connections>
                                             </button>
                                             <userDefinedRuntimeAttributes>
@@ -184,7 +189,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                     <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="1"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
@@ -250,7 +255,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7fG-Kd-QDI" firstAttribute="leading" secondItem="pSX-cf-Q8e" secondAttribute="leading" id="Eee-24-34c"/>
                             <constraint firstItem="JE9-Wa-jvk" firstAttribute="bottom" secondItem="qUV-I9-dmS" secondAttribute="bottom" id="Ghe-NT-Hbx"/>

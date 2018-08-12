@@ -14,7 +14,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -22,9 +22,25 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailField.text = "rlehman221@gmail.com"
-        passwordField.text = "password"
+        // Used for dismissing keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        emailField.text = ""
+        passwordField.text = ""
+        self.emailField.delegate = self as UITextFieldDelegate
+        self.passwordField.delegate = self as UITextFieldDelegate
         signInButton.addTarget(self, action: #selector(self.signIn(_:)), for: .touchUpInside)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+   
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the search to resign the first responder status.
+        view.endEditing(true)
     }
     
    /**

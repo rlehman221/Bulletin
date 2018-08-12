@@ -20,6 +20,7 @@ class Menu2ViewController: UIViewController {
     @IBOutlet weak var feedbackButton: UIButton!
     @IBOutlet weak var events_view: UIView!
     @IBOutlet weak var coming_soon: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     
     var ref: DatabaseReference! // Reference to database
@@ -29,6 +30,8 @@ class Menu2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.startAnimating()
+        spinner.isHidden = false
         getServerInfo {
             do {
                 try self.getUserData()
@@ -38,6 +41,8 @@ class Menu2ViewController: UIViewController {
             
             self.logoutButton.addTarget(self, action: #selector(Menu2ViewController.signOut(_:)), for: .touchUpInside)
             self.feedbackButton.addTarget(self, action: #selector(Menu2ViewController.requestFeedback(_:)), for: .touchUpInside)
+            self.spinner.stopAnimating()
+            self.spinner.isHidden = true
         }
     }
     

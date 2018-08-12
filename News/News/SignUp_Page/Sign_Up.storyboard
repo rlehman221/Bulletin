@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1U-ri-BWy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f1U-ri-BWy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Sign Up View Controller-->
         <scene sceneID="peW-0z-RZc">
@@ -48,7 +43,7 @@
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4YA-05-7Fm" kind="custom" customClass="UIStoryboardSegueFromLeft" customModule="News" customModuleProvider="target" id="u4y-G5-EbU"/>
+                                    <segue destination="4YA-05-7Fm" kind="custom" identifier="login" customClass="UIStoryboardSegueNormalLeft" customModule="News" customModuleProvider="target" id="u4y-G5-EbU"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-h8-415">
@@ -440,20 +435,11 @@
                         <outlet property="emailField" destination="k0i-qL-Jk9" id="2Ez-xT-A1E"/>
                         <outlet property="nameField" destination="ql4-oN-Bnz" id="QQZ-cF-Wdd"/>
                         <outlet property="passwordField" destination="5bz-bn-ni1" id="jsh-8a-pLl"/>
-                        <segue destination="1D1-tf-Bfv" kind="custom" identifier="to_home" customClass="UIStoryboardSegueFromRight" customModule="News" customModuleProvider="target" id="VSY-Hj-ROi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Iz-pV-GIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="215.94202898550725" y="-575.54347826086962"/>
-        </scene>
-        <!--my_feed-->
-        <scene sceneID="RHu-CX-TFL">
-            <objects>
-                <viewControllerPlaceholder storyboardName="my_feed" id="1D1-tf-Bfv" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b8L-wP-AMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="872" y="-684"/>
         </scene>
         <!--Main-->
         <scene sceneID="fD3-12-lQn">

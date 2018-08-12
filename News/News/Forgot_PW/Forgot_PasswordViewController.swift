@@ -13,14 +13,29 @@
 import UIKit
 import Firebase
 
-class Forgot_PasswordViewController: UIViewController {
+class Forgot_PasswordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var email_field: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        self.email_field.delegate = self as UITextFieldDelegate
+
         
         // Do any additional setup after loading the view.
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the search to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +75,13 @@ class Forgot_PasswordViewController: UIViewController {
                     
                 }
             } else {
-                self.performSegue(withIdentifier: "to_home", sender: self) // Be directed back to login view controller
+                let valid_Alert = UIAlertController(title: "Email Successfully Sent", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                    self.performSegue(withIdentifier: "to_home", sender: self) // Be directed back to login view controller
+                }
+                valid_Alert.addAction(okAction)
+                self.present(valid_Alert, animated: true, completion: nil)
             }
         }
     }

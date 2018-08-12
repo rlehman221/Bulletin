@@ -36,11 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         
         FirebaseApp.configure()
+        setRootViewController()
         return true
     }
     
     func setRootViewController() {
         if Auth.auth().currentUser != nil {
+            print("nothing2")
             // Set Your home view controller Here as root View Controller
             let storyboard = UIStoryboard.init(name: "my_feed", bundle: nil)
             
@@ -49,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
+        } else {
+            print("nothing")
         }
     }
     
