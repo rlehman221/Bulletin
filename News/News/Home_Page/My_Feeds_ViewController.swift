@@ -277,6 +277,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         dataToSend?.receivedName = (self.feed_data[selected_Post]["Name"])!
         dataToSend?.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
         dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
+        dataToSend?.senderInfo = 1
     }
     
     override func didReceiveMemoryWarning()

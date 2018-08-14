@@ -4,10 +4,42 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>News-Dev.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>News.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9400398F21238E6E0046B620</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>948674742031216D00EC9D9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>948674882031216D00EC9D9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>948674932031216D00EC9D9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -19,6 +19,7 @@ class Post_PageViewController: UIViewController {
     var receivedPostData = ""
     var receivedSubject = ""
     var receivedDate = ""
+    var senderInfo = 0 // Value to determine which segue to take (0)=all_feed (1)=my_feed
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +34,15 @@ class Post_PageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func back_button_clicked(_ sender: Any) {
+        switch senderInfo {
+            case 0:
+                performSegue(withIdentifier: "all_feed_left", sender: self)
+            case 1:
+                performSegue(withIdentifier: "my_feed_left", sender: self)
+            default: // Used for error checking
+                performSegue(withIdentifier: "all_feed_left", sender: self)
+            }
+    }
 }

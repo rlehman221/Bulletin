@@ -1,4 +1,4 @@
-//
+ //
 //  AppDelegate.swift
 //  News
 //
@@ -25,13 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
                 completionHandler: {_, _ in })
-            // For iOS 10 data message (sent via FCM
-            Messaging.messaging().remoteMessageDelegate = self
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
+        
+        
         
         application.registerForRemoteNotifications()
         

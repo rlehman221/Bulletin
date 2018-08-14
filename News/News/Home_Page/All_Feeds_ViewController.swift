@@ -192,6 +192,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         dataToSend?.receivedName = (self.feed_data[selected_Post]["Name"])!
         dataToSend?.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
         dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
+        dataToSend?.senderInfo = 0
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
