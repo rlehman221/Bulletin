@@ -33,7 +33,6 @@ static NSString *const kGTMSessionHeaderXGoogUploadContentLength    = @"X-Goog-U
 static NSString *const kGTMSessionHeaderXGoogUploadContentType      = @"X-Goog-Upload-Content-Type";
 static NSString *const kGTMSessionHeaderXGoogUploadOffset           = @"X-Goog-Upload-Offset";
 static NSString *const kGTMSessionHeaderXGoogUploadProtocol         = @"X-Goog-Upload-Protocol";
-static NSString *const kGTMSessionXGoogUploadProtocolResumable      = @"resumable";
 static NSString *const kGTMSessionHeaderXGoogUploadSizeReceived     = @"X-Goog-Upload-Size-Received";
 static NSString *const kGTMSessionHeaderXGoogUploadStatus           = @"X-Goog-Upload-Status";
 static NSString *const kGTMSessionHeaderXGoogUploadURL              = @"X-Goog-Upload-URL";
@@ -480,7 +479,7 @@ NSString *const kGTMSessionFetcherUploadLocationObtainedNotification =
                           @"Request and location are mutually exclusive");
   if (!mutableRequest) return;
 
-  [mutableRequest setValue:kGTMSessionXGoogUploadProtocolResumable
+  [mutableRequest setValue:@"resumable"
         forHTTPHeaderField:kGTMSessionHeaderXGoogUploadProtocol];
   [mutableRequest setValue:@"start"
         forHTTPHeaderField:kGTMSessionHeaderXGoogUploadCommand];
@@ -1167,7 +1166,7 @@ NSString *const kGTMSessionFetcherUploadLocationObtainedNotification =
         }
       }
       @synchronized(self) {
-        self->_isCancelInFlight = NO;
+        _isCancelInFlight = NO;
       }
   }];
 }
@@ -1214,7 +1213,7 @@ NSString *const kGTMSessionFetcherUploadLocationObtainedNotification =
 
         // dont allow the updating of fileLength for uploads not using a data provider as they
         // should know the file length before the upload starts.
-        if (self->_uploadDataProvider != nil && uploadFileLength > 0) {
+        if (_uploadDataProvider != nil && uploadFileLength > 0) {
           [self setUploadFileLength:uploadFileLength];
           // Update the command and content-length headers if this is the last chunk to be sent.
           if (offset + chunkSize >= uploadFileLength) {
@@ -1333,17 +1332,11 @@ NSString *const kGTMSessionFetcherUploadLocationObtainedNotification =
   [chunkRequest setHTTPMethod:@"PUT"];
 
   // copy the user-agent from the original connection
-  // n.b. that self.request is nil for upload fetchers created with an existing upload location
-  // URL.
   NSURLRequest *origRequest = self.request;
   NSString *userAgent = [origRequest valueForHTTPHeaderField:@"User-Agent"];
   if (userAgent.length > 0) {
     [chunkRequest setValue:userAgent forHTTPHeaderField:@"User-Agent"];
   }
-
-  [chunkRequest setValue:kGTMSessionXGoogUploadProtocolResumable
-      forHTTPHeaderField:kGTMSessionHeaderXGoogUploadProtocol];
-
   // To avoid timeouts when debugging, copy the timeout of the initial fetcher.
   NSTimeInterval origTimeout = [origRequest timeoutInterval];
   [chunkRequest setTimeoutInterval:origTimeout];
@@ -1643,7 +1636,7 @@ NSString *const kGTMSessionFetcherUploadLocationObtainedNotification =
       // cancel request, check here to ensure that the cancellation handler invocation which fires
       // will definitely be for the real request sent previously.
       @synchronized(self) {
-        if (self->_isCancelInFlight) {
+        if (_isCancelInFlight) {
           return;
         }
       }
