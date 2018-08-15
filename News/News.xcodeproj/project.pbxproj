@@ -36,7 +36,6 @@
 		940039AA21238E6E0046B620 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F81492564848547F61BA851 /* Pods_News.framework */; };
 		940039AC21238E6E0046B620 /* my_feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C782F0206F09A200573BED /* my_feed.storyboard */; };
 		940039AD21238E6E0046B620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948674812031216D00EC9D9F /* LaunchScreen.storyboard */; };
-		940039AE21238E6E0046B620 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F59C0520A3907200E024A2 /* GoogleService-Info.plist */; };
 		940039AF21238E6E0046B620 /* Forgot_PW.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946BABDF20E9132D00EB3AA9 /* Forgot_PW.storyboard */; };
 		940039B021238E6E0046B620 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
 		940039B121238E6E0046B620 /* Sign_Up.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C782F4206F0E6400573BED /* Sign_Up.storyboard */; };
@@ -47,6 +46,8 @@
 		940039B621238E6E0046B620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9486747C2031216D00EC9D9F /* Main.storyboard */; };
 		9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9401D8D420FED0EC00D27E71 /* Settings.storyboard */; };
 		9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */; };
+		943699F92124621D0071C0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 943699F82124621D0071C0E7 /* GoogleService-Info.plist */; };
+		943699FB212464F70071C0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 943699F82124621D0071C0E7 /* GoogleService-Info.plist */; };
 		945331242070534D00545ED4 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
 		94533126207054F200545ED4 /* Post_PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94533125207054F200545ED4 /* Post_PageViewController.swift */; };
 		94633EC921173FFB003C0D59 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94633EC821173FFB003C0D59 /* TabViewController.swift */; };
@@ -67,8 +68,6 @@
 		9478963B2102CDAB00DE4195 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9478963A2102CDAB00DE4195 /* Events.storyboard */; };
 		947DED2120FD7DEF007DAD17 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */; };
 		9480C114212392A0005DC488 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9480C113212392A0005DC488 /* Default-568h@2x.png */; };
-		94863120212396BC0035556A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9486311F212396BC0035556A /* GoogleService-Info.plist */; };
-		94863121212396BC0035556A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9486311F212396BC0035556A /* GoogleService-Info.plist */; };
 		948674792031216D00EC9D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948674782031216D00EC9D9F /* AppDelegate.swift */; };
 		9486747B2031216D00EC9D9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486747A2031216D00EC9D9F /* LoginViewController.swift */; };
 		9486747E2031216D00EC9D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9486747C2031216D00EC9D9F /* Main.storyboard */; };
@@ -82,7 +81,6 @@
 		94C782F5206F0E6400573BED /* Sign_Up.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C782F4206F0E6400573BED /* Sign_Up.storyboard */; };
 		94EF0B3B2032242700F3FFDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B3A2032242700F3FFDC /* User.swift */; };
 		94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */; };
-		94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F59C0520A3907200E024A2 /* GoogleService-Info.plist */; };
 		AD87FD66DB6FCF61138839C1 /* libPods-NewsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9691B3A3468B9F16F7C771C3 /* libPods-NewsUITests.a */; };
 		F8B46F4CF3412EE61E9C9C24 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F81492564848547F61BA851 /* Pods_News.framework */; };
 /* End PBXBuildFile section */
@@ -114,6 +112,7 @@
 		940039BB21238E6E0046B620 /* News-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9401D8D420FED0EC00D27E71 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		943699F82124621D0071C0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		945331232070534D00545ED4 /* Post_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post_Page.storyboard; sourceTree = "<group>"; };
 		94533125207054F200545ED4 /* Post_PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PageViewController.swift; sourceTree = "<group>"; };
 		94633EC821173FFB003C0D59 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -134,8 +133,8 @@
 		9478963A2102CDAB00DE4195 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
 		947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		9480C113212392A0005DC488 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		9486311F212396BC0035556A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		948674752031216D00EC9D9F /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9486311F212396BC0035556A /* GoogleService-Info-Development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Development.plist"; sourceTree = "<group>"; };
+		948674752031216D00EC9D9F /* News1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948674782031216D00EC9D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9486747A2031216D00EC9D9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9486747D2031216D00EC9D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,7 +154,7 @@
 		94C782F4206F0E6400573BED /* Sign_Up.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign_Up.storyboard; sourceTree = "<group>"; };
 		94EF0B3A2032242700F3FFDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94EF0B43203680FF00F3FFDC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		94F59C0520A3907200E024A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94F59C0520A3907200E024A2 /* GoogleService-Info-Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Production.plist"; sourceTree = "<group>"; };
 		9691B3A3468B9F16F7C771C3 /* libPods-NewsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F81492564848547F61BA851 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A227941DEDA096348FC8F596 /* Pods-NewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsUITests/Pods-NewsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +222,15 @@
 			path = "Menu Sections";
 			sourceTree = "<group>";
 		};
+		943699F721245FAD0071C0E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9486311F212396BC0035556A /* GoogleService-Info-Development.plist */,
+				94F59C0520A3907200E024A2 /* GoogleService-Info-Production.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		94533122207052D100545ED4 /* Post_Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,14 +283,13 @@
 				99C59816F90ED908278357A9 /* Pods */,
 				8E7271C63A972010A7FCB129 /* Frameworks */,
 				9400398E21238E3C0046B620 /* News-Dev.plist */,
-				9486311F212396BC0035556A /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		948674762031216D00EC9D9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				948674752031216D00EC9D9F /* News.app */,
+				948674752031216D00EC9D9F /* News1.app */,
 				948674892031216D00EC9D9F /* NewsTests.xctest */,
 				948674942031216D00EC9D9F /* NewsUITests.xctest */,
 				940039BB21238E6E0046B620 /* News-Dev.app */,
@@ -293,6 +300,7 @@
 		948674772031216D00EC9D9F /* News */ = {
 			isa = PBXGroup;
 			children = (
+				943699F721245FAD0071C0E7 /* Resources */,
 				947896392102CD9200DE4195 /* Events */,
 				946BABDC20E912EE00EB3AA9 /* Forgot_PW */,
 				946DF3D720C7586F00570ADE /* Subscription_Page */,
@@ -306,8 +314,8 @@
 				9486747C2031216D00EC9D9F /* Main.storyboard */,
 				9486747F2031216D00EC9D9F /* Assets.xcassets */,
 				948674812031216D00EC9D9F /* LaunchScreen.storyboard */,
-				94F59C0520A3907200E024A2 /* GoogleService-Info.plist */,
 				948674842031216D00EC9D9F /* Info.plist */,
+				943699F82124621D0071C0E7 /* GoogleService-Info.plist */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -406,6 +414,7 @@
 				9400399021238E6E0046B620 /* [CP] Check Pods Manifest.lock */,
 				9400399121238E6E0046B620 /* Sources */,
 				940039A921238E6E0046B620 /* Frameworks */,
+				943699FA212464520071C0E7 /* Copy GoogleService-Info.plist */,
 				940039AB21238E6E0046B620 /* Resources */,
 				940039B721238E6E0046B620 /* [CP] Embed Pods Frameworks */,
 				56B4A0214552BC01C021B620 /* [CP] Copy Pods Resources */,
@@ -426,6 +435,7 @@
 				1FB237F3DF4E7CF78DB1C5CA /* [CP] Check Pods Manifest.lock */,
 				948674712031216D00EC9D9F /* Sources */,
 				948674722031216D00EC9D9F /* Frameworks */,
+				943699F621245F0F0071C0E7 /* Copy GoogleService-Info.plist */,
 				948674732031216D00EC9D9F /* Resources */,
 				3C9246BC3879DC71DB971B5F /* [CP] Embed Pods Frameworks */,
 				15FA09C5675340338E542334 /* [CP] Copy Pods Resources */,
@@ -436,7 +446,7 @@
 			);
 			name = News;
 			productName = News;
-			productReference = 948674752031216D00EC9D9F /* News.app */;
+			productReference = 948674752031216D00EC9D9F /* News1.app */;
 			productType = "com.apple.product-type.application";
 		};
 		948674882031216D00EC9D9F /* NewsTests */ = {
@@ -491,12 +501,12 @@
 				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					9400398F21238E6E0046B620 = {
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					948674742031216D00EC9D9F = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -544,14 +554,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943699FB212464F70071C0E7 /* GoogleService-Info.plist in Resources */,
 				940039AC21238E6E0046B620 /* my_feed.storyboard in Resources */,
 				940039AD21238E6E0046B620 /* LaunchScreen.storyboard in Resources */,
-				940039AE21238E6E0046B620 /* GoogleService-Info.plist in Resources */,
 				940039AF21238E6E0046B620 /* Forgot_PW.storyboard in Resources */,
 				940039B021238E6E0046B620 /* Post_Page.storyboard in Resources */,
 				9480C114212392A0005DC488 /* Default-568h@2x.png in Resources */,
 				940039B121238E6E0046B620 /* Sign_Up.storyboard in Resources */,
-				94863121212396BC0035556A /* GoogleService-Info.plist in Resources */,
 				940039B221238E6E0046B620 /* Subscription_Page.storyboard in Resources */,
 				940039B321238E6E0046B620 /* Events.storyboard in Resources */,
 				940039B421238E6E0046B620 /* Assets.xcassets in Resources */,
@@ -566,14 +575,13 @@
 			files = (
 				94C782F1206F09A200573BED /* my_feed.storyboard in Resources */,
 				948674832031216D00EC9D9F /* LaunchScreen.storyboard in Resources */,
-				94F59C0620A3907200E024A2 /* GoogleService-Info.plist in Resources */,
 				946BABE020E9132D00EB3AA9 /* Forgot_PW.storyboard in Resources */,
 				945331242070534D00545ED4 /* Post_Page.storyboard in Resources */,
 				94C782F5206F0E6400573BED /* Sign_Up.storyboard in Resources */,
 				946DF3E220C7586F00570ADE /* Subscription_Page.storyboard in Resources */,
-				94863120212396BC0035556A /* GoogleService-Info.plist in Resources */,
 				9478963B2102CDAB00DE4195 /* Events.storyboard in Resources */,
 				948674802031216D00EC9D9F /* Assets.xcassets in Resources */,
+				943699F92124621D0071C0E7 /* GoogleService-Info.plist in Resources */,
 				9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */,
 				9486747E2031216D00EC9D9F /* Main.storyboard in Resources */,
 			);
@@ -762,6 +770,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-News-Dev/Pods-News-Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		943699F621245F0F0071C0E7 /* Copy GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy GoogleService-Info.plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SRCROOT}/News/Resources/GoogleService-Info-$CONFFILE.plist\" \"${SRCROOT}/News/GoogleService-Info.plist\"";
+		};
+		943699FA212464520071C0E7 /* Copy GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy GoogleService-Info.plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SRCROOT}/News/Resources/GoogleService-Info-$CONFFILE.plist\" \"${SRCROOT}/News/GoogleService-Info.plist\"";
+		};
 		9FEDF193A1715781CA46BF0C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -931,17 +967,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = News/News.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				CODE_SIGN_STYLE = Manual;
+				CONFFILE = Development;
 				DEVELOPMENT_TEAM = XSKT949M82;
 				INFOPLIST_FILE = "$(SRCROOT)/News-Dev.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDEVELOPMENT";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ubiquity.Bulletin-Dev";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ubiquity.Bulletin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a70c55bd-54f0-4918-a892-c5f25dd631ea";
+				PROVISIONING_PROFILE_SPECIFIER = Bulletin;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -955,16 +992,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = News/News.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				CODE_SIGN_STYLE = Manual;
+				CONFFILE = Development;
 				DEVELOPMENT_TEAM = XSKT949M82;
 				INFOPLIST_FILE = "$(SRCROOT)/News-Dev.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDEVELOPMENT";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ubiquity.Bulletin-Dev";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ubiquity.Bulletin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a70c55bd-54f0-4918-a892-c5f25dd631ea";
+				PROVISIONING_PROFILE_SPECIFIER = Bulletin;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1088,16 +1127,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = News/News.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				CODE_SIGN_STYLE = Manual;
+				CONFFILE = Production;
+				DEVELOPMENT_TEAM = XSKT949M82;
 				INFOPLIST_FILE = News/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ubiquity.Bulletin-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ubiquity.Bulletin;
+				PRODUCT_NAME = Bulletin;
+				PROVISIONING_PROFILE = "84cd45cb-424a-4e5f-8046-4276e51adc43";
+				PROVISIONING_PROFILE_SPECIFIER = Bulletin;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1111,15 +1151,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = News/News.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ryan lehman (XSKT949M82)";
+				CODE_SIGN_STYLE = Manual;
+				CONFFILE = Production;
+				DEVELOPMENT_TEAM = XSKT949M82;
 				INFOPLIST_FILE = News/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ubiquity.Bulletin-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ubiquity.Bulletin;
+				PRODUCT_NAME = Bulletin;
+				PROVISIONING_PROFILE = "84cd45cb-424a-4e5f-8046-4276e51adc43";
+				PROVISIONING_PROFILE_SPECIFIER = Bulletin;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

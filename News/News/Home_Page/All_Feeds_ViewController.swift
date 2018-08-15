@@ -118,16 +118,18 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         spinner.stopAnimating()
         spinner.isHidden = true
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! All_Feed_TableViewCell
-        
+        cell.selectionStyle = .none // Allows the box selected to not have a grey outline
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.club_name.text = self.feed_data[indexPath.item]["Name"]
         cell.Subject.text = self.feed_data[indexPath.item]["Subject"]
         cell.time_duration.text = self.feed_data[indexPath.item]["Duration"]
         cell.image_view.layer.masksToBounds = true
         cell.image_view.layer.cornerRadius = CGFloat(roundf(Float(4)))
-        if (self.feed_data[indexPath.item]["Type"] == "Event"){
+        if (self.feed_data[indexPath.item]["Type"]! == "Event"){
             cell.post_type_label.text = "Event"
             cell.post_type_label.font = UIFont(name: "Arial Rounded MT Bold", size: 18.0) // set fontName and Size
+        } else {
+            cell.post_type_label.text = "Announcement"
         }
        
         cell.backgroundColor = UIColor.white // make cell more visible in our example project

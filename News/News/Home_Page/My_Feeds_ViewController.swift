@@ -39,6 +39,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         filter_view.layer.cornerRadius = 10
         filter_view.clipsToBounds = true
+        
         // Used for dismissing keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         search_bar.addGestureRecognizer(tap)
@@ -114,13 +115,14 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         return self.feed_data.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         spinner.stopAnimating()
         spinner.isHidden = true
         loading_view.alpha = 0
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! My_Feed_TableViewCell
-        
+        cell.selectionStyle = .none // Allows the box selected to not have a grey outline
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.club_name.text = self.feed_data[indexPath.item]["Name"]
         cell.Subject.text = self.feed_data[indexPath.item]["Subject"]
@@ -130,7 +132,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         if (self.feed_data[indexPath.item]["Type"] == "Event"){
             cell.post_type_label.text = "Event"
             cell.post_type_label.font = UIFont(name: "Arial Rounded MT Bold", size: 18.0) // set fontName and Size
+        } else {
+            cell.post_type_label.text = "Announcement"
         }
+        
         cell.backgroundColor = UIColor.white // make cell more visible in our example project
         
         return cell
@@ -215,7 +220,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
                 break
             case (1):
                 self.filter = "announcement"
-                //self.refreshData()
+                self.refreshData()
                 break
             case (2):
                 self.filter = "both"

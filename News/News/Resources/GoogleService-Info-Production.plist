@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>904326467744-5k1b0c1sqmtrkb7efp1ut9b42o0vsej3.apps.googleusercontent.com</string>
+	<string>1074982491922-vgqfhkmctglt1dfrrg8umpjs2rhpn4fe.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.904326467744-5k1b0c1sqmtrkb7efp1ut9b42o0vsej3</string>
+	<string>com.googleusercontent.apps.1074982491922-vgqfhkmctglt1dfrrg8umpjs2rhpn4fe</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBqCFeMiJJRzzsvkn9mReHcMUhNe49-5pY</string>
+	<string>AIzaSyD-KFgHzZNa48fmTE7nCBIYu1Eo_LeL2xw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>904326467744</string>
+	<string>1074982491922</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.Ubiquity.Bulletin-Dev</string>
+	<string>com.Ubiquity.Bulletin</string>
 	<key>PROJECT_ID</key>
-	<string>news-dev-e0188</string>
+	<string>news-749e3</string>
 	<key>STORAGE_BUCKET</key>
-	<string>news-dev-e0188.appspot.com</string>
+	<string>news-749e3.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:904326467744:ios:409419a1995b7eec</string>
+	<string>1:1074982491922:ios:0f7526c7a4146837</string>
 	<key>DATABASE_URL</key>
-	<string>https://news-dev-e0188.firebaseio.com</string>
+	<string>https://news-749e3.firebaseio.com</string>
 </dict>
 </plist>
