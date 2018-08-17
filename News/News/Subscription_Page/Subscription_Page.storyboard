@@ -27,7 +27,7 @@
         <!--Subscription New View Controller-->
         <scene sceneID="zOz-Zs-pAM">
             <objects>
-                <viewController id="iKO-v1-rpt" customClass="SubscriptionNewViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iKO-v1-rpt" customClass="SubscriptionNewViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EAZ-Yd-3cR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="15" y="69" width="345" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eMv-35-SpR" userLabel="cell" customClass="SubscriptionTableViewCell" customModule="News" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eMv-35-SpR" userLabel="cell" customClass="SubscriptionTableViewCell" customModule="Bulletin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="20" width="345" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eMv-35-SpR" id="AyP-Yt-dAr">
@@ -66,7 +66,7 @@
                                             <outlet property="clubName" destination="IkC-qw-Ib0" id="bsN-0N-hQz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nosub_cell" id="eGQ-mm-VGc" userLabel="nosub_cell" customClass="NoSubTableViewCell" customModule="News" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nosub_cell" id="eGQ-mm-VGc" userLabel="nosub_cell" customClass="NoSubTableViewCell" customModule="Bulletin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="345" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eGQ-mm-VGc" id="0T4-Xk-ag3">
@@ -110,7 +110,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="iBu-tu-dQF" kind="custom" identifier="" customClass="UIStoryboardSegueFrom_MenuItem_To_Menu_Left" customModule="News" customModuleProvider="target" id="gau-eB-rq4"/>
+                                                <segue destination="iBu-tu-dQF" kind="custom" identifier="" customClass="UIStoryboardSegueFrom_MenuItem_To_Menu_Left" customModule="Bulletin" customModuleProvider="target" id="gau-eB-rq4"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="add_subscribers" id="d3r-WO-A7X">
@@ -120,19 +120,27 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="0vd-cz-mS0" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="News" customModuleProvider="target" id="XSa-6i-JpJ"/>
+                                                <segue destination="0vd-cz-mS0" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="XSa-6i-JpJ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uO-N4-xeF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.96855324506759644" green="0.96866911649703979" blue="0.96851390600204468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pq9-uD-rVa" firstAttribute="bottom" secondItem="1XP-os-xrq" secondAttribute="bottom" id="2xy-00-gz8"/>
+                            <constraint firstItem="8dn-6C-AJN" firstAttribute="top" secondItem="5uO-N4-xeF" secondAttribute="bottom" id="PTQ-zT-i3D"/>
                             <constraint firstItem="1XP-os-xrq" firstAttribute="trailing" secondItem="pq9-uD-rVa" secondAttribute="trailing" constant="15" id="Q1f-Rg-xpN"/>
                             <constraint firstItem="8dn-6C-AJN" firstAttribute="top" secondItem="1XP-os-xrq" secondAttribute="top" id="Rtp-5V-41r"/>
+                            <constraint firstItem="5uO-N4-xeF" firstAttribute="leading" secondItem="EAZ-Yd-3cR" secondAttribute="leading" id="Sar-5c-Gka"/>
+                            <constraint firstItem="5uO-N4-xeF" firstAttribute="top" secondItem="EAZ-Yd-3cR" secondAttribute="top" id="e31-s0-DjK"/>
                             <constraint firstItem="8dn-6C-AJN" firstAttribute="leading" secondItem="1XP-os-xrq" secondAttribute="leading" id="h7B-x7-ZYh"/>
+                            <constraint firstAttribute="trailing" secondItem="5uO-N4-xeF" secondAttribute="trailing" id="oPa-3F-2Ad"/>
                             <constraint firstItem="pq9-uD-rVa" firstAttribute="leading" secondItem="1XP-os-xrq" secondAttribute="leading" constant="15" id="rVP-cn-kb2"/>
                             <constraint firstItem="pq9-uD-rVa" firstAttribute="top" secondItem="8dn-6C-AJN" secondAttribute="bottom" constant="5" id="tNC-yn-SN8"/>
                             <constraint firstItem="8dn-6C-AJN" firstAttribute="trailing" secondItem="1XP-os-xrq" secondAttribute="trailing" id="z64-pA-liF"/>
@@ -150,7 +158,7 @@
         <!--Add Sub View Controller-->
         <scene sceneID="Vy9-JE-f1e">
             <objects>
-                <viewController id="0vd-cz-mS0" customClass="AddSubViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0vd-cz-mS0" customClass="AddSubViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSX-cf-Q8e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +180,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="back"/>
                                                 <connections>
-                                                    <segue destination="iKO-v1-rpt" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="News" customModuleProvider="target" id="U8r-Vi-YxH"/>
+                                                    <segue destination="iKO-v1-rpt" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="U8r-Vi-YxH"/>
                                                 </connections>
                                             </button>
                                             <userDefinedRuntimeAttributes>
@@ -198,7 +206,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addsub_cell" rowHeight="50" id="aWn-BQ-2lQ" customClass="SubscribeTableViewCell" customModule="News" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addsub_cell" rowHeight="50" id="aWn-BQ-2lQ" customClass="SubscribeTableViewCell" customModule="Bulletin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="345" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aWn-BQ-2lQ" id="Eys-r9-zjB">
@@ -228,7 +236,7 @@
                                             <outlet property="club_name" destination="iqf-ui-LGJ" id="17X-hn-zE4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allsub_cell" rowHeight="50" id="tcE-n4-nC4" customClass="AllSubTableViewCell" customModule="News" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allsub_cell" rowHeight="50" id="tcE-n4-nC4" customClass="AllSubTableViewCell" customModule="Bulletin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="134" width="345" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcE-n4-nC4" id="T0r-0k-FTm">
@@ -253,16 +261,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-6T-QMe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.96855324509999996" green="0.96866911649999998" blue="0.96851390599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7fG-Kd-QDI" firstAttribute="trailing" secondItem="qUV-I9-dmS" secondAttribute="trailing" id="1YE-AF-pj1"/>
+                            <constraint firstAttribute="trailing" secondItem="Wvn-6T-QMe" secondAttribute="trailing" id="Uki-6d-S3t"/>
                             <constraint firstItem="JE9-Wa-jvk" firstAttribute="bottom" secondItem="qUV-I9-dmS" secondAttribute="bottom" id="Wqq-8O-ZMP"/>
+                            <constraint firstItem="7fG-Kd-QDI" firstAttribute="top" secondItem="Wvn-6T-QMe" secondAttribute="bottom" id="bo3-Fa-8z2"/>
+                            <constraint firstItem="Wvn-6T-QMe" firstAttribute="top" secondItem="pSX-cf-Q8e" secondAttribute="top" id="dzc-dP-Y18"/>
                             <constraint firstItem="qUV-I9-dmS" firstAttribute="trailing" secondItem="JE9-Wa-jvk" secondAttribute="trailing" constant="15" id="jDd-ep-Wkd"/>
                             <constraint firstItem="JE9-Wa-jvk" firstAttribute="top" secondItem="7fG-Kd-QDI" secondAttribute="bottom" constant="2" id="m9I-LW-ZqV"/>
                             <constraint firstItem="7fG-Kd-QDI" firstAttribute="leading" secondItem="qUV-I9-dmS" secondAttribute="leading" id="mMW-yG-R05"/>
                             <constraint firstItem="7fG-Kd-QDI" firstAttribute="top" secondItem="qUV-I9-dmS" secondAttribute="top" id="oLh-H2-5ha"/>
                             <constraint firstItem="JE9-Wa-jvk" firstAttribute="leading" secondItem="qUV-I9-dmS" secondAttribute="leading" constant="15" id="sqx-UK-tql"/>
+                            <constraint firstItem="Wvn-6T-QMe" firstAttribute="leading" secondItem="pSX-cf-Q8e" secondAttribute="leading" id="utx-dm-9Pg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qUV-I9-dmS"/>
                     </view>

@@ -18,7 +18,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="9ZS-jM-XhX">
             <objects>
-                <viewController id="35x-2Y-sQ4" customClass="Forgot_PasswordViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="35x-2Y-sQ4" customClass="Forgot_PasswordViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A5o-a0-wMe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-A6-V8N">
-                                <rect key="frame" x="13" y="307" width="26" height="18"/>
+                                <rect key="frame" x="13" y="305" width="26" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="PmZ-lV-xIn"/>
                                     <constraint firstAttribute="height" constant="18" id="Sjh-wO-fra"/>
@@ -74,7 +74,7 @@
                                 </constraints>
                                 <state key="normal" image="back"/>
                                 <connections>
-                                    <segue destination="OXw-X5-Qmv" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="News" customModuleProvider="target" id="PRK-0y-Pnd"/>
+                                    <segue destination="OXw-X5-Qmv" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="PRK-0y-Pnd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqG-7r-kag">
@@ -99,7 +99,7 @@
                             <constraint firstItem="bXW-wT-uqe" firstAttribute="centerX" secondItem="A5o-a0-wMe" secondAttribute="centerX" id="Eg6-1d-YYc"/>
                             <constraint firstItem="KqG-7r-kag" firstAttribute="top" secondItem="lii-08-O9o" secondAttribute="bottom" constant="76" id="FRm-UN-qce"/>
                             <constraint firstItem="HPX-Y7-MRW" firstAttribute="leading" secondItem="4Pb-Og-XOH" secondAttribute="leading" constant="16" id="P4R-C1-Q46"/>
-                            <constraint firstItem="lii-08-O9o" firstAttribute="top" secondItem="ebf-A6-V8N" secondAttribute="bottom" constant="8" id="Sfd-D0-DBh"/>
+                            <constraint firstItem="lii-08-O9o" firstAttribute="top" secondItem="ebf-A6-V8N" secondAttribute="bottom" constant="10" id="Sfd-D0-DBh"/>
                             <constraint firstItem="Qhx-pP-CNn" firstAttribute="top" secondItem="bXW-wT-uqe" secondAttribute="bottom" constant="17" id="Xtd-9n-KKG"/>
                             <constraint firstItem="bXW-wT-uqe" firstAttribute="top" secondItem="r3E-nP-LoU" secondAttribute="bottom" constant="28" id="Y8S-BJ-eI7"/>
                             <constraint firstItem="KqG-7r-kag" firstAttribute="centerX" secondItem="A5o-a0-wMe" secondAttribute="centerX" id="dR3-7j-VCd"/>
@@ -116,7 +116,7 @@
                     </view>
                     <connections>
                         <outlet property="email_field" destination="ADr-Fi-tAM" id="5sY-Gs-CiU"/>
-                        <segue destination="OXw-X5-Qmv" kind="custom" identifier="to_home" customClass="UIStoryboardSegueNormalLeft" customModule="News" customModuleProvider="target" id="fKJ-nC-voj"/>
+                        <segue destination="OXw-X5-Qmv" kind="custom" identifier="to_home" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="fKJ-nC-voj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urX-a0-w7k" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,12 +18,12 @@
         <!--Log In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="login_screen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login_screen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpS-Gn-Inf" customClass="GradientButton" customModule="News" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpS-Gn-Inf" customClass="GradientButton" customModule="Bulletin" customModuleProvider="target">
                                 <rect key="frame" x="112.5" y="405" width="150" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.78823529411764703" blue="0.18431372549019609" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="9xl-HP-bK8">
-                                <rect key="frame" x="13" y="255" width="27" height="17"/>
+                                <rect key="frame" x="13" y="253" width="27" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="DgG-Dj-kkf"/>
                                     <constraint firstAttribute="width" constant="27" id="pEo-a2-NW6"/>
@@ -116,7 +116,7 @@
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LHC-oO-5Cb" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="News" customModuleProvider="target" id="yfR-mP-uDc"/>
+                                    <segue destination="LHC-oO-5Cb" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="yfR-mP-uDc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayg-fh-nr3">
@@ -127,7 +127,7 @@
                                 </constraints>
                                 <state key="normal" image="Forgot password?"/>
                                 <connections>
-                                    <segue destination="Byd-KF-EUF" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="News" customModuleProvider="target" id="lKx-VV-KuF"/>
+                                    <segue destination="Byd-KF-EUF" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="lKx-VV-KuF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" image="Not set up yet?" translatesAutoresizingMaskIntoConstraints="NO" id="HRb-Cl-Waj">
@@ -146,7 +146,7 @@
                             <constraint firstItem="1hG-qv-Oil" firstAttribute="top" secondItem="tFM-pc-rTU" secondAttribute="bottom" constant="8" id="5ii-gT-POg"/>
                             <constraint firstItem="Dwe-eF-7uf" firstAttribute="top" secondItem="sR5-7c-OlH" secondAttribute="bottom" constant="16" id="6Sf-sm-HWG"/>
                             <constraint firstAttribute="trailing" secondItem="sR5-7c-OlH" secondAttribute="trailing" id="7fV-hc-zGa"/>
-                            <constraint firstItem="sR5-7c-OlH" firstAttribute="top" secondItem="9xl-HP-bK8" secondAttribute="bottom" constant="9" id="9bS-gb-cJb"/>
+                            <constraint firstItem="sR5-7c-OlH" firstAttribute="top" secondItem="9xl-HP-bK8" secondAttribute="bottom" constant="11" id="9bS-gb-cJb"/>
                             <constraint firstItem="Dwe-eF-7uf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="A7a-wb-nxC"/>
                             <constraint firstItem="tFM-pc-rTU" firstAttribute="leading" secondItem="Dwe-eF-7uf" secondAttribute="trailing" constant="17" id="EnC-cG-A58"/>
                             <constraint firstItem="c4W-c4-YaB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G0U-Ap-dUy"/>
@@ -174,7 +174,7 @@
                         <outlet property="emailField" destination="AUh-3Y-Sfi" id="Rp6-Te-8vY"/>
                         <outlet property="passwordField" destination="tFM-pc-rTU" id="tAk-vE-Mml"/>
                         <outlet property="signInButton" destination="IpS-Gn-Inf" id="agi-uW-TFy"/>
-                        <segue destination="l9G-9F-gPf" kind="custom" identifier="home_segue" customClass="UIStoryboardSegueFromRight" customModule="News" customModuleProvider="target" animates="NO" id="2D1-kO-jqj"/>
+                        <segue destination="l9G-9F-gPf" kind="custom" identifier="home_segue" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" animates="NO" id="2D1-kO-jqj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
