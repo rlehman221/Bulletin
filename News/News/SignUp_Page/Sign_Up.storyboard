@@ -19,7 +19,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="peW-0z-RZc">
             <objects>
-                <viewController id="f1U-ri-BWy" customClass="SignUpViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f1U-ri-BWy" customClass="SignUpViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Y3-IE-qlh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4YA-05-7Fm" kind="custom" identifier="login" customClass="UIStoryboardSegueNormalLeft" customModule="News" customModuleProvider="target" id="u4y-G5-EbU"/>
+                                    <segue destination="4YA-05-7Fm" kind="custom" identifier="login" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="u4y-G5-EbU"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-h8-415">
@@ -129,7 +129,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="q9c-cV-Uj0">
-                                <rect key="frame" x="18" y="248.5" width="26" height="17"/>
+                                <rect key="frame" x="18" y="246.5" width="26" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="XPs-Dj-2P9"/>
                                     <constraint firstAttribute="height" constant="17" id="tao-b2-S2H"/>
@@ -171,7 +171,7 @@
                             <constraint firstItem="Dl4-XZ-XkQ" firstAttribute="leading" secondItem="66x-Ir-brS" secondAttribute="leading" constant="16" id="vtd-Xq-WXm"/>
                             <constraint firstItem="LGb-TP-oMp" firstAttribute="centerX" secondItem="2Y3-IE-qlh" secondAttribute="centerX" id="xQD-3H-BQR"/>
                             <constraint firstItem="mld-cf-lRu" firstAttribute="leading" secondItem="2Y3-IE-qlh" secondAttribute="leading" id="xkr-dN-bex"/>
-                            <constraint firstItem="mld-cf-lRu" firstAttribute="top" secondItem="q9c-cV-Uj0" secondAttribute="bottom" constant="12" id="yFZ-4v-D3Y"/>
+                            <constraint firstItem="mld-cf-lRu" firstAttribute="top" secondItem="q9c-cV-Uj0" secondAttribute="bottom" constant="14" id="yFZ-4v-D3Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="66x-Ir-brS"/>
                     </view>
