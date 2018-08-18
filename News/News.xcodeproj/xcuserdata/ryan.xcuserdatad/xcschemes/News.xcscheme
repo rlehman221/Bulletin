@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "948674742031216D00EC9D9F"
-               BuildableName = "News.app"
+               BuildableName = "Bulletin.app"
                BlueprintName = "News"
                ReferencedContainer = "container:News.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "948674742031216D00EC9D9F"
-            BuildableName = "News.app"
+            BuildableName = "Bulletin.app"
             BlueprintName = "News"
             ReferencedContainer = "container:News.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "948674742031216D00EC9D9F"
-            BuildableName = "News.app"
+            BuildableName = "Bulletin.app"
             BlueprintName = "News"
             ReferencedContainer = "container:News.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "948674742031216D00EC9D9F"
-            BuildableName = "News.app"
+            BuildableName = "Bulletin.app"
             BlueprintName = "News"
             ReferencedContainer = "container:News.xcodeproj">
          </BuildableReference>

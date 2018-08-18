@@ -134,7 +134,7 @@
 		947DED2020FD7DEF007DAD17 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		9480C113212392A0005DC488 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9486311F212396BC0035556A /* GoogleService-Info-Development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Development.plist"; sourceTree = "<group>"; };
-		948674752031216D00EC9D9F /* News1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		948674752031216D00EC9D9F /* News1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = News1.app; path = Bulletin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948674782031216D00EC9D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9486747A2031216D00EC9D9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9486747D2031216D00EC9D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
