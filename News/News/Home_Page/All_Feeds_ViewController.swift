@@ -14,7 +14,6 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var search_bar: UISearchBar!
     @IBOutlet weak var filter_button: UIButton!
     @IBOutlet weak var segemented_filters: UISegmentedControl!
-    
 
     var feed_data: [[String:String]] = []
     var post_time = ""
@@ -188,13 +187,16 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dataToSend = segue.destination as? Post_PageViewController
-        dataToSend?.receivedPostData = (self.feed_data[selected_Post]["Body"])!
-        dataToSend?.receivedName = (self.feed_data[selected_Post]["Name"])!
-        dataToSend?.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
-        dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
-        dataToSend?.senderInfo = 0
+        let navVC = segue.destination as? UINavigationController
+        let real_dst = navVC?.viewControllers.first as! Post_PageViewController
+
+        real_dst.receivedPostData = (self.feed_data[selected_Post]["Body"])!
+        real_dst.receivedName = (self.feed_data[selected_Post]["Name"])!
+        real_dst.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
+        real_dst.receivedDate = (self.feed_data[selected_Post]["Duration"])!
+        real_dst.senderInfo = 0
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -255,3 +257,4 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
 }
+

@@ -36,6 +36,8 @@ class Post_PageViewController: UIViewController {
     }
     
     @IBAction func back_button_clicked(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+        
         switch senderInfo {
             case 0:
                 performSegue(withIdentifier: "all_feed_left", sender: self)

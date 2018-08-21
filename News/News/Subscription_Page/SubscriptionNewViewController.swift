@@ -26,6 +26,7 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
         tableView.addSubview(refreshControl)
         tableView.delegate = self
         tableView.dataSource = self
+        
         self.refreshData()
 
         // Do any additional setup after loading the view.

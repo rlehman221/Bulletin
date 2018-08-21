@@ -147,8 +147,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         search_bar.endEditing(true)
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selected_Post = indexPath.item
         self.performSegue(withIdentifier: "go_to_post", sender: self)
     }
@@ -277,12 +276,14 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        let dataToSend = segue.destination as? Post_PageViewController
-        dataToSend?.receivedPostData = (self.feed_data[selected_Post]["Body"])!
-        dataToSend?.receivedName = (self.feed_data[selected_Post]["Name"])!
-        dataToSend?.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
-        dataToSend?.receivedDate = (self.feed_data[selected_Post]["Duration"])!
-        dataToSend?.senderInfo = 1
+        let navVC = segue.destination as? UINavigationController
+        let real_dst = navVC?.viewControllers.first as! Post_PageViewController
+        
+        real_dst.receivedPostData = (self.feed_data[selected_Post]["Body"])!
+        real_dst.receivedName = (self.feed_data[selected_Post]["Name"])!
+        real_dst.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
+        real_dst.receivedDate = (self.feed_data[selected_Post]["Duration"])!
+        real_dst.senderInfo = 1
     }
     
     override func didReceiveMemoryWarning()
