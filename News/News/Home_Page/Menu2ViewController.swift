@@ -48,6 +48,7 @@ class Menu2ViewController: UIViewController {
     
     @objc func signOut(_ sender: UIButton!) {
         try! Auth.auth().signOut()
+        navigationController?.popViewController(animated: true)
     }
     
     func getServerInfo (finished: @escaping () -> Void)

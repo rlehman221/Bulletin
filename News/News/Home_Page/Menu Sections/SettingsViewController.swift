@@ -32,7 +32,27 @@ class SettingsViewController: UIViewController {
         usernameAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { [weak usernameAlert] (_) in
             let textField = usernameAlert?.textFields![0] // Force unwrapping because we know it exists.
             print("Text field: \(String(describing: textField?.text))")
-            self.ref.child("Users").child((self.user?.uid)!).child("Name").setValue(textField?.text)
+            do {
+                try self.changeUsername(data: (textField?.text!)!)
+                let confirmationAlert = UIAlertController(title: "Username Successfully Changed", message: "", preferredStyle: .alert)
+                let okConfirmAction = UIAlertAction(title: "Perfect", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                }
+                confirmationAlert.addAction(okConfirmAction)
+                
+                // Error checking to makw sure confirmation alert is presented right
+                if self.presentedViewController == nil {
+                    self.present(confirmationAlert, animated: true, completion: nil)
+                } else{
+                    self.dismiss(animated: false) { () -> Void in
+                        self.present(confirmationAlert, animated: true, completion: nil)
+                    }
+                }
+                
+            } catch {
+                print("Error in changing username")
+            }
+            
         }))
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive) {
@@ -128,10 +148,13 @@ class SettingsViewController: UIViewController {
         self.present(passwordAlert, animated: true, completion: nil)
     }
     
+    // Allows a function to change username with error throwing
+    func changeUsername(data: String) throws {
+        self.ref.child("Users").child((self.user?.uid)!).child("Name").setValue(data)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }

@@ -14,7 +14,9 @@
         <!--tab_view-->
         <scene sceneID="LTW-sz-0B3">
             <objects>
-                <viewControllerPlaceholder storyboardName="my_feed" referencedIdentifier="tab_view" id="yHg-dd-SgQ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="my_feed" referencedIdentifier="tab_view" id="yHg-dd-SgQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f3g-L1-CPW"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mM-K4-RoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71" y="-46"/>
@@ -57,7 +59,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rwa-Ds-Qvw">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rwa-Ds-Qvw">
                                         <rect key="frame" x="0.0" y="260" width="414" height="435"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -119,7 +121,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="back_button_clicked:" destination="0P3-bD-EEt" id="5A5-vl-SOM"/>
+                                                <action selector="button_tapped:" destination="0P3-bD-EEt" id="OMV-F3-v7B"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -146,8 +148,8 @@
                         <outlet property="post_data" destination="Rwa-Ds-Qvw" id="T08-9O-0yk"/>
                         <outlet property="scroll_view" destination="k4s-Mt-Ybn" id="vZj-hk-x4I"/>
                         <outlet property="subject" destination="jdq-VB-FTW" id="CYg-Fv-NMj"/>
-                        <segue destination="yHg-dd-SgQ" kind="custom" identifier="my_feed_left" customClass="UIStoryboardSegueFrom_Post_To_MyFeed_Left" customModule="Bulletin" customModuleProvider="target" id="Fcb-d0-xzz"/>
-                        <segue destination="yHg-dd-SgQ" kind="custom" identifier="all_feed_left" customClass="UIStoryboardSegueFrom_Post_To_AllFeed_Left" customModule="Bulletin" customModuleProvider="target" id="wt3-FS-Q0V"/>
+                        <segue destination="yHg-dd-SgQ" kind="custom" identifier="all_feed_left" customClass="UIStoryboardSegueFrom_Post_To_AllFeed_Left" customModule="Bulletin" customModuleProvider="target" id="qZ5-Eq-aQO"/>
+                        <segue destination="yHg-dd-SgQ" kind="custom" identifier="my_feed_left" customClass="UIStoryboardSegueFrom_Post_To_MyFeed_Left" customModule="Bulletin" customModuleProvider="target" id="7VB-gZ-alR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86E-Oe-KAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,6 +179,6 @@
         <image name="gradient_file" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fcb-d0-xzz"/>
+        <segue reference="7VB-gZ-alR"/>
     </inferredMetricsTieBreakers>
 </document>

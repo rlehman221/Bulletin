@@ -195,7 +195,7 @@
                         <outlet property="segemented_filters" destination="Lro-mn-WYn" id="2Lc-c5-CLf"/>
                         <outlet property="spinner" destination="o2E-yk-luV" id="EEb-0B-vca"/>
                         <outlet property="table_view" destination="hA5-Uc-wbI" id="leI-z7-e3D"/>
-                        <segue destination="VZN-fk-X2o" kind="presentation" identifier="post_page" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="IVQ-Mk-ijx"/>
+                        <segue destination="VZN-fk-X2o" kind="custom" identifier="post_page" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="IVQ-Mk-ijx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbK-4h-ib0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,7 +561,7 @@
                                     <constraint firstAttribute="height" constant="45" id="6oJ-Pa-x0l"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="A90-W7-UGy" kind="custom" customClass="UIStoryboardSegueFromMenu_Right" customModule="Bulletin" customModuleProvider="target" id="AO0-hG-cZt"/>
+                                    <segue destination="A90-W7-UGy" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="AO0-hG-cZt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZW-3P-em8">
@@ -576,7 +576,7 @@
                                     <constraint firstAttribute="height" constant="56" id="nhD-Wp-e7c"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Jrx-hP-B3c" kind="custom" customClass="UIStoryboardSegueFromMenu_Right" customModule="Bulletin" customModuleProvider="target" id="uWO-p2-XlX"/>
+                                    <segue destination="Jrx-hP-B3c" kind="presentation" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="uWO-p2-XlX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFg-Sh-wUi" userLabel="Settings">

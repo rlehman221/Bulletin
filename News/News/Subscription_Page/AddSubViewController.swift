@@ -184,4 +184,8 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
             finished()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.dismiss(animated: false, completion: nil)
+    }
 }

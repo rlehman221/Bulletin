@@ -36,6 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+
    
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {

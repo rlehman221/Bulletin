@@ -35,7 +35,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     {
         spinner.startAnimating()
         spinner.isHidden = false
-        loading_view.alpha = 1
         super.viewDidLoad()
         filter_view.layer.cornerRadius = 10
         filter_view.clipsToBounds = true
@@ -55,7 +54,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         search_bar.layer.cornerRadius = 5
         search_bar.setImage(UIImage(named: "search"), for: UISearchBarIcon.search, state: .normal)
         search_bar.delegate = self
-        
         table_view.dataSource = self
         table_view.delegate = self
         refreshControl = UIRefreshControl()
@@ -76,14 +74,14 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         loadClubs {
             do {
                 try self.load_database()
+                self.reloadDuration()
+                
+                self.table_view.reloadData()
+                self.refreshControl?.endRefreshing()
             } catch {
                 print("My_Feed: Load database error")
             }
         }
-        reloadDuration()
-        
-        self.table_view.reloadData()
-        refreshControl?.endRefreshing()
     }
     
     @objc func segmented_control_changed()
@@ -109,12 +107,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         filter_view.alpha = 0
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.feed_data.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -158,7 +154,8 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         self.clubHolder.removeAll()
         ref = Database.database().reference() // Reference to database
         let uid = Auth.auth().currentUser?.uid
-        ref.child("Users").child(uid!).child("Subscribed").observeSingleEvent(of: .value) { (snapshot) in
+        
+        ref.child("Users").child(uid!).child("Subscribed").observe(.value) { (snapshot) in
             let subClubs = snapshot.value
             let all_clubs = subClubs as? [String: Bool]
             for (club, value) in all_clubs! {
@@ -168,6 +165,10 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             }
             self.counter2 = self.clubHolder.count
             
+            // Allow the "Not Subscribed To Any Clubs" view to appear
+            if (self.counter2 == 0){
+                self.loading_view.alpha = 1
+            }
             finished()
         }
     }
@@ -291,5 +292,8 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        refreshData()
+    }
 }

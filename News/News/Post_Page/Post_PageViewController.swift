@@ -35,16 +35,16 @@ class Post_PageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func back_button_clicked(_ sender: Any) {
+    @IBAction func button_tapped(_ sender: UIStoryboardSegue) {
         self.dismiss(animated: false, completion: nil)
-        
+        print("trying to dismisss")
         switch senderInfo {
-            case 0:
-                performSegue(withIdentifier: "all_feed_left", sender: self)
-            case 1:
-                performSegue(withIdentifier: "my_feed_left", sender: self)
-            default: // Used for error checking
-                performSegue(withIdentifier: "all_feed_left", sender: self)
-            }
+        case 0:
+            performSegue(withIdentifier: "all_feed_left", sender: self)
+        case 1:
+            performSegue(withIdentifier: "my_feed_left", sender: self)
+        default: // Used for error checking
+            performSegue(withIdentifier: "all_feed_left", sender: self)
+        }
     }
 }

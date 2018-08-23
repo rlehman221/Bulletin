@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iKO-v1-rpt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iKO-v1-rpt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--tab_view-->
         <scene sceneID="zac-qc-fzZ">
@@ -110,7 +104,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="iBu-tu-dQF" kind="custom" identifier="" customClass="UIStoryboardSegueFrom_MenuItem_To_Menu_Left" customModule="Bulletin" customModuleProvider="target" id="gau-eB-rq4"/>
+                                                <action selector="return_button_pressed:" destination="iKO-v1-rpt" id="vFc-nv-Mi7"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="add_subscribers" id="d3r-WO-A7X">
@@ -120,7 +114,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="0vd-cz-mS0" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="XSa-6i-JpJ"/>
+                                                <action selector="add_sub_button_pressed:" destination="iKO-v1-rpt" id="ye1-yc-0gp"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -149,6 +143,8 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="pq9-uD-rVa" id="23X-XZ-odm"/>
+                        <segue destination="iBu-tu-dQF" kind="custom" identifier="return" customClass="UIStoryboardSegueFrom_MenuItem_To_Menu_Left" customModule="Bulletin" customModuleProvider="target" id="elg-Wh-lsx"/>
+                        <segue destination="0vd-cz-mS0" kind="custom" identifier="add_Sub_view" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="V85-y5-sfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEG-Be-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,7 +176,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="back"/>
                                                 <connections>
-                                                    <segue destination="iKO-v1-rpt" kind="custom" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="U8r-Vi-YxH"/>
+                                                    <segue destination="iKO-v1-rpt" kind="custom" identifier="add_sub" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="U8r-Vi-YxH"/>
                                                 </connections>
                                             </button>
                                             <userDefinedRuntimeAttributes>

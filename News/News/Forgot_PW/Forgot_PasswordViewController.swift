@@ -78,6 +78,7 @@ class Forgot_PasswordViewController: UIViewController, UITextFieldDelegate {
                 let valid_Alert = UIAlertController(title: "Email Successfully Sent", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
                     UIAlertAction in
+                    self.dismiss(animated: false, completion: nil)
                     self.performSegue(withIdentifier: "to_home", sender: self) // Be directed back to login view controller
                 }
                 valid_Alert.addAction(okAction)

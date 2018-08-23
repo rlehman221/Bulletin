@@ -41,8 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func setRootViewController() {
+        
         if Auth.auth().currentUser != nil {
-            print("nothing2")
             // Set Your home view controller Here as root View Controller
             let storyboard = UIStoryboard.init(name: "my_feed", bundle: nil)
             

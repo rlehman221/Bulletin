@@ -66,6 +66,14 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
         return UISwipeActionsConfiguration(actions: [TrashAction])
     }
     
+    @IBAction func return_button_pressed(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+        performSegue(withIdentifier: "return", sender: self)
+    }
+    
+    @IBAction func add_sub_button_pressed(_ sender: Any) {
+        performSegue(withIdentifier: "add_Sub_view", sender: self)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (self.subList.count == 0) {

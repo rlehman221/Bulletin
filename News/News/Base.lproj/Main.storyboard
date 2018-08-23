@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Log In-->
         <scene sceneID="tne-QT-ifu">
@@ -174,7 +169,7 @@
                         <outlet property="emailField" destination="AUh-3Y-Sfi" id="Rp6-Te-8vY"/>
                         <outlet property="passwordField" destination="tFM-pc-rTU" id="tAk-vE-Mml"/>
                         <outlet property="signInButton" destination="IpS-Gn-Inf" id="agi-uW-TFy"/>
-                        <segue destination="l9G-9F-gPf" kind="custom" identifier="home_segue" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" animates="NO" id="2D1-kO-jqj"/>
+                        <segue destination="l9G-9F-gPf" kind="showDetail" identifier="home_segue" animates="NO" id="2D1-kO-jqj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -200,7 +195,9 @@
         <!--my_feed-->
         <scene sceneID="0P4-VX-yph">
             <objects>
-                <viewControllerPlaceholder storyboardName="my_feed" id="l9G-9F-gPf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="my_feed" id="l9G-9F-gPf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zVT-If-d7Z"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yx-ja-Cow" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2304" y="-918.44077961019502"/>

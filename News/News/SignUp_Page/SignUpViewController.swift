@@ -103,6 +103,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 let alert = UIAlertController(title: "Success", message: "Please check your email for verification", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
                     UIAlertAction in
+                    self.dismiss(animated: false, completion: nil)
                     self.performSegue(withIdentifier: "login", sender: self) // Be directed back to login view controller
                 }
                 
