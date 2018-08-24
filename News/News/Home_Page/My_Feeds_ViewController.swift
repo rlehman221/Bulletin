@@ -38,7 +38,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         filter_view.layer.cornerRadius = 10
         filter_view.clipsToBounds = true
-        
+
         // Used for dismissing keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         search_bar.addGestureRecognizer(tap)

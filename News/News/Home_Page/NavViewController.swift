@@ -12,6 +12,7 @@ class NavViewController: UINavigationController {
     // This is just a dummy file to allow logins to be traced here
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 

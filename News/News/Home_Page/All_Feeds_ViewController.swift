@@ -8,6 +8,10 @@
 import UIKit
 import Firebase
 
+struct MyVariables {
+    static var yourVariable = "0"
+}
+
 class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
     @IBOutlet weak var table_view: UITableView!
@@ -25,16 +29,17 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     var refreshControl: UIRefreshControl!
     var counter = 0
     @IBOutlet weak var filter_view: UIView!
-    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         spinner.startAnimating()
         spinner.isHidden = false
-    
-        super.viewDidLoad()
+        
         filter_view.layer.cornerRadius = 10
         filter_view.clipsToBounds = true
-
         // Used for dismissing keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         search_bar.addGestureRecognizer(tap)
@@ -81,6 +86,17 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.table_view.reloadData()
         refreshControl?.endRefreshing()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("My Varaible is")
+        print(MyVariables.yourVariable)
+        if (MyVariables.yourVariable == "1") {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.setRootViewController()
+            MyVariables.yourVariable = "0"
+        }
+        
     }
     
     @objc func segmented_control_changed()
@@ -189,14 +205,17 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC = segue.destination as? UINavigationController
-        let real_dst = navVC?.viewControllers.first as! Post_PageViewController
-
-        real_dst.receivedPostData = (self.feed_data[selected_Post]["Body"])!
-        real_dst.receivedName = (self.feed_data[selected_Post]["Name"])!
-        real_dst.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
-        real_dst.receivedDate = (self.feed_data[selected_Post]["Duration"])!
-        real_dst.senderInfo = 0
+        if (segue.identifier != "back_to_it") {
+            let navVC = segue.destination as? UINavigationController
+            let real_dst = navVC?.viewControllers.first as! Post_PageViewController
+            
+            real_dst.receivedPostData = (self.feed_data[selected_Post]["Body"])!
+            real_dst.receivedName = (self.feed_data[selected_Post]["Name"])!
+            real_dst.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
+            real_dst.receivedDate = (self.feed_data[selected_Post]["Duration"])!
+            real_dst.senderInfo = 0
+        }
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

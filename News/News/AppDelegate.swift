@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let storyboard = UIStoryboard.init(name: "my_feed", bundle: nil)
             
             // controller identifier sets up in storyboard utilities
-            let viewController = storyboard.instantiateViewController(withIdentifier: "home_view") as! NavViewController
+            let viewController = storyboard.instantiateViewController(withIdentifier: "tab_view") as! TabViewController
             
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()

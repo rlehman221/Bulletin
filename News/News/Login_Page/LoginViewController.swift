@@ -22,6 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(MyVariables.yourVariable)
         // Used for dismissing keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -79,6 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             self.present(not_verif_Alert, animated: true, completion: nil)
                             
                         } else {
+                            MyVariables.yourVariable = "1"
                             self.performSegue(withIdentifier: "home_segue", sender: self)
                         }
                     } else {

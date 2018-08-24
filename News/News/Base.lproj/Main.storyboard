@@ -169,7 +169,7 @@
                         <outlet property="emailField" destination="AUh-3Y-Sfi" id="Rp6-Te-8vY"/>
                         <outlet property="passwordField" destination="tFM-pc-rTU" id="tAk-vE-Mml"/>
                         <outlet property="signInButton" destination="IpS-Gn-Inf" id="agi-uW-TFy"/>
-                        <segue destination="l9G-9F-gPf" kind="showDetail" identifier="home_segue" animates="NO" id="2D1-kO-jqj"/>
+                        <segue destination="l9G-9F-gPf" kind="custom" identifier="home_segue" customClass="UIStoryboardSegueNormalRight" customModule="Bulletin" customModuleProvider="target" animates="NO" id="2D1-kO-jqj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -192,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="2303.1999999999998" y="-503.74812593703155"/>
         </scene>
-        <!--my_feed-->
+        <!--all_feed_view-->
         <scene sceneID="0P4-VX-yph">
             <objects>
-                <viewControllerPlaceholder storyboardName="my_feed" id="l9G-9F-gPf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="my_feed" referencedIdentifier="all_feed_view" id="l9G-9F-gPf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zVT-If-d7Z"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yx-ja-Cow" userLabel="First Responder" sceneMemberID="firstResponder"/>

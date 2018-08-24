@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAd-l9-2I1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FIm-ZN-k6z">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
         <!--All Feed-->
         <scene sceneID="v8W-L0-emA">
             <objects>
-                <viewController storyboardIdentifier="new" id="XT4-P2-7qN" customClass="All_Feeds_ViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="all_feed_view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XT4-P2-7qN" customClass="All_Feeds_ViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XLj-gU-Fkx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,7 +195,8 @@
                         <outlet property="segemented_filters" destination="Lro-mn-WYn" id="2Lc-c5-CLf"/>
                         <outlet property="spinner" destination="o2E-yk-luV" id="EEb-0B-vca"/>
                         <outlet property="table_view" destination="hA5-Uc-wbI" id="leI-z7-e3D"/>
-                        <segue destination="VZN-fk-X2o" kind="custom" identifier="post_page" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="IVQ-Mk-ijx"/>
+                        <segue destination="VZN-fk-X2o" kind="showDetail" identifier="post_page" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="IVQ-Mk-ijx"/>
+                        <segue destination="FIm-ZN-k6z" kind="show" identifier="back_to_it" id="vW7-pU-6hH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbK-4h-ib0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -576,7 +577,7 @@
                                     <constraint firstAttribute="height" constant="56" id="nhD-Wp-e7c"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Jrx-hP-B3c" kind="presentation" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="uWO-p2-XlX"/>
+                                    <segue destination="Jrx-hP-B3c" kind="custom" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="uWO-p2-XlX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFg-Sh-wUi" userLabel="Settings">
@@ -768,21 +769,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4B7-cs-7yO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2841" y="539"/>
-        </scene>
-        <!--Nav View Controller-->
-        <scene sceneID="tD8-Zd-wSl">
-            <objects>
-                <navigationController storyboardIdentifier="home_view" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="NAd-l9-2I1" customClass="NavViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YpX-Mc-EBC">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FIm-ZN-k6z" kind="relationship" relationship="rootViewController" id="WeB-eQ-bdG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7lv-eC-Fws" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-530" y="468"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="xvl-fT-01w">
