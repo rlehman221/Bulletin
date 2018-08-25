@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iKO-v1-rpt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iKO-v1-rpt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+            <string>AppleSDGothicNeo-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--tab_view-->
         <scene sceneID="zac-qc-fzZ">
@@ -67,14 +73,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVt-uj-Ikf" userLabel="nosub_label">
-                                                    <rect key="frame" x="152" y="15" width="41" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SVt-uj-Ikf" userLabel="nosub_label">
+                                                    <rect key="frame" x="0.0" y="15" width="345" height="20"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="SVt-uj-Ikf" secondAttribute="trailing" id="6lp-rZ-Oph"/>
+                                                <constraint firstItem="SVt-uj-Ikf" firstAttribute="leading" secondItem="0T4-Xk-ag3" secondAttribute="leading" id="BU9-8p-drv"/>
                                                 <constraint firstItem="SVt-uj-Ikf" firstAttribute="centerX" secondItem="0T4-Xk-ag3" secondAttribute="centerX" id="qJU-kf-zEr"/>
                                                 <constraint firstItem="SVt-uj-Ikf" firstAttribute="centerY" secondItem="0T4-Xk-ag3" secondAttribute="centerY" id="uzc-C9-ChL"/>
                                             </constraints>
@@ -170,20 +178,15 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Add Subscriptions" id="5Ng-Ez-wcE">
-                                        <barButtonItem key="leftBarButtonItem" image="back" id="GJJ-C2-0s4">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JYb-7T-ZHw">
-                                                <rect key="frame" x="16" y="9" width="18" height="26"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="back"/>
-                                                <connections>
-                                                    <segue destination="iKO-v1-rpt" kind="custom" identifier="add_sub" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="U8r-Vi-YxH"/>
-                                                </connections>
-                                            </button>
+                                        <barButtonItem key="leftBarButtonItem" image="back" id="WbU-gt-1o8">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                    <color key="value" red="0.93914578045685271" green="0.66306713540381512" blue="0.25948651191355709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.98961764574050903" green="0.71065253019332886" blue="0.19250932335853577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="iKO-v1-rpt" kind="custom" identifier="add_sub" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="aFV-g9-R4Y"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -240,15 +243,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="allsub_label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gus-gd-ogb">
-                                                    <rect key="frame" x="129" y="15.5" width="87" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="14.5" width="345" height="21"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gus-gd-ogb" firstAttribute="leading" secondItem="T0r-0k-FTm" secondAttribute="leading" id="8EL-77-GWG"/>
                                                 <constraint firstItem="gus-gd-ogb" firstAttribute="centerX" secondItem="T0r-0k-FTm" secondAttribute="centerX" id="KJo-GL-cLD"/>
                                                 <constraint firstItem="gus-gd-ogb" firstAttribute="centerY" secondItem="T0r-0k-FTm" secondAttribute="centerY" id="Lji-LA-4Iu"/>
+                                                <constraint firstAttribute="trailing" secondItem="gus-gd-ogb" secondAttribute="trailing" id="de3-jC-XGU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -40,6 +40,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         
         filter_view.layer.cornerRadius = 10
         filter_view.clipsToBounds = true
+        setWidthToSegmentControl(view: filter_view)
         // Used for dismissing keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         search_bar.addGestureRecognizer(tap)
@@ -49,7 +50,7 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
         segemented_filters.addTarget(self, action: #selector(segmented_control_changed), for: .valueChanged)
 
         placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
-        placeholderField?.textColor = UIColor.white
+        textFieldInsideSearchBar!.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
         textFieldInsideSearchBar?.textColor = UIColor.black
         search_bar.layer.cornerRadius = 5
@@ -268,6 +269,20 @@ class All_Feeds_ViewController: UIViewController, UITableViewDelegate, UITableVi
 
         } else {
             filter_view.alpha = 1
+        }
+    }
+    
+    func setWidthToSegmentControl(view: UIView) {
+        let subviews = view.subviews
+        for subview in subviews {
+            if subview is UILabel {
+                let label: UILabel? = (subview as? UILabel)
+                label?.adjustsFontSizeToFitWidth = true
+                label?.minimumScaleFactor = 0.1
+            }
+            else {
+                setWidthToSegmentControl(view: subview)
+            }
         }
     }
     
