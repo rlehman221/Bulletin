@@ -56,14 +56,18 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // Write action code for the trash
-        let TrashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("delete")
-            self.unsubscribe(index: indexPath.section)
-            success(true)
-        })
-        TrashAction.backgroundColor = .red
-        
-        return UISwipeActionsConfiguration(actions: [TrashAction])
+        if self.subList.count != 0 {
+            let TrashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("delete")
+                self.unsubscribe(index: indexPath.section)
+                success(true)
+            })
+            TrashAction.backgroundColor = .red
+            return UISwipeActionsConfiguration(actions: [TrashAction])
+        }
+        else {
+            return nil
+        }
     }
     
     @IBAction func return_button_pressed(_ sender: Any) {

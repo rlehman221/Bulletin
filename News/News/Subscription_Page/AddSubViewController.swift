@@ -27,7 +27,7 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         search_bar.addGestureRecognizer(tap)
         placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
-        placeholderField?.textColor = UIColor.black
+        textFieldInsideSearchBar!.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
         textFieldInsideSearchBar?.textColor = UIColor.black
         search_bar.layer.cornerRadius = 5

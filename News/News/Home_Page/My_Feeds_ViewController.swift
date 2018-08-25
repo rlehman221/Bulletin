@@ -18,7 +18,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var search_bar: UISearchBar!
     
     @IBOutlet weak var filter_button: UIButton!
-    @IBOutlet weak var filter_label: UILabel!
     
     var feed_data: [[String:String]] = []
     var clubHolder = [String]()
@@ -38,6 +37,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         filter_view.layer.cornerRadius = 10
         filter_view.clipsToBounds = true
+        setWidthToSegmentControl(view: filter_view)
 
         // Used for dismissing keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -48,7 +48,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         let placeholderField = search_bar.value(forKey: "placeholder") as? UITextField
         segemented_filters.addTarget(self, action: #selector(segmented_control_changed), for: .valueChanged)
         placeholderField?.font = UIFont(name: "Apple SD Gothic Neo", size: (placeholderField?.font?.pointSize)!)
-        placeholderField?.textColor = UIColor.white
+        textFieldInsideSearchBar!.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         textFieldInsideSearchBar?.font = UIFont(name: "Apple SD Gothic Neo", size: (textFieldInsideSearchBar?.font?.pointSize)!)
         textFieldInsideSearchBar?.textColor = UIColor.black
         search_bar.layer.cornerRadius = 5
@@ -285,6 +285,20 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         real_dst.receivedSubject = (self.feed_data[selected_Post]["Subject"])!
         real_dst.receivedDate = (self.feed_data[selected_Post]["Duration"])!
         real_dst.senderInfo = 1
+    }
+    
+    func setWidthToSegmentControl(view: UIView) {
+        let subviews = view.subviews
+        for subview in subviews {
+            if subview is UILabel {
+                let label: UILabel? = (subview as? UILabel)
+                label?.adjustsFontSizeToFitWidth = true
+                label?.minimumScaleFactor = 0.1
+            }
+            else {
+                setWidthToSegmentControl(view: subview)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning()
