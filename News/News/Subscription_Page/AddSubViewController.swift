@@ -140,7 +140,7 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         let topicString = clubChoosen.replacingOccurrences(of: " ", with: "")
-        
+        print(topicString)
         Messaging.messaging().subscribe(toTopic: topicString)
         
         updateClub(finished: {

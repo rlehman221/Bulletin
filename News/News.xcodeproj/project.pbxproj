@@ -46,6 +46,8 @@
 		940039B621238E6E0046B620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9486747C2031216D00EC9D9F /* Main.storyboard */; };
 		9401D8D520FED0EC00D27E71 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9401D8D420FED0EC00D27E71 /* Settings.storyboard */; };
 		9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */; };
+		940A9C6021318828008DCBC9 /* SettingsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A9C5F21318828008DCBC9 /* SettingsNavViewController.swift */; };
+		940A9C6221318901008DCBC9 /* SubNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A9C6121318901008DCBC9 /* SubNavViewController.swift */; };
 		943699F92124621D0071C0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 943699F82124621D0071C0E7 /* GoogleService-Info.plist */; };
 		943699FB212464F70071C0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 943699F82124621D0071C0E7 /* GoogleService-Info.plist */; };
 		945331242070534D00545ED4 /* Post_Page.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945331232070534D00545ED4 /* Post_Page.storyboard */; };
@@ -113,6 +115,8 @@
 		940039BB21238E6E0046B620 /* News-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9401D8D420FED0EC00D27E71 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		940A9C5F21318828008DCBC9 /* SettingsNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavViewController.swift; sourceTree = "<group>"; };
+		940A9C6121318901008DCBC9 /* SubNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubNavViewController.swift; sourceTree = "<group>"; };
 		943699F82124621D0071C0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		945331232070534D00545ED4 /* Post_Page.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post_Page.storyboard; sourceTree = "<group>"; };
 		94533125207054F200545ED4 /* Post_PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_PageViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			children = (
 				9401D8D420FED0EC00D27E71 /* Settings.storyboard */,
 				9401D8D620FED0FF00D27E71 /* SettingsViewController.swift */,
+				940A9C5F21318828008DCBC9 /* SettingsNavViewController.swift */,
 			);
 			path = "Menu Sections";
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				946DF3DC20C7586F00570ADE /* AllSubTableViewCell.swift */,
 				946DF3DE20C7586F00570ADE /* SubscribeTableViewCell.swift */,
 				94A8F7D520F28B1D007B95DD /* SubscriptionNewViewController.swift */,
+				940A9C6121318901008DCBC9 /* SubNavViewController.swift */,
 			);
 			path = Subscription_Page;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 				946DF3E320C7586F00570ADE /* SubscriptionTableViewCell.swift in Sources */,
 				946BABEE20EAD3DC00EB3AA9 /* My_Feed_TableViewCell.swift in Sources */,
 				946DF3E420C7586F00570ADE /* AllSubTableViewCell.swift in Sources */,
+				940A9C6221318901008DCBC9 /* SubNavViewController.swift in Sources */,
 				946BABEC20EAD3AF00EB3AA9 /* My_Feeds_ViewController.swift in Sources */,
 				94633EC921173FFB003C0D59 /* TabViewController.swift in Sources */,
 				94EF0B44203680FF00F3FFDC /* SignUpViewController.swift in Sources */,
@@ -901,6 +908,7 @@
 				946D6301211D1F2B008CD197 /* NavViewController.swift in Sources */,
 				9401D8D720FED0FF00D27E71 /* SettingsViewController.swift in Sources */,
 				946BABEA20E9791C00EB3AA9 /* All_Feeds_ViewController.swift in Sources */,
+				940A9C6021318828008DCBC9 /* SettingsNavViewController.swift in Sources */,
 				94A8F7D620F28B1D007B95DD /* SubscriptionNewViewController.swift in Sources */,
 				9486747B2031216D00EC9D9F /* LoginViewController.swift in Sources */,
 				94A8F7D420F2762D007B95DD /* custom_transitions.swift in Sources */,

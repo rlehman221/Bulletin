@@ -153,6 +153,10 @@ class SettingsViewController: UIViewController {
         self.ref.child("Users").child((self.user?.uid)!).child("Name").setValue(data)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

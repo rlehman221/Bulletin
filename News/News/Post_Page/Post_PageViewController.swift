@@ -37,7 +37,7 @@ class Post_PageViewController: UIViewController {
     
     @IBAction func button_tapped(_ sender: UIStoryboardSegue) {
         self.dismiss(animated: false, completion: nil)
-        print("trying to dismisss")
+
         switch senderInfo {
         case 0:
             performSegue(withIdentifier: "all_feed_left", sender: self)

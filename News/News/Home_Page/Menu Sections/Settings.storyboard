@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="11N-2L-I3G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SvV-4E-8su">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Thin</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--tab_view-->
         <scene sceneID="x9f-fS-h6V">
@@ -22,6 +17,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaM-gb-d9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-317" y="-193"/>
+        </scene>
+        <!--Settings Nav View Controller-->
+        <scene sceneID="HZO-3X-DbX">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="SvV-4E-8su" customClass="SettingsNavViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JuB-hj-Msj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="11N-2L-I3G" kind="relationship" relationship="rootViewController" id="Lpt-pb-S4R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8t-iV-bWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-955" y="64"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Fx7-gO-3IQ">
@@ -125,6 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5h3-ca-v85"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KXs-BN-Ax0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkl-lr-gVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

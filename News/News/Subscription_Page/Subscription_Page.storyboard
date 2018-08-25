@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iKO-v1-rpt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ii3-pr-EZc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-SemiBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--tab_view-->
         <scene sceneID="zac-qc-fzZ">
@@ -23,6 +17,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-8g-Rip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2919" y="-269"/>
+        </scene>
+        <!--Sub Nav View Controller-->
+        <scene sceneID="xzO-Ol-N2Q">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Ii3-pr-EZc" customClass="SubNavViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8u1-QR-qJM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iKO-v1-rpt" kind="relationship" relationship="rootViewController" id="Zyk-nc-lmy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuA-on-md7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3465" y="-91"/>
         </scene>
         <!--Subscription New View Controller-->
         <scene sceneID="zOz-Zs-pAM">
@@ -149,10 +158,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1XP-os-xrq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nUx-Ke-V8X"/>
                     <connections>
                         <outlet property="tableView" destination="pq9-uD-rVa" id="23X-XZ-odm"/>
                         <segue destination="iBu-tu-dQF" kind="custom" identifier="return" customClass="UIStoryboardSegueFrom_MenuItem_To_Menu_Left" customModule="Bulletin" customModuleProvider="target" id="elg-Wh-lsx"/>
-                        <segue destination="0vd-cz-mS0" kind="custom" identifier="add_Sub_view" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="V85-y5-sfY"/>
+                        <segue destination="0vd-cz-mS0" kind="custom" identifier="add_Sub_view" customClass="UIStoryboardSegueNormalRight" customModule="Bulletin" customModuleProvider="target" id="V85-y5-sfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEG-Be-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +195,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="iKO-v1-rpt" kind="custom" identifier="add_sub" customClass="UIStoryboardSegueFromRight" customModule="Bulletin" customModuleProvider="target" id="aFV-g9-R4Y"/>
+                                                <segue destination="iKO-v1-rpt" kind="custom" identifier="add_sub" customClass="UIStoryboardSegueNormalLeft" customModule="Bulletin" customModuleProvider="target" id="aFV-g9-R4Y"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -298,4 +308,7 @@
         <image name="back" width="18" height="26"/>
         <image name="subscriber_background" width="335" height="45"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aFV-g9-R4Y"/>
+    </inferredMetricsTieBreakers>
 </document>

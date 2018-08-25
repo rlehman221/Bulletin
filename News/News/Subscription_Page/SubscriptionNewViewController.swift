@@ -161,4 +161,8 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
             finished()
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        self.dismiss(animated: false, completion: nil)
+//    }
 }
