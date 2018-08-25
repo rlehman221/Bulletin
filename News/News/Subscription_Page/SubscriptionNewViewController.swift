@@ -55,10 +55,10 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        // Write action code for the trash
+ 
         if self.subList.count != 0 {
             let TrashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("delete")
+
                 self.unsubscribe(index: indexPath.section)
                 success(true)
             })
@@ -66,7 +66,8 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
             return UISwipeActionsConfiguration(actions: [TrashAction])
         }
         else {
-            return nil
+            let swipeAction = UISwipeActionsConfiguration(actions: [])
+            return swipeAction
         }
     }
     
@@ -108,7 +109,6 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
             }
             self.tableView.reloadData()
         })
-        print(self.subList)
     }
     
     // Set the spacing between sections
@@ -161,8 +161,5 @@ class SubscriptionNewViewController: UIViewController, UITableViewDataSource, UI
             finished()
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        self.dismiss(animated: false, completion: nil)
-//    }
+
 }

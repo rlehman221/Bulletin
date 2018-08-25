@@ -86,14 +86,21 @@ class AddSubViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // Write action code for the trash
-        let TrashAction = UIContextualAction(style: .normal, title:  "Add", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("add")
-            self.subscribe(index: indexPath.section)
-            success(true)
-        })
-        TrashAction.backgroundColor = UIColor.init(red: 0, green: 0.7, blue: 0, alpha: 1)
-        
-        return UISwipeActionsConfiguration(actions: [TrashAction])
+        if self.subList.count != 0 {
+            let TrashAction = UIContextualAction(style: .normal, title:  "Add", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("add")
+                self.subscribe(index: indexPath.section)
+                success(true)
+            })
+            
+            TrashAction.backgroundColor = UIColor.init(red: 0, green: 0.7, blue: 0, alpha: 1)
+            
+            return UISwipeActionsConfiguration(actions: [TrashAction])
+        }
+        else {
+            let swipeAction = UISwipeActionsConfiguration(actions: [])
+            return swipeAction
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
