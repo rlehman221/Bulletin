@@ -90,6 +90,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     {
         
         if (emailField.text! == "" || nameField.text! == "" || passwordField.text! == "") {
+            let lastChar = emailField.text!.suffix(8)
+            print(lastChar)
             let invalid_Alert = UIAlertController(title: "Invalid", message: "All Fields Need To Be Filled In", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
                 UIAlertAction in
@@ -97,6 +99,28 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             invalid_Alert.addAction(okAction)
             self.present(invalid_Alert, animated: true, completion: nil)
         } else {
+            if (emailField.text!.count > 8){
+                let emailChecker = emailField.text!.suffix(8)
+                
+                if (emailChecker != "@rpi.edu"){
+                    let invalid_Alert = UIAlertController(title: "Invalid Email", message: "An RPI Email Is Needed", preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                        UIAlertAction in
+                        return 
+                    }
+                    invalid_Alert.addAction(okAction)
+                    self.present(invalid_Alert, animated: true, completion: nil)
+                }
+            } else {
+                let invalid_Alert = UIAlertController(title: "Invalid Email", message: "Email Is Invalid", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                }
+                invalid_Alert.addAction(okAction)
+                self.present(invalid_Alert, animated: true, completion: nil)
+            }
+            
+            
             let new_User = User(email: emailField.text!, password: passwordField.text!, name: nameField.text!) // Creates a new instance of  user
             do {
                 try new_User.add_User() // Calls the add function on the user
