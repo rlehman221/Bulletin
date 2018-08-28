@@ -52,7 +52,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Event" id="mlg-It-Qwk">
-                                        <barButtonItem key="leftBarButtonItem" image="back" id="OLu-oo-96p">
+                                        <barButtonItem key="leftBarButtonItem" image="back" width="10" id="OLu-oo-96p">
                                             <color key="tintColor" red="0.91886532310000002" green="0.64919948579999998" blue="0.24635136129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -159,7 +159,7 @@
                             <constraint firstItem="StR-XH-5bi" firstAttribute="trailing" secondItem="Vat-jn-ZgS" secondAttribute="trailing" id="ar0-je-Gxb"/>
                             <constraint firstItem="G1b-ya-J1v" firstAttribute="leading" secondItem="ls0-fe-mPF" secondAttribute="leading" id="bW4-eA-99U"/>
                             <constraint firstItem="StR-XH-5bi" firstAttribute="leading" secondItem="Vat-jn-ZgS" secondAttribute="leading" id="j8r-uH-uTQ"/>
-                            <constraint firstItem="StR-XH-5bi" firstAttribute="top" secondItem="ls0-fe-mPF" secondAttribute="top" constant="20" id="jNu-Ud-r7h"/>
+                            <constraint firstItem="StR-XH-5bi" firstAttribute="top" secondItem="Vat-jn-ZgS" secondAttribute="top" id="jNu-Ud-r7h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vat-jn-ZgS"/>
                     </view>

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ii3-pr-EZc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ii3-pr-EZc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+            <string>AppleSDGothicNeo-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--tab_view-->
         <scene sceneID="zac-qc-fzZ">
@@ -114,7 +120,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Subscriptions" id="pW7-yb-9JL">
-                                        <barButtonItem key="leftBarButtonItem" image="back" id="BlB-hk-DDh">
+                                        <barButtonItem key="leftBarButtonItem" image="back" width="10" id="BlB-hk-DDh">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                                     <color key="value" red="0.97254901959999995" green="0.78823529410000004" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,7 +130,7 @@
                                                 <action selector="return_button_pressed:" destination="iKO-v1-rpt" id="vFc-nv-Mi7"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="add_subscribers" id="d3r-WO-A7X">
+                                        <barButtonItem key="rightBarButtonItem" image="add_subscribers" width="10" id="d3r-WO-A7X">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                                     <color key="value" red="1" green="0.76959400566506009" blue="0.19539162589146053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -188,7 +194,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Add Subscriptions" id="5Ng-Ez-wcE">
-                                        <barButtonItem key="leftBarButtonItem" image="back" id="WbU-gt-1o8">
+                                        <barButtonItem key="leftBarButtonItem" image="back" width="10" id="WbU-gt-1o8">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                                     <color key="value" red="0.98961764574050903" green="0.71065253019332886" blue="0.19250932335853577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
