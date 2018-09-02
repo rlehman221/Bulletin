@@ -98,7 +98,7 @@
                                                     <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKi-IV-5Ud" userLabel="Subject">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKi-IV-5Ud" userLabel="Subject">
                                                     <rect key="frame" x="21" y="32" width="228" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="x3z-E0-1ci"/>
@@ -278,10 +278,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIO-uX-lUa" userLabel="Subject">
-                                                    <rect key="frame" x="21" y="32" width="228" height="51"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIO-uX-lUa" userLabel="Subject">
+                                                    <rect key="frame" x="21" y="32" width="228" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="51" id="3Pq-xE-pjC"/>
+                                                        <constraint firstAttribute="height" constant="60" id="3Pq-xE-pjC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -331,7 +331,7 @@
                                                 <constraint firstItem="QkC-QN-FD8" firstAttribute="leading" secondItem="RbB-nf-S7Z" secondAttribute="leading" constant="25" id="jfX-tF-J4D"/>
                                                 <constraint firstItem="jIO-uX-lUa" firstAttribute="leading" secondItem="RbB-nf-S7Z" secondAttribute="leadingMargin" constant="6" id="jwy-sy-Usq"/>
                                                 <constraint firstItem="jIO-uX-lUa" firstAttribute="top" secondItem="RbB-nf-S7Z" secondAttribute="topMargin" constant="21" id="mOr-Ve-eyU"/>
-                                                <constraint firstItem="1y4-SV-1GP" firstAttribute="top" secondItem="jIO-uX-lUa" secondAttribute="bottom" constant="9" id="s1H-qg-14g"/>
+                                                <constraint firstItem="1y4-SV-1GP" firstAttribute="top" secondItem="jIO-uX-lUa" secondAttribute="bottom" id="s1H-qg-14g"/>
                                                 <constraint firstItem="m61-H2-DAz" firstAttribute="top" secondItem="RbB-nf-S7Z" secondAttribute="top" constant="19" id="sAd-Oa-idc"/>
                                                 <constraint firstItem="VEh-cX-Yui" firstAttribute="top" secondItem="RbB-nf-S7Z" secondAttribute="topMargin" constant="7" id="vYq-NP-tLj"/>
                                                 <constraint firstItem="VEh-cX-Yui" firstAttribute="leading" secondItem="RbB-nf-S7Z" secondAttribute="leadingMargin" constant="6" id="vod-tQ-yE2"/>
@@ -2171,6 +2171,6 @@ fieBJ4YnjieRJ6MnpierAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAJ60
         <image name="seperator" width="375" height="2"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IVQ-Mk-ijx"/>
+        <segue reference="pJV-VO-cVJ"/>
     </inferredMetricsTieBreakers>
 </document>
