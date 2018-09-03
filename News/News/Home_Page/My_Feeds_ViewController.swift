@@ -70,12 +70,11 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     
     @objc func refreshData()
     {
-        
         loadClubs {
             do {
                 try self.load_database()
-                self.reloadDuration()
                 
+                self.reloadDuration()
                 self.table_view.reloadData()
                 self.refreshControl?.endRefreshing()
             } catch {
@@ -121,6 +120,7 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
         cell.selectionStyle = .none // Allows the box selected to not have a grey outline
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.club_name.text = self.feed_data[indexPath.item]["Name"]
+
         cell.Subject.text = self.feed_data[indexPath.item]["Subject"]
         cell.time_duration.text = self.feed_data[indexPath.item]["Duration"]
         cell.image_view.layer.masksToBounds = true
@@ -182,7 +182,6 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
             
             let posts = snapshot.value
             let all_posts = posts as? [String: String]
-            
             if (self.clubHolder.contains(all_posts!["Name"]!)) {
                 if (self.search_text == ""
                     || all_posts!["Name"]?.lowercased().range(of: self.search_text.lowercased()) != nil
@@ -305,9 +304,5 @@ class My_Feeds_ViewController: UIViewController, UITableViewDataSource, UITableV
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        refreshData()
     }
 }
